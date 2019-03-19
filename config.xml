@@ -12,7 +12,7 @@
     <allow-intent href="geo:*" />
     <preference name="HideKeyboardFormAccessoryBar" value="true"/>
     <preference name="AutoHideSplashScreen" value="true" />
-    <preference name="StatusBarBackgroundColor" value="#0A2146" />
+    <preference name="StatusBarBackgroundColor" value="#FFF" />
     <preference name="orientation" value="portrait" />
     <preference name="target-device" value="handset" />
     <preference name="fullscreen" value="false" />
