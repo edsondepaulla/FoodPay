@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="br.com.mobile.foodpay" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>Food Pay</name>
+    <description>xxx</description>
+	<content src="index.html" />
+    <access origin="*" />
+    <allow-navigation href="*" />
+    <allow-intent href="*" />
+    <allow-intent href="tel:*" />
+    <allow-intent href="sms:*" />
+    <allow-intent href="mailto:*" />
+    <allow-intent href="geo:*" />
+    <preference name="HideKeyboardFormAccessoryBar" value="true"/>
+    <preference name="AutoHideSplashScreen" value="true" />
+    <preference name="StatusBarBackgroundColor" value="#0A2146" />
+    <preference name="orientation" value="portrait" />
+    <preference name="target-device" value="handset" />
+    <preference name="fullscreen" value="false" />
+    <preference name="StatusBarOverlaysWebView" value="true" />
+    <preference name="webviewbounce" value="true" />
+    <preference name="SplashScreenDelay" value="0" />
+    <preference name="phonegap-version" value="cli-8.0.0" />
+    <platform name="android">
+        <allow-intent href="market:*" />
+        <icon density="ldpi" src="res/android/icon32.png" />
+        <icon density="mdpi" src="res/android/icon48.png" />
+        <icon density="hdpi" src="res/android/icon72.png" />
+        <icon density="xhdpi" src="res/android/icon96.png" />
+        <preference name="DisallowOverscroll" value="false" />
+        <preference name="SplashScreenDelay" value="0" />
+        <preference name="SplashMaintainAspectRatio" value="false" />
+        <preference name="SplashShowOnlyFirstTime" value="false" />
+        <preference name="StatusBarStyle" value="default" />
+        <preference name="android-minSdkVersion" value="23" />
+    </platform>
+    <engine name="ios" spec="^4.3.1" />
+    <engine name="android" spec="~6.2.3" />
+    <plugin name="cordova-plugin-ios-non-exempt-encryption" />
+    <plugin name="cordova-plugin-keyboard" spec="^1.1.5" />
+    <plugin name="cordova-plugin-splashscreen" />
+    <plugin name="cordova-plugin-whitelist" spec="1" />
+    <plugin name="cordova-plugin-x-toast" spec="^2.6.0" />
+    <plugin name="cordova-plugin-statusbar" spec="~2.2.3" />
+</widget>
