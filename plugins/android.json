@@ -1,0 +1,30 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {}
+  },
+  "installed_plugins": {
+    "cordova-plugin-ios-non-exempt-encryption": {
+      "PACKAGE_NAME": "br.com.mobile.foodpay"
+    },
+    "cordova-plugin-keyboard": {
+      "PACKAGE_NAME": "br.com.mobile.foodpay"
+    },
+    "cordova-plugin-splashscreen": {
+      "PACKAGE_NAME": "br.com.mobile.foodpay"
+    },
+    "cordova-plugin-statusbar": {
+      "PACKAGE_NAME": "br.com.mobile.foodpay"
+    },
+    "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "br.com.mobile.foodpay"
+    },
+    "cordova-plugin-x-toast": {
+      "PACKAGE_NAME": "br.com.mobile.foodpay"
+    }
+  },
+  "dependent_plugins": {}
+}

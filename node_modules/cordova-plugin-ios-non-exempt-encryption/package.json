@@ -1,0 +1,101 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "cordova-plugin-ios-non-exempt-encryption",
+        "scope": null,
+        "escapedName": "cordova-plugin-ios-non-exempt-encryption",
+        "name": "cordova-plugin-ios-non-exempt-encryption",
+        "rawSpec": "",
+        "spec": "latest",
+        "type": "tag"
+      },
+      "C:\\Projetos\\FoodPay"
+    ]
+  ],
+  "_from": "cordova-plugin-ios-non-exempt-encryption@latest",
+  "_id": "cordova-plugin-ios-non-exempt-encryption@1.0.0",
+  "_inCache": true,
+  "_location": "/cordova-plugin-ios-non-exempt-encryption",
+  "_nodeVersion": "5.5.0",
+  "_npmOperationalInternal": {
+    "host": "packages-12-west.internal.npmjs.com",
+    "tmp": "tmp/cordova-plugin-ios-non-exempt-encryption-1.0.0.tgz_1464884147668_0.24605835904367268"
+  },
+  "_npmUser": {
+    "name": "pbakondy",
+    "email": "pbakondy@gmail.com"
+  },
+  "_npmVersion": "3.8.9",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "cordova-plugin-ios-non-exempt-encryption",
+    "scope": null,
+    "escapedName": "cordova-plugin-ios-non-exempt-encryption",
+    "name": "cordova-plugin-ios-non-exempt-encryption",
+    "rawSpec": "",
+    "spec": "latest",
+    "type": "tag"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/cordova-plugin-ios-non-exempt-encryption/-/cordova-plugin-ios-non-exempt-encryption-1.0.0.tgz",
+  "_shasum": "e5994f6366336865fcf57ca2f047c5a73b76e668",
+  "_shrinkwrap": null,
+  "_spec": "cordova-plugin-ios-non-exempt-encryption",
+  "_where": "C:\\Projetos\\FoodPay",
+  "author": {
+    "name": "Peter Bakondy"
+  },
+  "bugs": {
+    "url": "https://github.com/pbakondy/cordova-plugin-ios-non-exempt-encryption/issues"
+  },
+  "cordova": {
+    "id": "cordova-plugin-ios-non-exempt-encryption",
+    "platforms": [
+      "ios"
+    ]
+  },
+  "dependencies": {},
+  "description": "Export Compliance: set ITSAppUsesNonExemptEncryption to false in Info.plist file",
+  "devDependencies": {},
+  "directories": {},
+  "dist": {
+    "shasum": "e5994f6366336865fcf57ca2f047c5a73b76e668",
+    "tarball": "https://registry.npmjs.org/cordova-plugin-ios-non-exempt-encryption/-/cordova-plugin-ios-non-exempt-encryption-1.0.0.tgz"
+  },
+  "engines": [
+    {
+      "name": "cordova",
+      "version": ">=3.0.0"
+    }
+  ],
+  "gitHead": "f2de7221833ed8a17314a02e8a7bf495d92de684",
+  "homepage": "https://github.com/pbakondy/cordova-plugin-ios-non-exempt-encryption#readme",
+  "keywords": [
+    "cordova",
+    "ios",
+    "TestFlight",
+    "Export Compliance",
+    "ecosystem:cordova",
+    "cordova-ios"
+  ],
+  "license": "MIT",
+  "maintainers": [
+    {
+      "name": "pbakondy",
+      "email": "pbakondy@gmail.com"
+    }
+  ],
+  "name": "cordova-plugin-ios-non-exempt-encryption",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pbakondy/cordova-plugin-ios-non-exempt-encryption.git"
+  },
+  "scripts": {},
+  "version": "1.0.0"
+}
