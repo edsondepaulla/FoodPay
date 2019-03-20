@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="br.com.mobile.foodpay" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>Food Pay</name>
-    <description>xxx</description>
-    <content src="index.html" />
+    <name>FoodPay</name>
+    <description></description>
+	<content src="index.html" />
     <access origin="*" />
     <allow-navigation href="*" />
     <allow-intent href="*" />
@@ -10,7 +10,7 @@
     <allow-intent href="sms:*" />
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
-    <preference name="HideKeyboardFormAccessoryBar" value="true" />
+    <preference name="HideKeyboardFormAccessoryBar" value="true"/>
     <preference name="AutoHideSplashScreen" value="true" />
     <preference name="StatusBarBackgroundColor" value="#0A2146" />
     <preference name="orientation" value="portrait" />
@@ -33,7 +33,5 @@
         <preference name="StatusBarStyle" value="default" />
         <preference name="android-minSdkVersion" value="23" />
     </platform>
-    <engine name="android" spec="^6.2.3" />
-    <engine name="ios" spec="^4.3.1" />
     <plugin name="cordova-plugin-camera" spec="^2.4.1" />
 </widget>
