@@ -1,7 +1,12 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="br.com.mobile.foodpay" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>FoodPay</name>
-    <description />
+    <description>
+        Pagamento de Refeições e Bebidas - FoodPay
+    </description>
+    <author email="edsondepaulla@gmail.com" href="http://www.foodpay.com.br">
+        FoodPay
+    </author>
     <content src="index.html" />
     <access origin="*" />
     <allow-navigation href="*" />
@@ -19,7 +24,6 @@
     <preference name="StatusBarOverlaysWebView" value="true" />
     <preference name="webviewbounce" value="true" />
     <preference name="SplashScreenDelay" value="0" />
-    <preference name="phonegap-version" value="cli-8.0.0" />
     <platform name="android">
         <allow-intent href="market:*" />
         <icon density="ldpi" src="res/android/icon32.png" />
@@ -33,6 +37,4 @@
         <preference name="StatusBarStyle" value="default" />
         <preference name="android-minSdkVersion" value="23" />
     </platform>
-    <plugin name="cordova-plugin-camera" spec="^2.4.1" />
-    <plugin name="cordova-plugin-qrscanner" spec="^2.6.0" />
 </widget>

@@ -1,92 +1,19 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 	<head>
-		<title>
-		  Motos antigas
-		</title>
+        <title>Pagamento de Refeições e Bebidas - FoodPay</title>
+        <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<script type="text/javascript">
-			setTimeout(function(){
-				//window.open('http://www.mdmmoveis.com.br', '_blank', 'location=yes');
-			}, 500);
-		</script>
 		<style>
-			html{
-				height: 100%;
-			}
 			body{
-				background: #EDEDED;
-				color: #282424;
-				height: 100%;
-				padding: 0;
-				margin: 0;
-				text-align: center;
-				padding-top: 50%;
-			}
-			
-			img{
-				width: 50%;
-				margin: 0 auto;
-				display: block;
-			}
+                background: #000;
+                color: #FFF;
+                text-align: center;
+            }
+		
 		</style>
 	</head>
 	<body>
-		<img src="logomarca.jpg" border="0">
-
-		<button onclick="app.capturePhoto()">Capturar Foto</button>
-
-		<script type="text/javascript" src="cordova.js"></script>
-		<script type="text/javascript" src="js/index.js"></script>
-		<script type="text/javascript">
-            app.initialize();
-
-            var QRScanner = require('QRScanner');
-
-            // For the best user experience, make sure the user is ready to give your app
-            // camera access before you show the prompt. On iOS, you only get one chance.
-
-            QRScanner.prepare(onDone); // show the prompt
-
-            function onDone(err, status){
-                if (err) {
-                    // here we can handle errors and clean up any loose ends.
-                    console.error(err);
-                }
-                if (status.authorized) {
-                    // W00t, you have camera access and the scanner is initialized.
-                    // QRscanner.show() should feel very fast.
-                } else if (status.denied) {
-                    // The video preview will remain black, and scanning is disabled. We can
-                    // try to ask the user to change their mind, but we'll have to send them
-                    // to their device settings with `QRScanner.openSettings()`.
-                } else {
-                    // we didn't get permission, but we didn't get permanently denied. (On
-                    // Android, a denial isn't permanent unless the user checks the "Don't
-                    // ask again" box.) We can ask again at the next relevant opportunity.
-                }
-            }
-
-
-            // Start a scan. Scanning will continue until something is detected or
-            // `QRScanner.cancelScan()` is called.
-            QRScanner.scan(displayContents);
-
-            function displayContents(err, text){
-                if(err){
-                    // an error occurred, or the scan was canceled (error code `6`)
-                } else {
-                    // The scan completed, display the contents of the QR code:
-                    alert(text);
-                }
-            }
-
-            // Make the webview transparent so the video preview is visible behind it.
-            QRScanner.show();
-            // Be sure to make any opaque HTML elements transparent here to avoid
-            // covering the video.
-		</script>
-
-		<span style="font-size: 24px;color: #021F4B;padding-left: 5px;font-family: Book Antiqua;font-weight: bold;">Motos Antigas Ltda</span>
+		<img src="logo.png">
 	</body>
 </html>
