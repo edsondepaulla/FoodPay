@@ -2,11 +2,8 @@
 <widget id="br.com.mobile.foodpay" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>FoodPay</name>
     <description>
-        Pagamento de Refeições e Bebidas - FoodPay
+        Pagamento de Refeições e Bebidas
     </description>
-    <author email="edsondepaulla@gmail.com" href="http://www.foodpay.com.br">
-        FoodPay
-    </author>
     <content src="index.html" />
     <access origin="*" />
     <allow-navigation href="*" />
