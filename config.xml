@@ -12,7 +12,8 @@
     <allow-intent href="sms:*" />
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
-    <preference name="BackgroundColor" value="fffff"/>
+    <preference name="backgroundColor" value="0x00000000" />
+    <splash src="res/splash.png"/>
     <preference name="HideKeyboardFormAccessoryBar" value="true"/>
     <preference name="AutoHideSplashScreen" value="true" />
     <preference name="StatusBarBackgroundColor" value="#0A2146" />
