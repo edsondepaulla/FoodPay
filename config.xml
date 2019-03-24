@@ -12,8 +12,6 @@
     <allow-intent href="sms:*" />
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
-    <preference name="backgroundColor" value="0x00000000" />
-    <splash src="res/splash.png" />
     <preference name="HideKeyboardFormAccessoryBar" value="true" />
     <preference name="AutoHideSplashScreen" value="true" />
     <preference name="StatusBarBackgroundColor" value="#0A2146" />
@@ -38,12 +36,4 @@
         <preference name="android-minSdkVersion" value="23" />
     </platform>
     <engine name="ios" spec="^4.3.1" />
-    <plugin name="cordova-plugin-ios-non-exempt-encryption" />
-    <plugin name="cordova-plugin-keyboard" spec="^1.1.5" />
-    <plugin name="cordova-plugin-splashscreen" />
-    <plugin name="cordova-plugin-whitelist" spec="1" />
-    <plugin name="cordova-plugin-x-toast" spec="^2.6.0" />
-    <plugin name="cordova-plugin-statusbar" spec="~2.2.3" />
-    <engine name="android" spec="~6.2.3" />
-    <plugin name="cordova-plugin-background-mode" spec="^0.7.2" />
 </widget>
