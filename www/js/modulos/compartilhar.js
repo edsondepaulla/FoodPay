@@ -2,7 +2,7 @@ app.controller('Index', function($rootScope, $scope, CompartilharData) {
     $('#subTituloTop').hide();
     $('#tituloTop').show();
     Factory.activeMenuBottom('');
-    $rootScope.titulo = 'Compartilhar';
+    $rootScope.titulo = 'FoodPay';
 
     // Menu direito
     $rootScope.MenuRight = [];

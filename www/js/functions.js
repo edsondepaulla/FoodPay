@@ -117,7 +117,7 @@ var Factory = {
                         if (Factory.$rootScope)
                             Factory.$rootScope.loading = false;
 
-                        if (response.data.desconectado == 1) {
+                        if (response.data.desconectado == 1 && false) {
                             Login.set({});
                             if(params.action != 'login/logout')
                                 window.location = "login.html";

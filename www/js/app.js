@@ -619,12 +619,12 @@ app.controller('Main', function($rootScope, $scope, $http, $routeParams, $route,
     // Menu
     $rootScope.MenuLeft = [
         {
-            titulo: 'Compartilhar',
+            titulo: 'Mapa',
             icone: 'fa fa-share-alt',
             url_pai: '#!/',
             url: '#!/',
             tipo: 'pai'
-        },
+        }/*,
         {
             titulo: 'Performance',
             icone: 'mdi mdi-chart-line',
@@ -687,7 +687,7 @@ app.controller('Main', function($rootScope, $scope, $http, $routeParams, $route,
 			url_pai: '#!/minhas-acoes',
             url: '#!/planos-de-acao',
             tipo: 'filho'
-        }
+        }*/
     ];
 
     $rootScope.menuOpcoes = function(menu){
