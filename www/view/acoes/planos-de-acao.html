@@ -1,0 +1,46 @@
+<link href="css/modulos/acoes-planos-de-acao.css" rel="stylesheet" type="text/css">
+<md-toolbar>
+    <md-tabs id="tabsPlanosDeAcao" md-swipe-content="false" md-center-tabs="true" md-selected="$root.tab_plano_acao">
+        <md-tab ng-repeat="tipo in lstRegistros" md-on-select="carregaAba(tipo)" id="{{tipo.TIPO}}">
+            <span tipo="{{tipo.TIPO}}"></span>{{tipo.QTDE}}
+            <br>
+            {{tipo.LABEL}}
+            <br><span  ng-if="tipo.QTDETAREFASATRAZADAS > 0" class="iconRadio"></span> <label>{{tipo.TAREFASATRAZADAS}}</label>
+        </md-tab>
+    </md-tabs>
+    <ul ng-repeat="(index, tipo) in lstRegistros" ng-if="tipo.TIPO == 'todos' && $root.tab_plano_acao == index" class="filtroPlanoAcao">
+        <li ng-click="filtroPlanoAcao(tipo, filtro)" ng-repeat="(status, filtro) in tipo.FILTROS" active="{{filtro.ACTIVE}}" status="{{status}}">{{filtro.NOME}}</li>
+        <div class="clearBoth"></div>
+    </ul>
+</md-toolbar>
+<md-content class="scrollable-content" scroll flex md-scroll-y>
+    <div ng-repeat="(index, tipo) in lstRegistros" id="{{tipo.TIPO}}" ng-if="$root.tab_plano_acao == index">
+        <ul style="padding-bottom: 120px" ng-style="tipo.TIPO == 'todos' && {'padding-bottom':'170px'}" ng-if="tipo.EXIBIR && tipo.ITENS.length >= 1" class="BlocolstMinhasAcoes efeitoLst">
+            <li data-atrasado="{{registro.ATRASADO}}" ng-click="abrir(registro)" class="lstMinhasAcoes" ng-repeat="registro in tipo.ITENS" data-id="{{registro.ID}}">
+                <h4>{{registro.TITULO}}</h4>
+                <label>{{registro.DESCRICAO}}</label>
+                <div class="user">
+                    <img src="{{registro.IMAGEM}}" on-error-src border="0">
+                    <div class="dados">
+                        <h3 class="limitaLabel80">{{registro.NOME_USUARIO}}</h3>
+                        <h4 class="limitaLabel80">{{registro.EMAIL}}</h4>
+                    </div>
+                </div>
+                <div class="status">
+                    <i>{{registro.PERCENTUAL}}%</i>
+                    <span status="{{registro.STATUS}}">{{registro.STATUS_LABEL}}</span>
+                    <br><label atrasado="{{registro.ATRASADO}}">{{registro.STATUS_TERMINO}}</label>
+                </div>
+                <div class="clearBoth"></div>
+            </li>
+        </ul>
+        <div class="semRegistros" ng-if="tipo.EXIBIR && !tipo.ITENS.length">
+            <img src="img/erro_planos.png">
+            <h3>{{tipo.msgNenhumRegistros}}</h3>
+        </div>
+    </div>
+</md-content>
+<button class="btn-fab" ng-click="location('#!/planos-de-acao-detalhes/0')">
+    <label>Adicionar plano de ação</label>
+    <span>+</span>
+</button>

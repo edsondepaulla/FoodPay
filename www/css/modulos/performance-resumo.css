@@ -1,0 +1,43 @@
+.btnResumoPerformance{
+    margin: 0 -16px;
+}
+
+#lstResumo .btnResumoPerformance li{
+    float: left;
+    width: 50%;
+    border: 1px solid #EEE !important;
+    padding-bottom: 3px !important;
+    position: relative;
+    padding: 5px 15px;
+    height: 40px;
+    line-height: 27px;
+}
+
+#lstResumo .btnResumoPerformance li a{
+    color: #6f7b8a !important;
+}
+
+#lstResumo .btnResumoPerformance li i{
+    left: 0;
+    right: auto;
+    font-size: 17px;
+    color: #224887 !important;
+    top: 5px;
+    vertical-align: middle;
+}
+#lstResumo .btnResumoPerformance li label{
+    vertical-align: middle !important;
+}
+
+#lstResumo .btnResumoPerformance li i.fa-share-alt{
+    font-size: 22px;
+    -webkit-text-stroke: 1px #fff;
+}
+
+#lstResumo li{
+    padding-bottom: 0 !important;
+}
+
+.btnResumoPerformance li a{
+    font-size: 12px !important;
+}

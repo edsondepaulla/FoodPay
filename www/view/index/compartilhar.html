@@ -1,0 +1,102 @@
+<link href="css/modulos/compartilhar.css" rel="stylesheet" type="text/css">
+
+<md-content id="blocoCompartilhar" class="scrollable-content" flex md-scroll-y scroll>
+    <div id="infoExtras" ng-if="registro.COMPARTILHAR.ACUMULARATE == 0 || registro.COMPARTILHAR.ACUMULARATE == 1 || registro.COMPARTILHAR.COMPETENCIA.length">
+        <p ng-if="registro.COMPARTILHAR.ACUMULARATE == 1" class="todo-element">
+            <input ng-checked="{{registro.COMPARTILHAR.ACUMULARATE}}" type="checkbox" style="display: none;">
+            <label>Acumulando até</label>
+        </p>
+        <span ng-if="registro.COMPARTILHAR.COMPETENCIA.length" id="competencia">{{registro.COMPARTILHAR.COMPETENCIA_label}}</span>
+    </div>
+
+    <article class="card" card-origem="{{registro.ORIGEM}}" ng-include="'view/extensao_cards/'+registro.ORIGEM+'.html'"></article>
+    <span id="datahora" ng-if="DADOS.DATAHORA.length > 0">{{DADOS.DATAHORA}}</span>
+
+    <div ng-if="lstMsg.length > 0" class="listaMsg">
+        <h4>Mensagens</h4>
+        <div style="margin-bottom: 0" class="card">
+            <div class="container" style="padding: 10px 0 3px;">
+                <div class="chat">
+                    <ul id="lstMensagens">
+                        <li class="message-{{msg.CLASS_RIGHT_LEFT}}" ng-repeat="(key, msg) in lstMsg | orderBy:'DATAHORA'" data-id="{{msg.ID}}" mn-touch swipe-left="exibirMenu(msg)" swipe-right="esconderMenu()">
+                            <img src="{{msg.IMAGEM}}" on-error-src border="0">
+                            <div class="message">
+                                <p ng-bind-html="msg.MENSAGEM"></p>
+                                <span class="dados_usuario">
+                                    {{msg.NOME_USUARIO}}
+                                    <br>
+                                    {{msg.EMAIL_USUARIO}}
+                                </span>
+                            </div>
+                            <span style="margin-bottom: 0">{{msg.DATAHORA}}</span>
+                            <div ng-if="msg.USUARIO == $root.usuarioLogado.ID || DADOS.USUARIO == $root.usuarioLogado.ID" title="Remover" ng-click="removerMsg(key, msg)" class="menu row">
+                                <a class="col s3">
+                                    <i class="fa fa-trash-o"></i>
+                                    <p>Remover</p>
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</md-content>
+
+<md-select ng-if="(DADOS.USUARIO == $root.usuarioLogado.ID) || ID == 0" style="display: none" id="lstUsuariosCompartilhar" multiple="true" ng-model="$root.USUARIOS_SELECTED" md-on-close="pesquisarUsuarios = ''" ng-controller="Usuarios" md-on-open="carregarLista(true)"  placeholder="Pesquisar usuários...">
+    <md-select-header>
+        <h2>Usuários</h2>
+        <input ng-model="pesquisarUsuarios" class="formata-icone" placeholder="&#xf002; Pesquisar..." select-search>
+    </md-select-header>
+    <md-content>
+        <md-optgroup label="Grupos" ng-if="GRUPOS.length > 0">
+            <label class="md-container-ignore" aria-hidden="true">Grupos</label>
+            <md-option ng-value="GRUPO.id" ng-repeat="GRUPO in GRUPOS | filter:pesquisarUsuarios">
+                {{GRUPO.name}}
+            </md-option>
+        </md-optgroup>
+        <md-optgroup label="Usuários">
+            <label class="md-container-ignore" aria-hidden="true" ng-if="GRUPOS.length > 0">Usuários</label>
+            <md-option ng-disabled="DADOS.USUARIO != $root.usuarioLogado.ID && ID != 0" ng-value="USUARIO.id" ng-repeat="USUARIO in USUARIOS | filter:pesquisarUsuarios">
+                <table>
+                    <tr>
+                        <td rowspan="2" style="width: 35px"><img class="imgSelect" src="{{USUARIO.imagem}}" on-error-src border="0"></td>
+                        <td class="textSelect">{{USUARIO.name}}</td>
+                    </tr>
+                    <tr><td class="textSelect">{{USUARIO.email}}</td></tr>
+                </table>
+            </md-option>
+        </md-optgroup>
+        <h4 ng-if="!USUARIOS.length" style="padding: 0 15px;">Nenhum registro localizado!</h4>
+    </md-content>
+    <md-select-footer>
+        <button ng-click="closeSelect()" class="btn btn-salvar" type="button">CONFIRMAR</button>
+    </md-select-footer>
+</md-select>
+
+<md-select ng-if="!((DADOS.USUARIO == $root.usuarioLogado.ID) || ID == 0)" style="display: none" id="lstUsuariosCompartilhar" multiple="false" ng-model="$root.USUARIOS_SELECTED" md-on-close="pesquisarUsuarios = ''" ng-controller="Usuarios" md-on-open="carregarLista(true, $root.USUARIOS_SELECTED)"  placeholder="Pesquisar usuários...">
+    <md-select-header style="height: 50px">
+        <h2>{{USUARIOS.length}} Participantes</h2>
+    </md-select-header>
+    <md-content style="padding-top: 50px !important;">
+        <md-option ng-disabled="DADOS.USUARIO != $root.usuarioLogado.ID && ID != 0" ng-value="USUARIO.id" ng-repeat="USUARIO in USUARIOS">
+            <table>
+                <tr>
+                    <td rowspan="2" style="width: 35px"><img class="imgSelect" src="{{USUARIO.imagem}}" on-error-src border="0"></td>
+                    <td class="textSelect">{{USUARIO.name}}</td>
+                </tr>
+                <tr><td class="textSelect">{{USUARIO.email}}</td></tr>
+            </table>
+        </md-option>
+        <h4 ng-if="!USUARIOS.length">Nenhum registro localizado!</h4>
+    </md-content>
+    <md-select-footer>
+        <button ng-click="closeSelect()" class="btn btn-default" type="button">FECHAR</button>
+    </md-select-footer>
+</md-select>
+
+<div id="comboMensagem">
+    <textarea class="msd-elastic" data-ng-model="MENSAGEM" name="MENSAGEM" id="MENSAGEM" placeholder="Digite aqui..."></textarea>
+    <i id="btn_usuarios" ng-click="openUsuarios()" class="fa fa-users"></i>
+    <i id="btn_salvar" ng-click="salvar()" class="fa fa-arrow-right"></i>
+</div>

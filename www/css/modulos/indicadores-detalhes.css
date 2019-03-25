@@ -1,0 +1,62 @@
+#opcoesMenuInd{
+  border-top: 1px rgb(209, 218, 222) solid;
+  margin: 10px -10px -10px;
+}
+
+#opcoesMenuInd li a[opcao="PLANO_DE_ACAO"] span {
+  border-radius: 50%;
+  font-size: 12px !important;
+  position: absolute !important;
+  top: 2px;
+  left: 59%;
+  background-color: #f35958;
+  padding-left: 3px !important;
+  padding-right: 4px !important;
+  padding-bottom: 0px !important;
+  padding-top: 0px !important;
+  color: #fff !important;
+  display: inline-block;
+  min-width: 20px;
+  line-height: 1.5;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+#opcoesMenuInd li{
+  float: left;
+  width: 33%;
+  text-align: center;
+  border-left: 1px rgb(209, 218, 222) solid;
+  padding: 5px 0px 5px 0px;
+  font-size: 12px;
+  line-height: 22px;
+  position: relative;
+  white-space: nowrap;
+}
+#opcoesMenuInd li label{
+  font-size: 12px;
+}
+#opcoesMenuInd li i.fa{
+  display: inline-block;
+  font-size: 20px !important;
+  float: none;
+  margin-right: 5px;
+}
+#opcoesMenuInd li i.fa.active{
+  color: #FBB05E;
+}
+
+#opcoesMenuInd:after{
+  clear: both;
+  content: '';
+  display: block;
+}
+
+#opcoesMenuInd li:first-child{
+  border: 0;
+}
+
+ul.NECESSITA_ANALISE_ li,
+ul.NECESSITA_ANALISE_0 li{
+  width: 45% !important;
+}

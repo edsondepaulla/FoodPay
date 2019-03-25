@@ -1,0 +1,33 @@
+<link href="css/modulos/indicadores-detalhes.css" rel="stylesheet" type="text/css">
+
+<div id="filtroTop">
+    <p class="todo-element" ng-controller="Acumular">
+        <input id="acumularAteTop" ng-model="ACUMULARATE" ng-checked="{{ACUMULARATE}}" ng-change="change()" type="checkbox" style="display: none;">
+        <label for="acumularAteTop">Acumular até</label>
+    </p>
+    <span ng-click="abrirCompetencia()">{{COMPETENCIA}}<i class="fa fa-caret-down" aria-hidden="true" style="margin-left: 5px;"></i></span>
+    <div ng-controller="Competencia" tipo="INDICADORES" id="comboCompetencia" ng-include="'view/componentes/competencia.html'"></div>
+</div>
+
+<md-content class="scrollable-content" flex md-scroll-y scroll>
+    <div class="card" id="detalhesIndicador" card-origem="IndicadoresDetalhar" ng-include="'view/extensao_cards/IndicadoresDetalhar.html'"></div>
+    <ul style="margin: -10px 10px 0;" id="opcoesMenuInd" class="card NECESSITA_ANALISE_{{registro.NECESSITA_ANALISE}}">
+        <li ng-if="registro.NECESSITA_ANALISE == 1" style="margin-left: -15px">
+            <a opcao="ANALISE" href="#!/analise-justificativa-indicador/{{registro.ID}}/ANALISE{{ORIGEM_COMPETENCIA}}/{{registro.TIPO}}">
+                <i class="fa fa-star {{registro.ACTIVE_ANALISE}}"></i><br>
+                <label>Análise</label>
+            </a>
+        </li>
+        <li style="padding-left: 12px">
+            <a opcao="PLANO_DE_ACAO" class="{{registro.ACTIVE_PLANO_ACAO}}" href="#!/analise-justificativa-indicador/{{registro.ID}}/PLANO_DE_ACAO{{ORIGEM_COMPETENCIA}}/{{registro.TIPO}}">
+                <i style="font-size: 22px; margin-top: -2px;" class="mdi mdi-checkbox-marked-outline"></i><br>
+                <label>Plano de ação</label>
+                <span>{{registro.QTDE_PLANO_ACAO}}</span>
+            </a>
+        </li>
+        <li ng-click="Compartilhar('IndicadoresDetalhar', registro)" style="margin-left: 15px">
+            <i style="color: #224887 !important;" class="fa fa-share-alt"></i><br>
+            Compartilhar
+        </li>
+    </ul>
+</md-content>

@@ -1,0 +1,36 @@
+<link href="css/modulos/performance-resumo.css" rel="stylesheet" type="text/css">
+
+<div id="filtroTop" ng-if="lstResumo.length">
+    <p class="todo-element" ng-controller="Acumular">
+        <input id="acumularAteTop" ng-model="ACUMULARATE" ng-checked="{{ACUMULARATE}}" ng-change="change()" type="checkbox" style="display: none;">
+        <label for="acumularAteTop">Acumular até</label>
+    </p>
+    <span ng-click="abrirCompetencia()">{{COMPETENCIA}}<i class="fa fa-caret-down" aria-hidden="true" style="margin-left: 5px;"></i></span>
+    <div ng-controller="Competencia" tipo="PLANEJAMENTOS" id="comboCompetencia" ng-include="'view/componentes/competencia.html'"></div>
+</div>
+<md-content class="scrollable-content" flex md-scroll-y scroll ng-if="lstResumo.length">
+    <ul id="lstResumo" class="efeitoLst">
+        <li ng-repeat="registro in lstResumo | filter:$root.criterio" data-id="{{registro.ID}}">
+            <article card-origem="PerformanceResumo" ng-include="'view/extensao_cards/PerformanceResumo.html'"></article>
+            <ul class="btnResumoPerformance clearBoth">
+                <li>
+                    <a href="#!/performance-resumo/{{registro.ID}}/0">
+                        <i class="fa fa-clock-o"></i>
+                        <label>Linha do tempo</label>
+                    </a>
+                </li>
+                <li style="border-left: 0">
+                    <a class="comments" ng-click="Compartilhar('PerformanceResumo', registro)">
+                        <i class="fa fa-share-alt"></i>
+                        Compartilhar
+                    </a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</md-content>
+
+<div class="semRegistros" ng-if="!lstResumo.length">
+    <img src="img/erro_resumo.png">
+    <h3>Não encontramos nenhum resumo da performance.</h3>
+</div>

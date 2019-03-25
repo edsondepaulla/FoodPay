@@ -1,0 +1,316 @@
+#listaPlanoAcao li{
+        position: relative;
+        padding: 10px;
+        border-bottom: 2px solid #EEE;
+}
+#listaPlanoAcao li span{
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    font-size: 18px;
+}
+#listaPlanoAcao li h4{
+    margin: 0;
+    font-size: 15px;
+}
+#detalhesIndicador > a i{
+    position: absolute;
+    right: 0;
+    font-size: 25px;
+}
+#detalhesIndicador > a{
+    color: #224887;
+    width: 100%;
+    display: block;
+    margin-top: 10px;
+    font-size: 18px;
+    position: relative;
+}
+#detalhesIndicador #login{
+    margin-top: 10px;
+}
+#detalhesIndicador #login img{
+    float: left;
+    filter: FlipH;
+    -ms-filter: FlipH;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin: 0 15px 0 0;
+    display: block;
+    background: #FFF;
+}
+#detalhesIndicador #login > div#dados{
+    float: left;
+}
+#detalhesIndicador #login > div#dados h3{
+    font-size: 12px;
+    margin: 5px 0 0 0;
+}
+#detalhesIndicador #login > div#dados h4{
+    font-size: 10px;
+    margin: 0;
+}
+#detalhesIndicador #login:after{
+    clear: both;
+    content: '';
+    display: block;
+}
+
+#detalhesIndicador{
+    margin: 0 10px 10px 10px;
+}
+#detalhesIndicador .dados{
+    float: left;
+    margin-bottom: 10px;
+    width: 85%
+}
+#detalhesIndicador .fa {
+    float: left;
+    font-size: 32px;
+    margin-right: 10px;
+	margin-top: 5px;
+}
+#detalhesIndicador .dados h3{
+    margin: 0;
+    font-size: 18px;
+}
+
+#detalhesIndicador .dados h4{
+    margin: 0;
+    font-size: 15px;
+    color: #999;
+}
+
+#detalhesIndicador div.i{
+    float: left;
+    width: 42%;
+    font-size: 12px;
+}
+
+#detalhesIndicador div.i span{
+    color: #9e9e9e;
+    display: block;
+    font-weight: normal;
+    font-size: 13px;
+}
+
+#detalhesIndicador div.i.porc{
+    width: 15%;
+    text-align: center;
+}
+
+#detalhesIndicador div.i.porc span{
+    padding: 0 3px;
+    border-radius: 4px;
+    color: black;
+    background: rgb(209, 218, 222);
+}
+
+#detalhesIndicador div.i.porc[sinal="VERDE"] span{
+    background: rgb(34, 175, 163);
+    color: #FFF;
+}
+
+#detalhesIndicador div.i.porc[sinal="VERMELHO"] span{
+    background: #f35958;
+    color: #FFF;
+}
+
+#detalhesIndicador div.i.porc[sinal="LARANJA"] span{
+    background: #fbb05e;
+}
+
+.subMenuDetalhes{
+    width: 100%;
+    overflow: auto;
+    background: rgba(238, 238, 238, 0.4);
+}
+
+.subMenuDetalhes > ul{
+    margin: 0 auto;
+}
+
+.subMenuDetalhes > ul > li{
+    padding: 5px;
+    font-size: 18px;
+    text-align: center;
+    display: none;
+}
+
+.subMenuDetalhes > ul li.active{
+    display: block;
+}
+
+.subMenuDetalhes > ul > li ul{
+    margin: 0 auto;
+    width: auto;
+}
+
+.subMenuDetalhes > ul > li ul:after{
+    clear: both;
+    content: '';
+    display: block;
+}
+
+.subMenuDetalhes > ul > li ul > li{
+    width: 10px;
+    height: 10px;
+    background: #fff;
+    display: inline-block;
+    margin: 0 5px 5px;
+    border-radius: 50%;
+}
+
+.subMenuDetalhes > ul > li[data-tipo="ANALISE_PROBLEMA"].active ul > li[data-tipo="ANALISE_PROBLEMA"],
+.subMenuDetalhes > ul > li[data-tipo="FATO"].active ul > li[data-tipo="FATO"],
+.subMenuDetalhes > ul > li[data-tipo="CAUSA"].active ul > li[data-tipo="CAUSA"],
+.subMenuDetalhes > ul > li[data-tipo="ACOES_RAPIDAS"].active ul > li[data-tipo="ACOES_RAPIDAS"]{
+    background: #224887;
+}
+
+.subMenuDetalhes > ul:after{
+    clear: both;
+    content: '';
+    display: block;
+}
+
+.subMenuDetalhes > ul li.active{
+    color: #224887;
+}
+
+#tableAcoesRapidas{
+    display: none;
+}
+#tableAcoesRapidas[data-tipo="ACOES_RAPIDAS"]{
+    display: table;
+}
+#tableAcoesRapidas thead th{
+    font-size: 10px;
+    text-align: center;
+}
+#tableAcoesRapidas thead{
+    border: 0;
+}
+#tableAcoesRapidas tbody td:first-child{
+    border-left: 0;
+}
+#tableAcoesRapidas tbody td{
+    font-size: 9px;
+    border-left: 2px solid #EEE;
+    text-align: center;
+    border-top: 2px solid #EEE;
+    width: 33%;
+    padding: 2px;
+}
+#tableAcoesRapidas tbody tr:first-child td{
+    border-top: 0;
+}
+.adicionarAcaoRapida{
+	font-size:28px; 
+	float: right; 
+	color:#224887;
+	margin-top: -15px;
+}
+tr.border_top td {
+	border-top: 1px solid #d0d0d0;
+}
+#formAnalise{
+    background-color: #FFF;
+    margin: 0 10px 0px 10px;
+    color: #999;
+    padding-bottom: 10px;
+}
+#formAnalise textarea{
+    /*border-radius: 7px;*/
+	resize: none;
+    font-size: 0.8rem;
+    color: #9e9e9e;
+    overflow-y: scroll;
+    border-color: #999;
+    padding: 5px;
+}
+#formAnalise thead{
+    border: 0;
+}
+#formAnalise thead.border{
+    border-bottom: 1px solid #d0d0d0;
+}
+#modelo td.nome_campo{
+	padding-bottom: 10px;
+    width: 60px;
+}
+#modelo td {
+    padding-bottom: 10px;
+}
+#modelo td  input{
+    padding-left: 5px;
+    width: 95%;
+    font-size: 0.8rem;
+    color: #9e9e9e;
+    border-bottom: 1px solid rgb(169, 169, 169);
+}
+.scrollable {
+    height: 101% !important;
+}
+.btn-adicionar {
+    color: #fff;
+    background-color: #0aa699;
+    width: 90px;
+    height: 25px;
+    -webkit-border-radius: 7px;
+    border: none;
+    font: 13px/20px "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.btn-adicionar:hover,
+.btn-adicionar:focus,
+.btn-adicionar:active,
+.btn-adicionar.active,
+.open .dropdown-toggle.btn-adicionar {
+    color: #FFFFFF;
+    background-color: #099388;
+    border-color: #0090D9;
+}
+.btn-relacionar {
+    color: #fff;
+    background-color: #224887;
+    width: 90px;
+    height: 25px;
+    -webkit-border-radius: 7px;
+    border: none;
+    font: 13px/20px "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.btn-relacionar:hover,
+.btn-relacionar:focus,
+.btn-relacionar:active,
+.btn-relacionar.active,
+.open .dropdown-toggle.btn-adicionar {
+    color: #FFFFFF;
+    background-color: #1e4077;
+    border-color: #0090D9;
+}
+.md-select-menu-container{
+   margin-top: 150px;
+}
+button{
+    margin-left: 10px;
+}
+md-optgroup label {
+    display: block;
+    font-size: 14px;
+    text-transform: uppercase;
+    padding: 10px 0px 0px 15px;
+    font-weight: 500;
+}
+input[disabled]::-webkit-input-placeholder {
+    color: transparent;
+}
+textarea[disabled]::-webkit-input-placeholder {
+    color: transparent;
+}
+#subTituloBotoes{
+    text-align: right;
+    float: right;
+    width: 100%;
+    margin-top: 10px;
+}

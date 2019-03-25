@@ -1,0 +1,33 @@
+<div id="tituloTop">
+  <div class="open-left" ng-click="menuOpen()">
+     <i class="fa fa-bars"></i>
+  </div>
+  <div id="centroTop">
+    <input ng-keyup="pesquisar()" placeholder="&#xf002; Pesquisar" onfocus="this.placeholder = ''" onblur="this.placeholder = '&#xf002; Pesquisar'" id="campoBusca" class="campoBusca" type="search"  ng-model="$root.criterio"><span ng-if="$root.criterio && $root.criterio != ''" ng-click="limpaBusca();pesquisar();" class="fa fa-close clearBusca"></span>
+  </div>
+  <div style="width: 100%; height: 50px; margin-top: -5px; position: absolute;">
+    <span class="title">{{titulo}}</span>
+  </div>
+</div>
+<div id="subTituloTop">
+  <a class="open-left" ng-click="backpageTop()" style="width: 100%; text-align: left; padding-left: 10px;">
+    <i class="mdi mdi-arrow-left"></i>
+  </a>
+  <div id="centroSubTop" ng-if="$root.centroSubTop">
+    <input ng-keyup="pesquisar()" placeholder="&#xf002; Pesquisar" onfocus="this.placeholder = ''" onblur="this.placeholder = '&#xf002; Pesquisar'" id="campoBusca" class="campoBusca" type="search"  ng-model="$root.criterio"><span ng-if="$root.criterio && $root.criterio != ''" ng-click="limpaBusca();pesquisar();" class="fa fa-close clearBusca"></span>
+  </div>
+  <div style="width: 100%; height: 50px; margin-top: -5px; ">
+    <span class="title">{{subTitulo}}</span>
+  </div>
+  <div id="subtitulo_medicao">
+    <span ng-if="subTituloMedicao" class="porc ng-binding" sinal="{{subTituloSinal}}" >{{subTituloMedicao}}</span>
+  </div>
+</div>
+
+<div class="open-right" ui-toggle="uiSidebarRight">
+  <div ng-repeat="menu in MenuRight">
+    <a href="{{menu.url}}">
+      <i class="fa fa-filter fa-1-5x"></i>
+    </a>
+  </div>
+</div>

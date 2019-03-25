@@ -1,0 +1,17 @@
+<div id="filtroTop" ng-if="lstIndicadores.length">
+    <span ng-click="abrirCompetencia()">{{COMPETENCIA}}<i class="fa fa-caret-down" aria-hidden="true" style="margin-left: 5px;"></i></span>
+    <div ng-controller="Competencia" tipo="PLANEJAMENTOS" id="comboCompetencia" ng-include="'view/componentes/competencia.html'"></div>
+</div>
+
+<md-content class="scrollable-content" flex md-scroll-y scroll ng-if="lstIndicadores.length">
+    <div class="fundoMenu" ng-click="comboMenuExibir()"></div>
+    <ul class="efeitoLst" tipo="INDICADORES">
+        <li class="card" ng-repeat="registro in lstIndicadores | filter:$root.criterio" data-id="{{indicadores.ID}}">
+            <article card-origem="PerformanceIndicadoresEconomicos" ng-include="'view/extensao_cards/PerformanceIndicadoresEconomicos.html'"></article>
+        </li>
+    </ul>
+</md-content>
+<div class="semRegistros" ng-if="!lstIndicadores.length">
+    <img src="img/erro_dre.png">
+    <h3>Não encontramos nenhum indicador econômico disponível</h3>
+</div>

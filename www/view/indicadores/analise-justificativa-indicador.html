@@ -1,0 +1,120 @@
+<link href="css/modulos/indicadores-analise.css" rel="stylesheet" type="text/css">
+<div id="filtroTop">
+    <label style="font-size: 1rem;">{{fraseTitulo}}</label>
+    <span ng-click="abrirCompetencia()">{{COMPETENCIA}}<i class="fa fa-caret-down" aria-hidden="true" style="margin-left: 5px;"></i></span>
+    <div ng-controller="Competencia" tipo="INDICADORES" id="comboCompetencia" ng-include="'view/componentes/competencia.html'"></div>
+	<div ng-if="TIPO == 'PLANO_DE_ACAO'">
+		<div id="subTituloBotoes">
+			<button ng-click="adicionarPlanoAcao(DADOS)" class="btn-adicionar">Adicionar</button>
+			<button ng-click="openRelacionar()" class="btn-relacionar">Relacionar</button>
+		</div>
+	</div>
+</div>
+
+<md-content class="scrollable-content" flex md-scroll-y scroll style="font-size: 12px;">
+	<div ng-if="TIPO == 'ANALISE'">
+		<!--Formulario FCA/SIMPLIFICADA-->
+		<form id="formAnalise" onsubmit="return false;"  action="indicadores/salvaranalise" method="post">
+			<input id="ID" name="ID" type="hidden" value="{{DADOS.idAnalise}}"/>
+			<input id="INDICADOR" name="INDICADOR" type="hidden" value="{{DADOS.ID}}"/>
+			<input id="COMPETENCIA" name="COMPETENCIA" type="hidden" value="{{COMPETENCIA}}"/>
+			<input id="TIPO" name="TIPO" type="hidden" value="{{DADOS.tipoAnalise}}"/>
+			<div class="card" ng-repeat="detalhes in DADOS.lstDetalhes" class="{{detalhes.ACTIVE}}" data-tipo="{{detalhes.TIPO}}" style="padding: 5px;">
+				<!-- Fato / Causa / Analise Problema-->
+				<table ng-if="detalhes.TIPO_CARD == 1">
+					<thead><th>{{detalhes.NOME}}:</th></thead>
+					<tbody >
+						<tr>
+							<td><textarea class="msd-elastic" data-ng-model="detalhes.DESCRICAO" name="{{detalhes.TIPO}}" id="{{detalhes.TIPO}}_{{detalhes.ID}}" ng-disabled="DADOS.DISABLED" placeholder="digite sua justificativa"></textarea></td>
+						</tr>
+					</tbody>
+				</table>
+
+				<!-- Ações rapidas-->
+				<table ng-if="detalhes.TIPO_CARD == 2 " id="modelo">
+					<thead class="border">
+						<th colspan="2" style="padding-top: 20px"> {{detalhes.NOME}}  <i ng-if="DADOS.PERMITIR_JUSTIFICATIVA" ng-click="addAcaoRapida(detalhes)" class="fa fa-plus-circle adicionarAcaoRapida" ></i> </th>
+					</thead>
+					<tbody ng-repeat="acao in detalhes.ACOES_RAPIDAS">
+						<input id="ACOES[{{$index}}][ID]" name="ACOES[{{$index}}][ID]" type="hidden" value="{{acao.ID}}"/>
+						<!--trash-->
+						<tr class="border_top" >
+							<td colspan="2" style="text-align: right;"  >
+								<i ng-if="DADOS.PERMITIR_JUSTIFICATIVA" style="font-size:25px; margin-top: 5px" class="fa fa-trash-o removeAcao" ng-click="removeAcaoRapida($index, detalhes, acao)"></i>
+							</td>
+						</tr>
+						<tr>
+							<td class="nome_campo"><label>Quando:</label></td>
+							<td><textarea class="msd-elastic" data-ng-model="acao.QUANDO" name="ACOES[{{$index}}][QUANDO]" id="QUANDO_{{$index}}" ng-disabled="DADOS.DISABLED" placeholder="digite sua justificativa"></textarea></td>
+						</tr>
+						<tr>
+							<td class="nome_campo"><label>Quem:</label></td>
+							<td><textarea class="msd-elastic" data-ng-model="acao.QUEM" name="ACOES[{{$index}}][QUEM]" id="QUEM_{{$index}}" ng-disabled="DADOS.DISABLED" placeholder="digite sua justificativa"></textarea></td>
+						</tr>
+						<tr>
+							<td class="nome_campo"><label>Como:</label></td>
+							<td><textarea class="msd-elastic" data-ng-model="acao.COMO" name="ACOES[{{$index}}][COMO]" id="COMO_{{$index}}" ng-disabled="DADOS.DISABLED" placeholder="digite sua justificativa"></textarea></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div style="text-align: center; margin: 10px 0 6px 0;">
+				<button ng-if="DADOS.PERMITIR_JUSTIFICATIVA" class="btn btn-salvar" type="button" ng-click="salvarAnalise()">Salvar</button>
+				<button class="btn btn-default" type="button" ng-click="backpageTop()">Cancelar</button>
+			</div>
+		</form>
+	</div>
+
+	<div ng-if="TIPO == 'ANALISE' && DADOS.ANALISE_TIPO == 'SIMPLIFICADA'" id="scroll_textarea" style="background-color: rgba(255, 255, 255, 0.15); height: 35%"></div>
+
+	<!-- PLANO DE ACAO-->
+	<div ng-if="TIPO == 'PLANO_DE_ACAO'">
+
+		<div ng-if="DADOS.lstPlanoAcao.length > 0">
+			<ul>
+				<li class="lstMinhasAcoes" ng-repeat="detalhes in DADOS.lstPlanoAcao | filter:$root.criterio" ng-click="abrir(detalhes.ID)">
+					<h4>{{detalhes.TITULO}}</h4>
+					<label>{{detalhes.DESCRICAO}}</label>
+					<div class="user">
+						<img src="{{detalhes.IMAGEMRESPONSAVEL}}" on-error-src border="0">
+						<div class="dados">
+							<h3>{{detalhes.NOMERESPONSAVEL}}</h3>
+							<h4>{{detalhes.EMAILRESPONSAVEL}}</h4>
+						</div>
+					</div>
+
+					<div class="status">
+						<i>{{detalhes.PERCENTUAL}}%</i>
+						<span status="{{detalhes.STATUS}}">{{detalhes.LABEL_STATUS}}</span>
+						<br><label atrasado="{{detalhes.ATRASADO}}">{{detalhes.FRASE_TERMINO}}</label>
+					</div>
+					<div class="clearBoth"></div>
+				</li>
+			</ul>
+		</div>
+		<div ng-if="DADOS.lstPlanoAcao.length == 0" class="semRegistros" >
+			<img src="img/erro_planos.png">
+			<h3>Não encontramos nenhum plano de ação.</h3>
+		</div>
+	</div>
+</md-content>
+
+<md-select style="display: none" id="lstRelacionarPlanos" multiple="true" ng-model="$root.PLANOS_SELECTED" md-on-close="relacionarPlanos = ''" md-on-open="carregarLista()"  placeholder="Pesquisar Planos de ação..."  >
+	<md-select-header>
+		<h2>Planos de ação</h2>
+		<input ng-model="relacionarPlanos" class="formata-icone" placeholder="&#xf002; Pesquisar..." select-search>
+	</md-select-header>
+	<md-content>
+		<md-option ng-value="PLANOS.ID" ng-repeat="PLANOS in PLANOSDEACAO  | filter:relacionarPlanos">
+			<table>
+				<tr>
+					<td>{{PLANOS.NOME}}</td>
+				</tr>
+			</table>
+		</md-option>
+		<h4 ng-if="!PLANOSDEACAO.length">Nenhum registro localizado!</h4>
+	</md-content>
+	<md-select-footer>
+		<button ng-click="salvarRelacionar()" class="btn btn-salvar" type="button">SALVAR</button>
+	</md-select-footer>
+</md-select>

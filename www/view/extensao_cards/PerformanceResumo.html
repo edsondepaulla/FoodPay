@@ -1,0 +1,22 @@
+<link href="css/extensao_cards/PerformanceResumo.css" rel="stylesheet" type="text/css">
+
+<h4 style="overflow: hidden; text-overflow: ellipsis;"><span style="color: #224887;">{{registro.NOME_CONTA}}</span><br>
+    <span style="color:{{registro.COLOR_REALIZADO}}">{{registro.REALIZADO}}</span>
+</h4>
+<h3 ng-if="registro.ACUMULARATE == false">Conseguimos
+    <span style="color:{{registro.COLOR_VARIACAO_PERCENTUAL_RELACAO_MES_PASSADO}}">{{registro.VARIACAO_PERCENTUAL_RELACAO_MES_PASSADO}}%</span>
+    em
+    <br>
+    relação ao mês passado.
+</h3>
+<div class="blocoGrafExp">
+    <div class="grafItemResumo"></div>
+    <div class="expectativaBloco">
+        <div class="setinha"></div>
+        Expectativa<br> <span style="color:{{registro.COLOR_PLANEJADO}}">{{registro.PLANEJADO}}</span>
+    </div>
+</div>
+
+<h3>Variou <span style="color:{{registro.COLOR_VARIACAO_PERCENTUAL}}">{{registro.VARIACAO_PERCENTUAL}}%</span> em relação ao planejado.</h3>
+
+<h3 data-demonstrar_raa="{{registro.DEMONSTRAR_RAA}}">Variou <span style="color:{{registro.COLOR_VARIACAO_AA_PERCENTUAL}}">{{registro.VARIACAO_AA_PERCENTUAL}}%</span> em relação ao ano anterior <span style="color:{{registro.COLOR_REALIZADOAA}}">{{registro.REALIZADOAA}}</span>.</h3>

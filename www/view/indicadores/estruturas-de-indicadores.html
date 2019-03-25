@@ -1,0 +1,80 @@
+<link href="css/modulos/indicadores-estruturas.css" rel="stylesheet" type="text/css">
+<link href="css/modulos/indicadores.css" rel="stylesheet" type="text/css">
+
+<div id="filtroTop" style="border-bottom: none">
+    <p class="todo-element" ng-controller="Acumular">
+        <input id="acumularAteTop" ng-model="ACUMULARATE" ng-checked="{{ACUMULARATE}}" ng-change="change()" type="checkbox" style="display: none;">
+        <label for="acumularAteTop">Acumular até</label>
+    </p>
+    <span ng-click="abrirCompetencia()">{{COMPETENCIA}}<i class="fa fa-caret-down" aria-hidden="true" style="margin-left: 5px;"></i></span>
+    <div ng-controller="Competencia" tipo="ESTRUTURAS" id="comboCompetencia" ng-include="'view/componentes/competencia.html'"></div>
+</div>
+
+<div id="filtroAuxiliar" mn-touch swipe-left="exibirDetalhamentoNivelzero()" swipe-right="esconderDetalhamentoNivelzero()">
+	<span id="comboMenu" ng-click="comboMenuExibir()">
+        <div class="limitaLabel70">{{ESTRUTURA_SELECIONADO}} <i class="fa fa-caret-down" aria-hidden="true" style="margin-left: 5px;"></i></div>
+        <div ng-if="ESTRUTURA_VAR_EXIBIR == 1" class="i porc porc_principal" sinal="{{ESTRUTURA_COR}}"><span class="ng-binding">{{ESTRUTURA_VAR}}</span></div>
+    </span>
+    <div ng-if="ESTRUTURA_VAR_EXIBIR == 1" class="menu row">
+        <a class="col s3" href="#!/indicadores-detalhes/{{ESTRUTURA_ID}}/ESTRUTURA/ESTRUTURAS">
+            <i class="mdi mdi-chart-line"></i>
+            <p>Detalhamento</p>
+            <div class="clearBoth"></div>
+        </a>
+    </div>
+</div>
+<ul id="comboMenuOpcoes">
+    <li ng-repeat="est in LSTESTRUTURA" ng-click="selectEstrutura(est)" class="{{est.ACTIVE}}">
+        {{est.NOME}}
+    </li>
+</ul>
+<md-content class="scrollable-content" flex md-scroll-y scroll>
+    <div ng-if="lstRegistros.length" style="margin-bottom: 75px">
+        <div style="position: relative; margin-top: -2px;">
+            <div class="fundoMenu" ng-click="comboMenuExibir()"></div>
+            <ul id="listEstruturasIndicadores" class="efeitoLst">
+                <li class="card" ng-switch="registro.TIPO" data-tipo="{{registro.TIPO}}" data-id="{{registro.ID}}-{{registro.TIPO}}" data-ultimonivel="{{registro.ULTIMONIVEL}}" ng-repeat="registro in lstRegistros" mn-touch swipe-left="exibirMenu(registro)" swipe-right="esconderMenu(registro)">
+                    <a ng-switch-when="ESTRUTURA" ng-click="getRegistro(registro)">
+                        <img src="{{registro.IMAGEMRESPONSAVEL}}" on-error-src border="0">
+                        <div class="dados">
+                            <h3>{{registro.NOME}}</h3>
+                            <h4>{{registro.NOMERESPONSAVEL}}</h4>
+                        </div>
+                        <div class="i porc" sinal="{{registro.COR_PERCENTUAL}}">%<span>{{registro.VAR_PERCENTUAL}}</span></div>
+                        <div class="clearBoth"></div>
+                    </a>
+                    <a ng-switch-when="INDICADOR" ng-click="getRegistro(registro)">
+                        <i class="fa {{registro.ICONE}}"></i>
+                        <div class="dados" style="width: 86%;">
+                            <h3>{{registro.NOME}}</h3>
+                            <h4>{{registro.DESCRICAO}}</h4>
+                        </div>
+                        <div class="clearBoth"></div>
+                        <div class="i">Meta:<span >{{registro.META}}</span></div>
+                        <div class="i">Real:<span >{{registro.REAL}}</span></div>
+                        <div class="i porc" sinal="{{registro.COR_PERCENTUAL}}">%<span>{{registro.VAR_PERCENTUAL}}</span></div>
+                        <div class="clearBoth"></div>
+                    </a>
+                    <ul class="btnEfetuarAnalise clearBoth" ng-if="registro.NECESSITA_ANALISE == 1" >
+                        <li>
+                            <a opcao="ANALISE" href="#!/analise-justificativa-indicador/{{registro.ID}}/ANALISE/ESTRUTURAS/INDICADOR">
+                                <i ng-if="registro.ANALISE_FEITA" class="fa fa-star active"><label style="margin-left: 10px;"> Análise efetuada </label></i>
+                                <i ng-if="!registro.ANALISE_FEITA" class="fa fa-star"> <label style="margin-left: 10px;"> Necessita Análise </label></i>
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="menu row" >
+                        <a id="detalhamento" class="col s3" href="#!/indicadores-detalhes/{{registro.ID}}/{{registro.TIPO}}/ESTRUTURAS" >
+                            <i style="font-size: 22px" class="mdi mdi-chart-line"></i>
+                            <p>Detalhamento</p>
+                        </a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="semRegistros" ng-if="!lstRegistros.length">
+        <img src="img/erro_indicadores.png">
+        <h3>Não encontramos nenhuma estrutura de indicadores.</h3>
+    </div>
+</md-content>

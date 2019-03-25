@@ -1,0 +1,3 @@
+body[controller="Performance"] .scrollable:not(.ng-enter) > #filtroTop+.scrollable-content {
+    padding-bottom: 30px;
+}

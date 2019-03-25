@@ -1,0 +1,48 @@
+<div id="topo_atualizar">
+    <h4>{{FORM_ATUALIZAR.TITULO}}</h4>
+    <label>{{FORM_ATUALIZAR.DESCRICAO}}</label>
+</div>
+<div id="conteudo_medicao">
+    <form id="formAcao" onsubmit="return false;" action="indicadores/formacao" method="post" style="height: 250px;">
+        <input type="hidden" name="ID" ng-value="FORM_ATUALIZAR.ID">
+        <input type="hidden" name="PERCENTUAL" ng-value="FORM_ATUALIZAR.PERCENTUAL">
+        <input type="hidden" name="STATUS" ng-value="FORM_ATUALIZAR.STATUS">
+        <input type="hidden" name="DATAINICIO" ng-value="FORM_ATUALIZAR.DATAINICIO">
+        <div ng-if="ID != 0" id="blocoAcaoAtualizar" style="padding: 25px 0 0 0">
+            <div id="iconStatusGestaoAcao" class="icon-status">
+                <i title="Em espera" ng-click="statusProcess(1)" data-class="em-espera" class="fa fa-stop status"></i>
+                <i title="Para fazer" ng-click="statusProcess(2)" data-class="para-fazer" class="fa fa-pause status"></i>
+                <i title="Em andamento" ng-click="statusProcess(3)" data-class="em-andamento" class="fa fa-play status"></i>
+                <i title="Concluída" ng-click="statusProcess(4)" data-class="concluidas" class="fa fa-check status"></i>
+            </div>
+            <div id="status-acao" class="status-acao" status="{{FORM_ATUALIZAR.STATUS}}">{{FORM_ATUALIZAR.STATUS_LABEL}}</div>
+            <div class="clearBoth"></div>
+            <md-slider style="margin-top: 25px" ng-disabled="FORM_ATUALIZAR.SLIDER_DISABLED" min="0" max="100" step="1" value="50" ng-change="alterSliderStatus()" ng-model="FORM_ATUALIZAR.PERCENTUAL" tickInterval="1" aria-label="rating" flex md-discrete></md-slider>
+        </div>
+
+        <div ng-if="FORM_ATUALIZAR.CHANGE_PERCENTUAL == 1">
+            <label class="title">Descreva o motivo do progresso</label>
+            <textarea name="OBSERVACAO" id="OBSERVACAO" ng-model="FORM_ATUALIZAR.OBSERVACAO" placeholder="Digite o Motivo"></textarea>
+        </div>
+
+        <div class="clearBoth"></div>
+
+        <div>
+            <div class="campo-data" ng-if="FORM_ATUALIZAR.DATAORIGINAL_label.length">
+                <label class="title m-t-10">Prazo original</label><br>
+                <input type="hidden" name="DATAORIGINAL" ng-value="FORM_ATUALIZAR.DATAORIGINAL">
+                <md-datepicker ng-disabled="true" ng-model="FORM_ATUALIZAR.DATAORIGINAL_label" ng-change="FORM_ATUALIZAR.DATAORIGINAL = formatDate(FORM_ATUALIZAR.DATAORIGINAL_label)" md-date-locale="locale" md-open-on-focus></md-datepicker>
+            </div>
+            <div class="campo-data" style="margin: 0; margin-left: -5px">
+                <label class="title m-t-10">Finaliza em</label><br>
+                <input type="hidden" name="DATAFINALIZAR" ng-value="FORM_ATUALIZAR.DATAFINALIZAR">
+                <md-datepicker ng-disabled="!FORM_ATUALIZAR.PERMISSAO" ng-model="FORM_ATUALIZAR.DATAFINALIZAR_label" ng-change="FORM_ATUALIZAR.DATAFINALIZAR = formatDate(FORM_ATUALIZAR.DATAFINALIZAR_label)" md-date-locale="locale" md-open-on-focus></md-datepicker>
+            </div>
+        </div>
+    </form>
+</div>
+<div class="modal-footer" style="padding-top: 15px">
+    <label class="usuario-sem-permissao" ng-if="!FORM_ATUALIZAR.PERMISSAO" >Usuário Sem Permissão</label>
+    <button ng-if="FORM_ATUALIZAR.PERMISSAO == true" type="button" ng-click="salvarAcao(); esconderMenu(FORM_ATUALIZAR)" class="btn btn-salvar" type="submit" >Salvar</button>
+    <button type="button" ng-click=" hideModal('AtualizarAcao'); esconderMenu(FORM_ATUALIZAR)" class="btn btn-white btn-cons "  >Cancelar</button>
+</div>

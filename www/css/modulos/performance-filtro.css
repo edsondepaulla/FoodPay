@@ -1,0 +1,189 @@
+body[controller="PerformanceFiltros"] #comboMenuOpcoes{
+    max-height: 50%;
+    overflow: scroll;
+    margin-bottom: 0;
+    margin-top: 0;
+    padding: 0;
+    height: auto;
+    padding-bottom: 0 !important;
+    margin-top: 0 !important;
+    overflow-x: hidden;
+}
+
+body[controller="PerformanceFiltros"] #comboMenuOpcoes li{
+    border-bottom: 1px solid #f2f2f2;
+    padding: 4px 19px 4px;
+    position: relative;
+}
+
+body[controller="PerformanceFiltros"] #comboMenuOpcoes li .menu{
+    position: absolute;
+    right: -175px;
+    top: 0;
+    height: 100%;
+    transition: 0.2s;
+    width: 167px;
+    margin: 0;
+    color: #FFF;
+    z-index: 1;
+}
+
+body[controller="PerformanceFiltros"] #comboMenuOpcoes li .menu.row .col.s3{
+    width: 50%;
+    text-align: center;
+    padding: 0;
+    height: 100%;
+    padding-top: 5px;
+}
+
+body[controller="PerformanceFiltros"] #comboMenuOpcoes li .menu.row .col.s3:nth-child(1){
+    background: #f35958;
+}
+
+body[controller="PerformanceFiltros"] #comboMenuOpcoes li .menu.row .col.s3:nth-child(2){
+    background: #224887;
+}
+
+body[controller="PerformanceFiltros"] #comboMenuOpcoes li .menu.row .col.s3 i{
+    font-size: 22px !important;
+}
+
+body[controller="PerformanceFiltros"] #comboMenuOpcoes li .menu.active{
+    right: 0;
+}
+
+body[controller="PerformanceFiltros"] #comboMenuOpcoes span{
+    display: inline-block;
+    padding-top: 3px;
+    width: 100%;
+}
+
+body[controller="PerformanceFiltros"] #comboMenuOpcoes button.btn-remover{
+    background: rgba(249, 38, 18, 0.66);
+}
+
+body[controller="PerformanceFiltros"] #comboMenuOpcoes button{
+    float: right;
+    margin-bottom: 6px;
+    background: #224887;
+    color: #FFF;
+    border: 0;
+    margin-left: 5px;
+}
+
+body[controller="PerformanceFiltros"] .comboFiltroLst{
+    margin-top: 5px;
+}
+
+body[controller="PerformanceFiltros"] .topLst{
+    margin-left: 22px;
+    margin-top: 10px;
+}
+
+body[controller="PerformanceFiltros"] .topLst > label{
+    float: left;
+    font-size: 16px;
+    padding-top: 0;
+    color: #224887 !important;
+}
+
+body[controller="PerformanceFiltros"] .topLst > div:not(.clearBoth){
+    float: right;
+    margin-right: 5px;
+    font-size: 15px;
+}
+
+body[controller="PerformanceFiltros"] .topLst > div:not(.clearBoth) label{
+    float: right;
+    margin-left: 11px;
+    padding-left: 36px;
+}
+
+body[controller="PerformanceFiltros"] .fundoMenu{
+    z-index: 9;
+}
+
+body[controller="PerformanceFiltros"] .md-tab {
+    line-height: 37px !important;
+    font-size: 18px;
+}
+
+body[controller="PerformanceFiltros"] .filtrosLst li{
+    font-size: 16px;
+    padding-right: 7px;
+}
+
+body[controller="PerformanceFiltros"] .filtrosLst li > a{
+    float: left;
+    display: block;
+    width: 90%;
+    padding: 8px;
+    margin: -8px;
+}
+body[controller="PerformanceFiltros"] .filtrosLst li > a > i{
+    float: left;
+    margin-right: 10px;
+    margin-top: 3px;
+}
+
+body[controller="PerformanceFiltros"] .filtrosLst li[checked_filhos="1"]{
+    background: rgba(255, 255, 153, 0.31);
+}
+
+body[controller="PerformanceFiltros"] .filtrosLst li label{
+    float: right;
+}
+body[controller="PerformanceFiltros"] .filtrosLst li [type="checkbox"]+label{
+    padding: 13px;
+}
+
+body[controller="PerformanceFiltros"] .filtrosLst #carregando{
+    color: #224887;
+    font-size: 12px;
+    text-align: center;
+    display: block;
+    padding-top: 15px;
+}
+body[controller="PerformanceFiltros"] .filtrosLst #carregando{
+    color: #224887;
+    font-size: 12px;
+    text-align: center;
+    display: block;
+    padding-top: 15px;
+}
+
+.btn-filtro {
+    color: #fff;
+    background-color: #0aa699;
+    float: right;
+    left: 5px;
+    width: auto;
+    height: 25px;
+    padding: 0 7px;
+    cursor: pointer;
+    -webkit-border-radius: 7px;
+    border: none;
+    text-shadow: none;
+    box-shadow: none;
+    transition: all 0.12s linear 0s !important;
+    font: 13px/20px "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.btn-filtro:hover,
+.btn-filtro:focus,
+.btn-filtro:active,btn-filtro.active,
+.open .dropdown-toggle.btn-filtro {
+    color: #fff;
+    background-color: #0aa699;
+}
+
+.btn-filtro:active,
+.btn-filtro.active,
+.open .dropdown-toggle.btn-filtro {
+    background-image: none;
+}
+
+body[controller="PerformanceFiltros"] #filtroTop{
+    position: static !important;
+    top: 0;
+}

@@ -1,197 +1,140 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="pt-BR">
   <head>
     <title>
-      Asteroid - Mobile Template
+      Mobile Plano
     </title>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Language" content="pt_BR">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta content="IE=edge" http-equiv="x-ua-compatible">
     <meta content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" name="viewport">
     <meta content="yes" name="apple-mobile-web-app-capable">
     <meta content="yes" name="apple-touch-fullscreen">
-    <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+
+    <link href="plugins/alert/jquery.edp-alert.css" media="all" rel="stylesheet" type="text/css" >
+    <link href="css/font.css" media="all" rel="stylesheet" type="text/css" >
     <link href="css/materialdesignicons.min.css" media="all" rel="stylesheet" type="text/css">
     <link href="css/keyframes.css" rel="stylesheet" type="text/css">
     <link href="css/materialize.min.css" rel="stylesheet" type="text/css">
-    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <link href="css/teclado.css" rel="stylesheet" type="text/css">
+
+    <link href="plugins/angular/css/mobile-angular-ui-base.css" rel="stylesheet" />
+    <link href="plugins/pace/pace-theme-flash.css" rel="stylesheet" type="text/css">
+    <link href="css/style-sistema.css" rel="stylesheet" type="text/css">
+    <link href="css/modal.css" rel="stylesheet" type="text/css">
+
+    <script src="plugins/jquery-2.1.1.min.js"></script>
+    <script src="plugins/pace/pace.min.js"></script>
+    <script src="plugins/angular.min.js"></script>
+    <script src="plugins/angular-route.min.js"></script>
+    <script src="plugins/angular-animate.js"></script>
+    <script src="plugins/moment.min.js"></script>
+    <script src="plugins/moment-with-locales.min.js"></script>
+    <script src="plugins/angular/js/mobile-angular-ui.min.js"></script>
+    <script src="plugins/angular/js/mobile-angular-ui.gestures.min.js"></script>
+    <script src="plugins/alert/jquery.edp-alert.js"></script>
+    <script src="plugins/lang.plano.js"></script>
+
+    <script src="plugins/highcharts/highstock.js"></script>
+    <script src="plugins/highcharts/modules/exporting.js"></script>
+    <script src="plugins/highcharts/grouped-categories.js"></script>
+    <script src="plugins/highcharts/highcharts-more.js"></script>
+    <script src="plugins/highcharts/modules/heatmap.js"></script>
+    <script src="plugins/highcharts/modules/treemap.js"></script>
+    <script src="plugins/highcharts/fuctions.js"></script>
+    <script src="plugins/mn-touch/mn-touch.min.js"></script>
+
+    <script src="plugins/device-detector/ng-device-detector.min.js"></script>
+    <script src="plugins/device-detector/re-tree.min.js"></script>
+    <script src="plugins/jquery.price_format.2.0.min.js"></script>
+    <script src="js/functions.js"></script>
+    <script src="js/config.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/modulos/login.js"></script>
+    <script src="js/modulos/compartilhar.js"></script>
+    <script src="js/modulos/performance.js"></script>
+    <script src="js/modulos/indicadores.js"></script>
+    <script src="js/modulos/acoes.js"></script>
+    <script src="js/modulos/componentes.js"></script>
+
+    <link rel="stylesheet" href="css/angular-material.min.css">
+    <script src="plugins/angular-aria.js"></script>
+    <script src="plugins/angular-material.min.js"></script>
+    <script src="plugins/angular-sanitize.js"></script>
+
+    <script src="plugins/elastic.js"></script>
+
+    <link href="img/favicon.png" rel="shortcut icon" >
+
+    <script type="text/javascript">
+        setTimeout(function(){
+            $('#carregando_sistema img').fadeToggle("slow");
+        }, 3000);
+        setTimeout(function(){
+            $('#carregando_sistema label').fadeToggle("slow");
+        }, 5000);
+    </script>
   </head>
-  <body>
+  <body class="verificando_login" device="{{device}}" controller="{{controller}}" ng-app="App">
+    <div id="carregando_sistema">
+      <img src="img/Vinheta-App-v2.3.gif">
+      <label>Por favor aguarde, carregando...</label>
+    </div>
 
-    <!-- Modal -->
-    <div class="modal bottom-sheet features" id="modal1">
-
-      <div class="modal-content">
-        <div class="row">
-          <div class="col s3">
-            <a href="profile.html"><i class="close-opacity mdi mdi-account"></i></a>
-            <p>
-              About
-            </p>
-          </div>
-          <div class="col s3">
-            <a href="portfolio.html"><i class="mdi mdi-file-image-box"></i></a>
-            <p>
-              Photos
-            </p>
-          </div>
-          <div class="col s3">
-            <a href="blog.html"><i class="mdi mdi-book-multiple-variant"></i></a>
-            <p>
-              Blog
-            </p>
-          </div>
-          <div class="col s3">
-            <a href="news.html"><i class="mdi mdi-rss"></i></a>
-            <p>
-              News
-            </p>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col s3">
-            <a href="timeline.html"><i class="mdi mdi-timelapse"></i></a>
-            <p>
-              Timeline
-            </p>
-          </div>
-          <div class="col s3">
-            <a href="messages.html"><i class="mdi mdi-bell"></i></a>
-            <p>
-              Chat
-            </p>
-          </div>
-          <div class="col s3">
-            <a href="todo.html"><i class="mdi mdi-checkbox-marked-outline"></i></a>
-            <p>
-              To Do
-            </p>
-          </div>
-          <div class="col s3">
-            <a href="login.html"><i class="mdi mdi-account-plus"></i></a>
-            <p>
-              Account
-            </p>
-          </div>
+    <div class="app" ng-controller="Main" ui-prevent-touchmove-defaults>
+      <div mn-touch swipe-right="swipeRight()" ng-include="'view/menu/top.html'" id="toolbar"></div>
+      <span id="ambiente_teste" ng-if="ambiente_teste == 1">Ambiente de testes</span>
+      <div class="app-body">
+        <div class="app-content">
+          <div class="scrollable ng-scope" ng-view></div>
         </div>
       </div>
+      <div mn-touch swipe-right="swipeRight()" id="menu-bottom" ng-include="'view/menu/bottom.html'" class="navbar-absolute-bottom"></div>
+    </div>
 
-    </div> <!-- End of Modal -->
+    <div id="fundo_transparente" ng-click="menuClose()" mn-touch swipe-left="swipeLeft()" ui-prevent-touchmove-defaults></div>
 
-    <div class="m-scene" id="main"> <!-- Page Container -->
-
-      <!-- Sidebars -->
-      <div class="snap-drawers">
-
-        <!-- Left Sidebar -->
-        <div class="snap-drawer snap-drawer-left">
-          <div class="drawer-inner">
-            <ul>
-              <li><a href="index.html"><i class="mdi mdi-home"></i> <span>Home</span></a></li>
-              <li><a href="profile.html"><i class="mdi mdi-account"></i> <span>Profile</span></a></li>
-              <li><a href="portfolio.html"><i class="mdi mdi-file-image-box"></i> <span>Portfolio</span></a></li>
-              <li><a href="blog.html"><i class="mdi mdi-book-multiple-variant"></i> <span>Blog <span class="badge white z-depth-1">4</span></span></a></li>
-              <li><a href="news.html"><i class="mdi mdi-rss"></i> <span>News</span></a></li>
-              <li><a href="contacts.html"><i class="mdi mdi-map-marker"></i> <span>Contacts</span></a></li>
-            </ul>
-
-            <ul class="exit">
-              <li>
-                <a href="login.html"><i class="mdi mdi-exit-to-app"></i> <span>Logout</span></a>
-              </li>
-            </ul>
-          </div>
-        </div> <!-- End of Left Sidebar -->
-
-        <!-- Right Sidebar -->
-        <div class="snap-drawer snap-drawer-right">
-          <div class="drawer-inner">
-            <ul>
-              <li><a href="timeline.html"><i class="mdi mdi-timelapse"></i> <span>Timeline</span></a></li>
-              <li><a href="messages.html"><i class="mdi mdi-bell"></i> <span>Messages<span class="badge white z-depth-1">2</span></span></a></li>
-              <li><a href="todo.html"><i class="mdi mdi-checkbox-marked-outline"></i> <span>ToDo</span></a></li>
-              <li><a href="login.html"><i class="mdi mdi-account-circle"></i> <span>Login</span></a></li>
-              <li><a href="signup.html"><i class="mdi mdi-account-plus"></i> <span>Account Creation</span></a></li>
-              <li class="have-child">
-                <ul class="collapsible" data-collapsible="accordion">
-                  <li>
-                    <div class="collapsible-header">
-                      <i class="mdi mdi-pine-tree"></i>Sub Tree<i class="mdi mdi-menu-down right"></i>
-                    </div>
-                    <div class="collapsible-body">
-                      <ul class="collapsible" data-collapsible="accordion">
-                        <li>
-                          <div class="collapsible-header">
-                            <i class="mdi mdi-numeric-1-box-outline"></i>First
-                          </div>
-                          <div class="collapsible-header">
-                            <i class="mdi mdi-numeric-2-box-outline"></i>Second
-                          </div>
-                          <div class="collapsible-header">
-                            <i class="mdi mdi-numeric-3-box-outline"></i>Third
-                          </div>
-                        </li>
-                      </ul>
-                    </div>
-                  </li>
-                </ul>
-              </li>
-            </ul>
-          </div>
-        </div> <!-- End of Right Sidebar -->
-      </div> <!-- End of Sidebars -->
-
-      <!-- Page Content -->
-      <div class="snap-content z-depth-5" id="content">
-
-        <!-- Toolbar -->
-        <div id="toolbar">
-          <div class="open-left" id="open-left">
-            <i class="mdi mdi-sort-variant"></i>
-          </div>
-          <span class="title">Asteroid</span>
-          <div class="open-right" id="open-right">
-            <i class="mdi mdi-dots-vertical"></i>
-          </div>
+    <div id="menuLeft" class="Menuleft " mn-touch swipe-left="swipeLeft()" ui-prevent-touchmove-defaults>
+      <!--imagem de quem esta logado-->
+      <div id="login" class="img_login">
+        <img src="{{usuarioLogado.url_avatar||''}}" on-error-src border="0">
+        <div id="dados" class="ativo">
+          <h3>{{usuarioLogado.NOME}}</h3>
+          <h4>{{usuarioLogado.EMAIL}}</h4>
         </div>
+      </div>
+      <!--conteudo com menu -->
+      <div ng-repeat="menu in MenuLeft" style="text-align: left;" class="{{menu.tipo}} ativo">
+        <a ng-click="locationMenuLeft(menu)">
+          <i class="{{menu.icone}}" style="font-size: 22px"></i> {{menu.titulo}}
+        </a>
+      </div>
+      <!--logout-->
+      <div id="footerMenu">
+        <a ng-click="$mdMenu.close($event)" onclick="window.location = 'login.html';">
+          <i class="fa fa-sign-out" aria-hidden="true" style="padding-right: 5px"></i>Sair do Plano
+        </a>
+      </div>
+    </div>
 
-        <!-- Main Content -->
-        <div class="scene_element splash scene_element--fadeinup">
-          
-          <!-- Gradient -->
-          <div class="overlay-gradient">
-          </div>
+    <div id="blocoTeclado" ng-controller="Teclado">
+      <div ng-click="close()"></div>
+      <table>
+        <tbody>
+        <tr ng-repeat="linha in $root.lstLinhas">
+          <td ng-click="select(item)" border="{{item.caracter}}" ng-repeat="item in linha" ng-bind-html="item.html"></td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
 
-          <div class="bottom">
-            <div class="container scene_element scene_element--fadein scene_element--delayed">
-              <h4 class="slogan left-align white-text">
-                Design <span class="primary-color-text" id="changeText">Beautiful</span> mobile websites with Asteroid
-              </h4>
-              <a class="btn-large waves-effect waves-light primary-color-text primary-border transparent modal-trigger fullwidth z-depth-1" href="#modal1">Features</a>
-            </div>
-          </div>
-
-        </div> <!-- End of Main Contents -->
-        <div id="blockui"></div>
-      </div> <!-- End of Page Content -->
-    </div> <!-- End of Page Container -->
-
-    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script> 
-    <script src="js/materialize.min.js"></script> 
-    <script src="js/snap.js"></script> 
-    <script type="text/javascript">
-      $(function () {
-        count = 0;
-        wordsArray = ["Creative", "Innovative", "Clean", "Beautiful"];
-        setInterval(function () {
-          count++;
-          $("#changeText").fadeOut(400, function () {
-            $(this).text(wordsArray[count % wordsArray.length]).fadeIn(400);
-          });
-        }, 3000);
-      });
-    </script> 
-    <script src="js/jquery.smoothState.min.js"></script> 
-    <script src="js/sidebar.js"></script> 
-    <script src="js/functions.js"></script>
+    <div id="slider" mn-touch swipe-left="slider('next')" swipe-right="slider('prev')" ui-prevent-touchmove-defaults>
+      <ul>
+        <li ng-click="slider('next')" class="{{registro.CLASS}}" ng-repeat="registro in lstSlider">
+          <img src="{{registro.IMG}}" border="0">
+        </li>
+      </ul>
+    </div>
   </body>
 </html>

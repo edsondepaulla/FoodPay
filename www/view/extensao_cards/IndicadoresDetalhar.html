@@ -1,0 +1,30 @@
+<link href="css/extensao_cards/IndicadoresDetalhar.css" rel="stylesheet" type="text/css">
+
+<i class="fa {{registro.ICONE}}"></i>
+<div class="dados">
+    <h3>{{registro.NOME}}</h3>
+    <h4>{{registro.DESCRICAO}}</h4>
+</div>
+<div class="clearBoth"></div>
+
+<div class="i" ng-if="registro.TIPO == 'INDICADOR'">Meta:<span>{{registro.META}}</span></div>
+<div class="i" ng-if="registro.TIPO == 'INDICADOR'">Real:<span>{{registro.REAL}}</span></div>
+<div style="float: right" class="i porc" sinal="{{registro.COR_PERCENTUAL}}"> % <span>{{registro.VAR_PERCENTUAL}}</span></div>
+<div class="clearBoth"></div>
+
+<div id="graf"></div>
+
+<div id="login">
+    <img src="{{registro.IMAGEMRESPONSAVEL}}" on-error-src border="0">
+    <div id="dados">
+        <h3>{{registro.NOMERESPONSAVEL}}</h3>
+        <h4>{{registro.EMAILRESPONSAVEL}}</h4>
+    </div>
+</div>
+<div class="clearBoth"></div>
+
+<div ng-if="registro.FORMAMEDICAO.length > 0" id="detalhes" tipo="{{registro.TIPO}}">
+    <h4>Forma de medição:</h4>
+    <h4 class="limita_campo_texto">{{registro.FORMAMEDICAO}}</h4>
+    <div class="clearBoth"></div>
+</div>

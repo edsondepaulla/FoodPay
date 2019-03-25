@@ -1,0 +1,76 @@
+#aviso_edp{
+    position: fixed;
+    z-index: 9999;
+    width: 90%;
+    border-radius: 0.25em;
+    -moz-border-radius: 0.25em;
+    -webkit-border-radius: 0.25em;
+    -o-border-radius: 0.25em;
+    -ms-border-radius: 0.25em;
+    background-color: #22262E;
+    -moz-box-shadow: 0 0 0.25em #000;
+    -webkit-box-shadow: 0 0 0.25em #000;
+    box-shadow: 0 0 0.25em #000;
+    display: none;
+}
+
+#aviso_edp h4{
+    color: #FFFFFF;
+    font-size: 16px;
+    margin: 10px;
+    text-align: center;
+}
+
+#aviso_edp #aviso_edp_button{
+    text-align: center;
+    margin: 10px;
+}
+
+#bg_fundo_aviso_msg_edp{
+    background-color: #000;
+    height: 100%;
+    left: 0;
+    opacity: 0.5;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 9999;
+}
+
+#aviso_edp .btn {
+    display: inline-block;
+    padding: 9px 12px;
+    padding-top:7px ;
+    margin-bottom: 0;
+    font-size: 14px;
+    line-height: 20px;
+    color: #5e5e5e;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    background-color: #d1dade;
+    -webkit-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    background-image:none !important;
+    border: none;
+    text-shadow: none;
+    box-shadow:none;
+    transition: all 0.12s linear 0s !important;
+    padding:3px 12px;
+    font-size: 12px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    float: none;
+}
+
+#aviso_edp .btn-success {
+    background-color: #0090d9;
+    color: #fff;
+}
+
+#aviso_edp .btn-danger {
+    background-color: #f35958;
+    color: #fff;
+}

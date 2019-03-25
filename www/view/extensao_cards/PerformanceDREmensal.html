@@ -1,0 +1,15 @@
+<link href="css/extensao_cards/PerformanceDRE.css" rel="stylesheet" type="text/css">
+
+<h3>{{DADOS_MENSAL.NOME_CONTA}}</h3>
+
+<div id="grafMensal"></div>
+
+<div class="i">Planejado<span style="color: {{DADOS_MENSAL.COLOR_PLANEJADO}}">{{DADOS_MENSAL.PLANEJADO}}</span></div>
+<div class="i" style="text-align: right"><span class="var" sinal="{{DADOS_MENSAL.VAR_PERC_SINAL}}" style="color: {{DADOS_MENSAL.COLOR_VAR_PERC}}">{{DADOS_MENSAL.VAR_PERC}}%</span></div>
+<div class="clearBoth"></div>
+
+<div class="i" style="margin-top: 5px">Realizado<span style="color: {{DADOS_MENSAL.COLOR_REALIZADO}}">{{DADOS_MENSAL.REALIZADO}}</span></div>
+<div class="i" style="margin-top: 5px;text-align: right">Variação<span style="color: {{DADOS_MENSAL.COLOR_VAR}}">{{DADOS_MENSAL.VAR}}</span></div>
+
+<div class="i" style="margin-top: 5px; font-size: 12px;">Ano anterior<span style="font-size: 13px; color: {{DADOS_MENSAL.COLOR_REALIZADO_AA}}">{{DADOS_MENSAL.REALIZADO_AA}}</span></div>
+<div class="i" style="margin-top: 5px;text-align: right; font-size: 12px;">% V AA<span style="font-size: 13px; color: {{DADOS_MENSAL.COLOR_VAR_AA_PERC}}">{{DADOS_MENSAL.VAR_AA_PERC}}%</span></div>
