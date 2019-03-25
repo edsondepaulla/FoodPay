@@ -16,9 +16,14 @@
 <script>
     var map;
     function initMap() {
-        map = new google.maps.Map(document.getElementById('map'), {
-            center: {lat: -34.397, lng: 150.644},
-            zoom: 12
+        navigator.geolocation.getCurrentPosition(function(position){
+            map = new google.maps.Map(document.getElementById('map'), {
+                center: {lat: position.coords.latitude, lng: position.coords.longitude},
+                zoom: 17
+            });
+        },
+        function(error){ // callback de erro
+
         });
 
         marker = new google.maps.Marker({
