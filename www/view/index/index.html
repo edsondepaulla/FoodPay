@@ -18,9 +18,26 @@
     function initMap() {
         map = new google.maps.Map(document.getElementById('map'), {
             center: {lat: -34.397, lng: 150.644},
-            zoom: 8
+            zoom: 12
         });
+
+        marker = new google.maps.Marker({
+            map: map,
+            draggable: true,
+        });
+
+        if(navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(function(position){ // callback de sucesso
+                // ajusta a posição do marker para a localização do usuário
+                marker.setPosition(new google.maps.LatLng(position.coords.latitude, position.coords.longitude));
+            },
+            function(error){ // callback de erro
+                alert('Erro ao obter localização!');
+                console.log('Erro ao obter localização.', error);
+            });
+        } else {
+            alert('Navegador não suporta Geolocalização!');
+        }
     }
 </script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCOTVwPGlSK8vaOb3US0PmBgzSOBAWEuAo&callback=initMap"
-        async defer></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAmC5dvFmNrc8sQ5Y5UtJfldKbc4O9Hq6g&callback=initMap" async defer></script>
