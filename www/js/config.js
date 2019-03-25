@@ -4,6 +4,6 @@ var config = {
     url_api: {
         local: "https://m-php5.planoparasuaempresa.com.br/",
         homologacao: "https://m-h.planoparasuaempresa.com.br/",
-        producao: "http://m.planoparasuaempresa.com.br/"
+        producao: "https://m.planoparasuaempresa.com.br/"
     }
 };
