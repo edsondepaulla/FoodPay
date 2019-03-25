@@ -4,6 +4,26 @@ app.controller('Index', function($rootScope, $scope, CompartilharData) {
     Factory.activeMenuBottom('');
     $rootScope.titulo = 'FoodPay';
 
+    $rootScope.click = function(){
+        marker = new google.maps.Marker({
+            map: map,
+            draggable: true,
+        });
+
+        if(navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(function(position){ // callback de sucesso
+                    // ajusta a posição do marker para a localização do usuário
+                    marker.setPosition(new google.maps.LatLng(position.coords.latitude, position.coords.longitude));
+                },
+                function(error){ // callback de erro
+                    alert('Erro ao obter localização!');
+                    console.log('Erro ao obter localização.', error);
+                });
+        } else {
+            alert('Navegador não suporta Geolocalização!');
+        }
+    };
+
     // Menu direito
     /*$rootScope.MenuRight = [];
 
