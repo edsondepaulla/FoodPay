@@ -5,7 +5,7 @@ app.controller('Index', function($rootScope, $scope, CompartilharData) {
     $rootScope.titulo = 'FoodPay';
 
     // Menu direito
-    $rootScope.MenuRight = [];
+    /*$rootScope.MenuRight = [];
 
     // Remover compartilhar
     $scope.remover = function (key, DADOS) {
@@ -69,7 +69,7 @@ app.controller('Index', function($rootScope, $scope, CompartilharData) {
                 $scope.Index(data);
             }
         );
-    };
+    };*/
 });
 
 app.controller('CompartilharForm', function($rootScope, $scope, $routeParams, CompartilharFormData) {
