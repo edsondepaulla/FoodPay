@@ -15,70 +15,8 @@
     <link href="css/style.css" rel="stylesheet" type="text/css">
   </head>
   <body>
-
-    <!-- Modal -->
-    <div class="modal bottom-sheet features" id="modal1">
-
-      <div class="modal-content">
-        <div class="row">
-          <div class="col s3">
-            <a href="profile.html"><i class="close-opacity mdi mdi-account"></i></a>
-            <p>
-              About
-            </p>
-          </div>
-          <div class="col s3">
-            <a href="portfolio.html"><i class="mdi mdi-file-image-box"></i></a>
-            <p>
-              Photos
-            </p>
-          </div>
-          <div class="col s3">
-            <a href="blog.html"><i class="mdi mdi-book-multiple-variant"></i></a>
-            <p>
-              Blog
-            </p>
-          </div>
-          <div class="col s3">
-            <a href="news.html"><i class="mdi mdi-rss"></i></a>
-            <p>
-              News
-            </p>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col s3">
-            <a href="timeline.html"><i class="mdi mdi-timelapse"></i></a>
-            <p>
-              Timeline
-            </p>
-          </div>
-          <div class="col s3">
-            <a href="messages.html"><i class="mdi mdi-bell"></i></a>
-            <p>
-              Chat
-            </p>
-          </div>
-          <div class="col s3">
-            <a href="todo.html"><i class="mdi mdi-checkbox-marked-outline"></i></a>
-            <p>
-              To Do
-            </p>
-          </div>
-          <div class="col s3">
-            <a href="login.html"><i class="mdi mdi-account-plus"></i></a>
-            <p>
-              Account
-            </p>
-          </div>
-        </div>
-      </div>
-
-    </div> <!-- End of Modal -->
-
     <div class="m-scene" id="main"> <!-- Page Container -->
-
+      
       <!-- Sidebars -->
       <div class="snap-drawers">
 
@@ -93,7 +31,6 @@
               <li><a href="news.html"><i class="mdi mdi-rss"></i> <span>News</span></a></li>
               <li><a href="contacts.html"><i class="mdi mdi-map-marker"></i> <span>Contacts</span></a></li>
             </ul>
-
             <ul class="exit">
               <li>
                 <a href="login.html"><i class="mdi mdi-exit-to-app"></i> <span>Logout</span></a>
@@ -107,7 +44,7 @@
           <div class="drawer-inner">
             <ul>
               <li><a href="timeline.html"><i class="mdi mdi-timelapse"></i> <span>Timeline</span></a></li>
-              <li><a href="messages.html"><i class="mdi mdi-bell"></i> <span>Messages<span class="badge white z-depth-1">2</span></span></a></li>
+              <li><a href="messages.html"><i class="mdi mdi-bell"></i> <span>Messages <span class="badge white z-depth-1">2</span></span></a></li>
               <li><a href="todo.html"><i class="mdi mdi-checkbox-marked-outline"></i> <span>ToDo</span></a></li>
               <li><a href="login.html"><i class="mdi mdi-account-circle"></i> <span>Login</span></a></li>
               <li><a href="signup.html"><i class="mdi mdi-account-plus"></i> <span>Account Creation</span></a></li>
@@ -115,19 +52,19 @@
                 <ul class="collapsible" data-collapsible="accordion">
                   <li>
                     <div class="collapsible-header">
-                      <i class="mdi mdi-pine-tree"></i>Sub Tree<i class="mdi mdi-menu-down right"></i>
+                      <i class="mdi mdi-pine-tree"></i> Sub Tree <i class="mdi mdi-menu-down right"></i>
                     </div>
                     <div class="collapsible-body">
                       <ul class="collapsible" data-collapsible="accordion">
                         <li>
                           <div class="collapsible-header">
-                            <i class="mdi mdi-numeric-1-box-outline"></i>First
+                            <i class="mdi mdi-numeric-1-box-outline"></i> First
                           </div>
                           <div class="collapsible-header">
-                            <i class="mdi mdi-numeric-2-box-outline"></i>Second
+                            <i class="mdi mdi-numeric-2-box-outline"></i> Second
                           </div>
                           <div class="collapsible-header">
-                            <i class="mdi mdi-numeric-3-box-outline"></i>Third
+                            <i class="mdi mdi-numeric-3-box-outline"></i> Third
                           </div>
                         </li>
                       </ul>
@@ -138,7 +75,7 @@
             </ul>
           </div>
         </div> <!-- End of Right Sidebar -->
-      </div> <!-- End of Sidebars -->
+      </div>  <!-- End of Sidebars -->
 
       <!-- Page Content -->
       <div class="snap-content z-depth-5" id="content">
@@ -148,48 +85,53 @@
           <div class="open-left" id="open-left">
             <i class="mdi mdi-sort-variant"></i>
           </div>
-          <span class="title">Asteroid</span>
+          <span class="title">Portfolio</span>
           <div class="open-right" id="open-right">
             <i class="mdi mdi-dots-vertical"></i>
           </div>
         </div>
-
+        
         <!-- Main Content -->
-        <div class="scene_element splash scene_element--fadeinup">
-          
-          <!-- Gradient -->
-          <div class="overlay-gradient">
+        <div class="scene_element portfolio scene_element--fadeinup">
+
+          <div class="row">
+            <!-- left column -->
+            <div class="col s6">
+              <a href="project.html"><img alt="" src="img/14.jpg"></a> 
+              <a href="project.html"><img alt="" src="img/8.jpg"></a> 
+              <a href="project.html"><img alt="" src="img/3.jpg"></a>
+              <a href="project.html"><img alt="" src="img/5.jpg"></a> 
+              <a href="project.html"><img alt="" src="img/7.jpg"></a>
+            </div>
+            
+            <!-- right column -->
+            <div class="col s6">
+              <a href="project.html"><img alt="" src="img/2.jpg"></a> 
+              <a href="project.html"><img alt="" src="img/10.jpg"></a> 
+              <a href="project.html"><img alt="" src="img/4.jpg"></a> 
+              <a href="project.html"><img alt="" src="img/11.jpg"></a> 
+              <a href="project.html"><img alt="" src="img/2.jpg"></a>
+            </div>
           </div>
 
-          <div class="bottom">
-            <div class="container scene_element scene_element--fadein scene_element--delayed">
-              <h4 class="slogan left-align white-text">
-                Design <span class="primary-color-text" id="changeText">Beautiful</span> mobile websites with Asteroid
-              </h4>
-              <a class="btn-large waves-effect waves-light primary-color-text primary-border transparent modal-trigger fullwidth z-depth-1" href="#modal1">Features</a>
+          <!-- Footer -->
+          <div class="scene_element scene_element--fadeinup footer-copyright primary-color">
+            <div class="container">
+              <i class="mdi mdi-facebook"></i> 
+              <i class="mdi mdi-twitter"></i> 
+              <i class="mdi mdi-google-plus"></i> 
+              <i class="mdi mdi-pinterest"></i>
             </div>
           </div>
 
         </div> <!-- End of Main Contents -->
-        <div id="blockui"></div>
+      <div id="blockui"></div>
       </div> <!-- End of Page Content -->
     </div> <!-- End of Page Container -->
 
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script> 
     <script src="js/materialize.min.js"></script> 
     <script src="js/snap.js"></script> 
-    <script type="text/javascript">
-      $(function () {
-        count = 0;
-        wordsArray = ["Creative", "Innovative", "Clean", "Beautiful"];
-        setInterval(function () {
-          count++;
-          $("#changeText").fadeOut(400, function () {
-            $(this).text(wordsArray[count % wordsArray.length]).fadeIn(400);
-          });
-        }, 3000);
-      });
-    </script> 
     <script src="js/jquery.smoothState.min.js"></script> 
     <script src="js/sidebar.js"></script> 
     <script src="js/functions.js"></script>

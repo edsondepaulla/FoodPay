@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <title>
+      Asteroid - Mobile Template
+    </title>
+    <meta content="IE=edge" http-equiv="x-ua-compatible">
+    <meta content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" name="viewport">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="yes" name="apple-touch-fullscreen">
+    <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+    <link href="css/materialdesignicons.min.css" media="all" rel="stylesheet" type="text/css">
+    <link href="css/keyframes.css" rel="stylesheet" type="text/css">
+    <link href="css/materialize.min.css" rel="stylesheet" type="text/css">
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+  </head>
+  <body>
+    <div class="m-scene" id="main"> <!-- Main Content (change from page to page) -->
+      
+      <!-- Sidebars -->
+      <div class="snap-drawers">
+        
+        <!-- Left Sidebar -->
+        <div class="snap-drawer snap-drawer-left">
+          <div class="drawer-inner">
+            <ul>
+              <li><a href="index.html"><i class="mdi mdi-home"></i> <span>Home</span></a></li>
+              <li><a href="profile.html"><i class="mdi mdi-account"></i> <span>Profile</span></a></li>
+              <li><a href="portfolio.html"><i class="mdi mdi-file-image-box"></i> <span>Portfolio</span></a></li>
+              <li><a href="blog.html"><i class="mdi mdi-book-multiple-variant"></i> <span>Blog <span class="badge white z-depth-1">4</span></span></a></li>
+              <li><a href="news.html"><i class="mdi mdi-rss"></i> <span>News</span></a></li>
+              <li><a href="contacts.html"><i class="mdi mdi-map-marker"></i> <span>Contacts</span></a></li>
+            </ul>
+            <ul class="exit">
+              <li>
+                <a href="login.html"><i class="mdi mdi-exit-to-app"></i> <span>Logout</span></a>
+              </li>
+            </ul>
+          </div>
+        </div> <!-- End of Left Sidebar -->
+
+        <!-- Right Sidebar -->
+        <div class="snap-drawer snap-drawer-right">
+          <div class="drawer-inner">
+            <ul>
+              <li><a href="timeline.html"><i class="mdi mdi-timelapse"></i> <span>Timeline</span></a></li>
+              <li><a href="messages.html"><i class="mdi mdi-bell"></i> <span>Messages <span class="badge white z-depth-1">2</span></span></a></li>
+              <li><a href="todo.html"><i class="mdi mdi-checkbox-marked-outline"></i> <span>ToDo</span></a></li>
+              <li><a href="login.html"><i class="mdi mdi-account-circle"></i> <span>Login</span></a></li>
+              <li><a href="signup.html"><i class="mdi mdi-account-plus"></i> <span>Account Creation</span></a></li>
+              <li class="have-child">
+                <ul class="collapsible" data-collapsible="accordion">
+                  <li>
+                    <div class="collapsible-header">
+                      <i class="mdi mdi-pine-tree"></i> Sub Tree <i class="mdi mdi-menu-down right"></i>
+                    </div>
+                    <div class="collapsible-body">
+                      <ul class="collapsible" data-collapsible="accordion">
+                        <li>
+                          <div class="collapsible-header">
+                            <i class="mdi mdi-numeric-1-box-outline"></i> First
+                          </div>
+                          <div class="collapsible-header">
+                            <i class="mdi mdi-numeric-2-box-outline"></i> Second
+                          </div>
+                          <div class="collapsible-header">
+                            <i class="mdi mdi-numeric-3-box-outline"></i> Third
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div> <!-- End of Right Sidebar -->
+      </div> <!-- End of Sidebars -->
+
+      <!-- Page Content -->
+      <div class="snap-content z-depth-5" id="content">
+
+        <!-- Toolbar -->
+        <div id="toolbar">
+          <a class="open-left" href="messages.html"><i class="mdi mdi-arrow-left"></i></a> <span class="title">Julie Davis</span>
+        </div>
+        
+        <!-- Main Content -->
+        <div class="scene_element scene_element--fadeinright">
+
+          <div class="container">
+            <div class="row">
+              <div class="col s12">
+                <div class="chat">
+                  <ul>
+                    <li class="message-right">
+                      <img alt="" src="img/user3.jpg">
+                      <div class="message">
+                        <p>
+                          Hello! The brown fox jumps over.
+                        </p>
+                        <span>12 min ago</span>
+                      </div>
+                      <span>Seen at 08:23</span>
+                    </li>
+
+                    <li class="message-left">
+                      <img alt="" src="img/user6.jpg">
+                      <div class="message">
+                        <p>
+                          The quick, brown fox jumps over a lazy dog.
+                        </p>
+                        <span>8 min ago</span>
+                      </div>
+                      <div class="message">
+                        <img alt="" src="img/9.jpg"> <span>8 min ago</span>
+                      </div>
+                    </li>
+
+                    <li class="message-right">
+                      <img alt="" src="img/user3.jpg">
+                      <div class="message">
+                        <p>
+                          Quick, Baz, get my woven!
+                        </p>
+                        <span>7 min ago</span>
+                      </div>
+                      <span>Seen at 07:44</span>
+                    </li>
+
+                    <li class="message-left">
+                      <img alt="" src="img/user6.jpg">
+                      <div class="message">
+                        <p>
+                          Call me now!
+                        </p>
+                        <span>6 min ago</span>
+                      </div>
+                    </li>
+
+                    <li class="message-right">
+                      <img alt="" src="img/user3.jpg">
+                      <div class="message">
+                        <p>
+                          My latest shots:
+                        </p>
+                        <div class="photo-add">
+                          <div class="square-user bg-5"></div>
+                          <div class="square-user bg-10"></div>
+                          <div class="square-user bg-6"></div>
+                          <div class="clr">
+                          </div>
+                        </div>
+                        <span>5 min ago</span>
+                      </div>
+                    </li>
+
+                    <li class="message-right">
+                      <img alt="" src="img/user3.jpg">
+                      <div class="message">
+                        <p>
+                          Ok! You're right!
+                        </p>
+                        <span>4 min ago</span>
+                      </div>
+                      <span>Seen at 05:17</span>
+                    </li>
+
+                    <li class="message-left">
+                      <img alt="" src="img/user6.jpg">
+                      <div class="message">
+                        <p>
+                          Quick zephyrs blow, vexing daft Jim.
+                        </p>
+                        <span>3 min ago</span>
+                      </div>
+                    </li>
+
+                    <li class="message-left">
+                      <img alt="" src="img/user6.jpg">
+                      <div class="message">
+                        <p>
+                          Junk MTV quiz graced...
+                        </p>
+                        <span>2 min ago</span>
+                      </div>
+                    </li>
+
+                    <li class="message-left">
+                      <img alt="" src="img/user6.jpg">
+                      <div class="message">
+                        <p>
+                          Bawds jog!
+                        </p>
+                        <span>1 min ago</span>
+                      </div>
+                    </li>
+
+                    <li class="message-right">
+                      <img alt="" src="img/user3.jpg">
+                      <div class="message">
+                        <p>
+                          Ok! You're right!
+                        </p>
+                        <span>Now</span>
+                      </div>
+                      <span>Seen at 00:36</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+        </div> <!-- End of Main Contents -->
+        <div id="blockui"></div>
+      </div> <!-- End of Page Content -->
+    </div> <!-- End of Page Container -->
+
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script> 
+    <script src="js/materialize.min.js"></script> 
+    <script src="js/snap.js"></script> 
+    <script src="js/jquery.smoothState.min.js"></script> 
+    <script src="js/sidebar.js"></script> 
+    <script src="js/functions.js"></script>
+  </body>
+</html>

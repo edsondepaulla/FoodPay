@@ -15,69 +15,7 @@
     <link href="css/style.css" rel="stylesheet" type="text/css">
   </head>
   <body>
-
-    <!-- Modal -->
-    <div class="modal bottom-sheet features" id="modal1">
-
-      <div class="modal-content">
-        <div class="row">
-          <div class="col s3">
-            <a href="profile.html"><i class="close-opacity mdi mdi-account"></i></a>
-            <p>
-              About
-            </p>
-          </div>
-          <div class="col s3">
-            <a href="portfolio.html"><i class="mdi mdi-file-image-box"></i></a>
-            <p>
-              Photos
-            </p>
-          </div>
-          <div class="col s3">
-            <a href="blog.html"><i class="mdi mdi-book-multiple-variant"></i></a>
-            <p>
-              Blog
-            </p>
-          </div>
-          <div class="col s3">
-            <a href="news.html"><i class="mdi mdi-rss"></i></a>
-            <p>
-              News
-            </p>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col s3">
-            <a href="timeline.html"><i class="mdi mdi-timelapse"></i></a>
-            <p>
-              Timeline
-            </p>
-          </div>
-          <div class="col s3">
-            <a href="messages.html"><i class="mdi mdi-bell"></i></a>
-            <p>
-              Chat
-            </p>
-          </div>
-          <div class="col s3">
-            <a href="todo.html"><i class="mdi mdi-checkbox-marked-outline"></i></a>
-            <p>
-              To Do
-            </p>
-          </div>
-          <div class="col s3">
-            <a href="login.html"><i class="mdi mdi-account-plus"></i></a>
-            <p>
-              Account
-            </p>
-          </div>
-        </div>
-      </div>
-
-    </div> <!-- End of Modal -->
-
-    <div class="m-scene" id="main"> <!-- Page Container -->
+    <div class="m-scene toolbar-inside" id="main"> <!-- Page Container -->
 
       <!-- Sidebars -->
       <div class="snap-drawers">
@@ -93,7 +31,6 @@
               <li><a href="news.html"><i class="mdi mdi-rss"></i> <span>News</span></a></li>
               <li><a href="contacts.html"><i class="mdi mdi-map-marker"></i> <span>Contacts</span></a></li>
             </ul>
-
             <ul class="exit">
               <li>
                 <a href="login.html"><i class="mdi mdi-exit-to-app"></i> <span>Logout</span></a>
@@ -107,7 +44,7 @@
           <div class="drawer-inner">
             <ul>
               <li><a href="timeline.html"><i class="mdi mdi-timelapse"></i> <span>Timeline</span></a></li>
-              <li><a href="messages.html"><i class="mdi mdi-bell"></i> <span>Messages<span class="badge white z-depth-1">2</span></span></a></li>
+              <li><a href="messages.html"><i class="mdi mdi-bell"></i> <span>Messages <span class="badge white z-depth-1">2</span></span></a></li>
               <li><a href="todo.html"><i class="mdi mdi-checkbox-marked-outline"></i> <span>ToDo</span></a></li>
               <li><a href="login.html"><i class="mdi mdi-account-circle"></i> <span>Login</span></a></li>
               <li><a href="signup.html"><i class="mdi mdi-account-plus"></i> <span>Account Creation</span></a></li>
@@ -115,19 +52,19 @@
                 <ul class="collapsible" data-collapsible="accordion">
                   <li>
                     <div class="collapsible-header">
-                      <i class="mdi mdi-pine-tree"></i>Sub Tree<i class="mdi mdi-menu-down right"></i>
+                      <i class="mdi mdi-pine-tree"></i> Sub Tree <i class="mdi mdi-menu-down right"></i>
                     </div>
                     <div class="collapsible-body">
                       <ul class="collapsible" data-collapsible="accordion">
                         <li>
                           <div class="collapsible-header">
-                            <i class="mdi mdi-numeric-1-box-outline"></i>First
+                            <i class="mdi mdi-numeric-1-box-outline"></i> First
                           </div>
                           <div class="collapsible-header">
-                            <i class="mdi mdi-numeric-2-box-outline"></i>Second
+                            <i class="mdi mdi-numeric-2-box-outline"></i> Second
                           </div>
                           <div class="collapsible-header">
-                            <i class="mdi mdi-numeric-3-box-outline"></i>Third
+                            <i class="mdi mdi-numeric-3-box-outline"></i> Third
                           </div>
                         </li>
                       </ul>
@@ -145,29 +82,40 @@
 
         <!-- Toolbar -->
         <div id="toolbar">
-          <div class="open-left" id="open-left">
-            <i class="mdi mdi-sort-variant"></i>
-          </div>
-          <span class="title">Asteroid</span>
-          <div class="open-right" id="open-right">
-            <i class="mdi mdi-dots-vertical"></i>
-          </div>
+          <a class="open-left" href="index.html"><i class="mdi mdi-arrow-left"></i></a> <span class="title">Sign Up</span>
         </div>
-
+        
         <!-- Main Content -->
-        <div class="scene_element splash scene_element--fadeinup">
-          
-          <!-- Gradient -->
-          <div class="overlay-gradient">
+        <div class="scene_element signup scene_element--fadeinright"> 
+
+          <div class="primary-color add-user center-align">
+            <div class="overlay-gradient">
+            </div>
+            <label for="upload">
+              <input id="upload" type="file"> <i class="mdi mdi-file-image-box white-text"></i>
+            </label>
           </div>
 
-          <div class="bottom">
-            <div class="container scene_element scene_element--fadein scene_element--delayed">
-              <h4 class="slogan left-align white-text">
-                Design <span class="primary-color-text" id="changeText">Beautiful</span> mobile websites with Asteroid
-              </h4>
-              <a class="btn-large waves-effect waves-light primary-color-text primary-border transparent modal-trigger fullwidth z-depth-1" href="#modal1">Features</a>
+          <div class="container">
+            <div class="input-field col s12">
+              <i class="mdi mdi-email prefix"></i> 
+                <input class="validate" id="email" type="email"> 
+                <label for="email">Email</label>
             </div>
+
+            <div class="input-field col s12">
+              <i class="mdi mdi-account-circle prefix"></i> 
+                <input class="validate" id="signup-name" type="text"> 
+                <label for="signup-name">Username</label>
+            </div>
+
+            <div class="input-field col s12">
+              <i class="mdi mdi-lock prefix"></i> 
+                <input class="validate" id="signup-psw" type="password"> 
+                <label for="signup-psw">Password</label>
+            </div>
+            <a class="waves-effect waves-light btn-large primary-color fullwidth" href="index.html">Create Account</a> 
+            <span>Already have an account? <a class="primary-color-text" href="login.html">Sign In</a></span>
           </div>
 
         </div> <!-- End of Main Contents -->
@@ -178,18 +126,6 @@
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script> 
     <script src="js/materialize.min.js"></script> 
     <script src="js/snap.js"></script> 
-    <script type="text/javascript">
-      $(function () {
-        count = 0;
-        wordsArray = ["Creative", "Innovative", "Clean", "Beautiful"];
-        setInterval(function () {
-          count++;
-          $("#changeText").fadeOut(400, function () {
-            $(this).text(wordsArray[count % wordsArray.length]).fadeIn(400);
-          });
-        }, 3000);
-      });
-    </script> 
     <script src="js/jquery.smoothState.min.js"></script> 
     <script src="js/sidebar.js"></script> 
     <script src="js/functions.js"></script>

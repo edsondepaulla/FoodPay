@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <title>
+      Asteroid - Mobile Template
+    </title>
+    <meta content="IE=edge" http-equiv="x-ua-compatible">
+    <meta content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" name="viewport">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="yes" name="apple-touch-fullscreen">
+    <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+    <link href="css/materialdesignicons.min.css" media="all" rel="stylesheet" type="text/css">
+    <link href="css/keyframes.css" rel="stylesheet" type="text/css">
+    <link href="css/materialize.min.css" rel="stylesheet" type="text/css">
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+  </head>
+  <body>
+    <div class="m-scene" id="main"> <!-- Page Container -->
+
+      <!-- Modal -->
+      <div class="modal bottom-sheet new-event" id="modal2">
+        <div class="modal-content">
+          <div class="modal-header">
+            <a class="modal-action modal-close waves-effect waves-primary-color btn-flat left close-event" href="#!"><i class="mdi mdi-close"></i></a> 
+            <a class="modal-action modal-close waves-effect waves-green btn-flat right" href="#!">Add Event</a>
+            <div class="clr">
+            </div>
+          </div>
+
+          <div class="primary-color add-user center-align">
+            <i class="mdi mdi-account-circle white-text"></i>
+          </div>
+
+          <div class="container">
+            <div class="input-field col s12">
+              <i class="mdi mdi-format-size prefix"></i> 
+              <input class="validate" id="event_name" type="text"> 
+              <label for="event_name">Event Title</label>
+            </div>
+
+            <div class="input-field col s12">
+              <i class="mdi mdi-calendar-today prefix"></i> 
+              <input class="validate" id="event_date" type="text"> 
+              <label for="event_date">Event Date</label>
+            </div>
+
+            <div class="input-field col s12">
+              <i class="mdi mdi-pencil prefix"></i> 
+              <textarea class="materialize-textarea" id="icon_prefix2"></textarea> 
+              <label for="icon_prefix2">Short Description</label>
+            </div>
+
+            <div class="col s12">
+              <label>Location</label> <select class="browser-default">
+                <option disabled selected value="">Choose your option</option>
+                <option value="1">Chicago</option>
+                <option value="2">New York</option>
+                <option value="3">Tokyo</option>
+                <option value="4">Copenhagen</option>
+                <option value="5">Rome</option>
+                <option value="6">Venice</option>
+                <option value="7">Milan</option>
+              </select>
+            </div>
+
+            <div class="container spacer">
+              <div class="chip">
+                Monday <i class="mdi mdi-close"></i>
+              </div>
+
+              <div class="chip">
+                Todo <i class="mdi mdi-close"></i>
+              </div>
+
+              <div class="chip">
+                Alarm <i class="mdi mdi-close"></i>
+              </div>
+            </div>
+
+            <div class="col s12 right-align">
+              <div class="switch spacer">
+                <label>Remember <input type="checkbox"> <span class="lever"></span></label>
+              </div>
+
+              <div class="switch">
+                <label>Alarm <input checked type="checkbox"> <span class="lever"></span></label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> <!-- End of Modal -->
+
+      <!-- Sidebars -->
+      <div class="snap-drawers">
+
+        <!-- Left Sidebar -->
+        <div class="snap-drawer snap-drawer-left">
+          <div class="drawer-inner">
+            <ul>
+              <li><a href="index.html"><i class="mdi mdi-home"></i> <span>Home</span></a></li>
+              <li><a href="profile.html"><i class="mdi mdi-account"></i> <span>Profile</span></a></li>
+              <li><a href="portfolio.html"><i class="mdi mdi-file-image-box"></i> <span>Portfolio</span></a></li>
+              <li><a href="blog.html"><i class="mdi mdi-book-multiple-variant"></i> <span>Blog <span class="badge white z-depth-1">4</span></span></a></li>
+              <li><a href="news.html"><i class="mdi mdi-rss"></i> <span>News</span></a></li>
+              <li><a href="contacts.html"><i class="mdi mdi-map-marker"></i> <span>Contacts</span></a></li>
+            </ul>
+            <ul class="exit">
+              <li><a href="login.html"><i class="mdi mdi-exit-to-app"></i> <span>Logout</span></a>
+              </li>
+            </ul>
+          </div>
+        </div> <!-- End of Left Sidebar -->
+
+        <!-- Right Sidebar -->
+        <div class="snap-drawer snap-drawer-right">
+          <div class="drawer-inner">
+            <ul>
+              <li><a href="timeline.html"><i class="mdi mdi-timelapse"></i> <span>Timeline</span></a></li>
+              <li><a href="messages.html"><i class="mdi mdi-bell"></i> <span>Messages <span class="badge white z-depth-1">2</span></span></a></li>
+              <li><a href="todo.html"><i class="mdi mdi-checkbox-marked-outline"></i> <span>ToDo</span></a></li>
+              <li><a href="login.html"><i class="mdi mdi-account-circle"></i> <span>Login</span></a></li>
+              <li><a href="signup.html"><i class="mdi mdi-account-plus"></i> <span>Account Creation</span></a></li>
+              <li class="have-child">
+                <ul class="collapsible" data-collapsible="accordion">
+                  <li>
+                    <div class="collapsible-header">
+                      <i class="mdi mdi-pine-tree"></i> Sub Tree <i class="mdi mdi-menu-down right"></i>
+                    </div>
+                    <div class="collapsible-body">
+                      <ul class="collapsible" data-collapsible="accordion">
+                        <li>
+                          <div class="collapsible-header">
+                            <i class="mdi mdi-numeric-1-box-outline"></i> First
+                          </div>
+                          <div class="collapsible-header">
+                            <i class="mdi mdi-numeric-2-box-outline"></i> Second
+                          </div>
+                          <div class="collapsible-header">
+                            <i class="mdi mdi-numeric-3-box-outline"></i> Third
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div> <!-- End of Right Sidebar -->
+      </div> <!-- End of Sidebars -->
+
+      <!-- Page Content -->
+      <div class="snap-content z-depth-5" id="content">
+
+        <!-- Toolbar -->
+        <div id="toolbar">
+          <div class="open-left" id="open-left">
+            <i class="mdi mdi-sort-variant"></i>
+          </div>
+          <span class="title">To Do</span>
+          <div class="open-right" id="open-right">
+            <i class="mdi mdi-dots-vertical"></i>
+          </div>
+        </div>
+        
+        <!-- Main Content -->
+        <div class="scene_element scene_element--fadeinup">
+
+          <div class="page-header bg-8">
+            <div class="overlay-gradient">
+            </div>
+            <h2 class="white-text">
+              June
+            </h2>
+            <ul class="tabs">
+              <li class="tab col s6">
+                <a class="active" href="#test1">Month</a>
+              </li>
+              <li class="tab col s6">
+                <a href="#test2">Week</a>
+              </li>
+              <li class="tab col s6">
+                <a href="#test3">Day</a>
+              </li>
+            </ul>
+            <div class="scene_element center-align scene_element--fadein scene_element--delayed add-event">
+              <a class="btn-floating btn-large waves-effect waves-light primary-color btn modal-trigger z-depth-1" href="#modal2">
+              <i class="mdi mdi-plus"></i></a>
+            </div>
+          </div>
+
+          <div class="col s12 todo" id="test1">
+            <p class="todo-element border-left-coral">
+              <input id="todo1" type="checkbox"> <label for="todo1">Go to gym with Mike</label> <span>9:45 AM</span>
+            </p>
+
+            <p class="todo-element border-left-sea">
+              <input checked id="todo2" type="checkbox"> <label for="todo2">Back home for lunch</label> <img alt="" src="img/user4.jpg"> <span>9:45 AM</span>
+            </p>
+
+            <p class="todo-element border-left-orange">
+              <input id="todo3" type="checkbox"> <label for="todo3">Lunch with Jane</label> <span>9:45 AM</span> <img alt="" src="img/user3.jpg">
+            </p>
+
+            <p class="todo-element border-left-green">
+              <input id="todo4" type="checkbox"> <label for="todo4">Work meeting</label> <span>9:45 AM</span>
+            </p>
+
+            <p class="todo-element border-left-coral">
+              <input id="todo5" type="checkbox"> <label for="todo5">Cooking for dinner</label> <span>9:45 AM</span> <img alt="" src="img/user6.jpg">
+            </p>
+
+            <p class="todo-element border-left-sea">
+              <input id="todo6" type="checkbox"> <label for="todo6">Take kids at swim</label> <span>9:45 AM</span>
+            </p>
+
+            <p class="todo-element border-left-sea">
+              <input checked id="todo7" type="checkbox"> <label for="todo7">Back home for lunch</label> <img alt="" src="img/user2.jpg"> <span>9:45 AM</span>
+            </p>
+
+            <p class="todo-element border-left-orange">
+              <input id="todo8" type="checkbox"> <label for="todo8">Lunch with Jane</label> <span>9:45 AM</span> <img alt="" src="img/user7.jpg">
+            </p>
+          </div>
+
+          <div class="col s12 todo timeline" id="test2">
+            <div class="container">
+              <div class="row">
+                <div class="col s12">
+                  <div class="contact">
+                    <img alt="" src="img/user7.jpg">
+                    <div class="dot border-coral">
+                    </div>
+                    <p>
+                      Julie Davis
+                    </p>
+                    <span>Sent you some photos.</span>
+                  </div>
+
+                  <div class="contact">
+                    <span class="date">6 - 7 pm</span>
+                    <div class="dot border-sea">
+                    </div>
+                    <p>
+                      Thomas Smith
+                    </p>
+                    <span>One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin.</span>
+                  </div>
+
+                  <div class="contact">
+                    <span class="date">4 - 5 pm</span>
+                    <div class="dot border-orange">
+                    </div>
+                    <p>
+                      37 New friends
+                    </p>
+                    <div class="friends">
+                      <img alt="" class="circle" src="img/user3.jpg"> <img alt="" class="circle" src="img/user8.jpg"> <img alt="" class="circle" src="img/user3.jpg">
+                    </div>
+                  </div>
+
+                  <div class="contact">
+                    <span class="date">1 - 2 pm</span>
+                    <div class="dot border-green">
+                    </div>
+                    <p>
+                      Jake Soul
+                    </p>
+                    <span>A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.</span>
+                  </div>
+
+                  <div class="contact">
+                    <img alt="" src="img/user3.jpg">
+                    <div class="dot border-coral">
+                    </div>
+                    <p>
+                      Robert Green
+                    </p>
+                    <span>7 New notifications</span>
+                  </div>
+
+                  <div class="contact">
+                    <span class="date">4 - 8 am</span>
+                    <div class="dot border-sea">
+                    </div>
+                    <p>
+                      Camilla Oller
+                    </p>
+                    <span>One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin.</span>
+                  </div>
+
+                  <div class="contact">
+                    <span class="date">2 - 3 am</span>
+                    <div class="dot border-green">
+                    </div>
+                    <p>
+                      Added 3 new photos.
+                    </p>
+                    <div class="friends">
+                      <img alt="" class="circle" src="img/user5.jpg"> <img alt="" class="circle" src="img/user4.jpg"> <img alt="" class="circle" src="img/user6.jpg">
+                    </div>
+                  </div>
+
+                  <div class="contact">
+                    <span class="date">1 - 2 pm</span>
+                    <div class="dot border-coral">
+                    </div>
+                    <p>
+                      Mike Lee
+                    </p>
+                    <span>Sent you an attachment.</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col s12 todo timeline" id="test3">
+            <div class="container">
+              <div class="row">
+                <div class="col s12">
+                  <div class="contact">
+                    <span class="date">1 - 2 pm</span>
+                    <div class="dot border-green">
+                    </div>
+                    <p>
+                      Jake Soul
+                    </p>
+                    <span>A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.</span>
+                  </div>
+
+                  <div class="contact">
+                    <img alt="" src="img/user4.jpg">
+                    <div class="dot border-coral">
+                    </div>
+                    <p>
+                      Robert Green
+                    </p>
+                    <span>7 New notifications</span>
+                  </div>
+
+                  <div class="contact">
+                    <span class="date">4 - 8 am</span>
+                    <div class="dot border-sea">
+                    </div>
+                    <p>
+                      Camilla Oller
+                    </p>
+                    <span>One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin.</span>
+                  </div>
+
+                  <div class="contact">
+                    <span class="date">2 - 3 am</span>
+                    <div class="dot border-green">
+                    </div>
+                    <p>
+                      Added 3 new photos.
+                    </p>
+                    <div class="friends">
+                      <img alt="" class="circle" src="img/user8.jpg"> <img alt="" class="circle" src="img/user7.jpg"> <img alt="" class="circle" src="img/user5.jpg">
+                    </div>
+                  </div>
+
+                  <div class="contact">
+                    <span class="date">1 - 2 pm</span>
+                    <div class="dot border-coral">
+                    </div>
+                    <p>
+                      Mike Lee
+                    </p>
+                    <span>Sent you an attachment.</span>
+                  </div>
+
+                  <div class="contact">
+                    <img alt="" src="img/user7.jpg">
+                    <div class="dot border-coral">
+                    </div>
+                    <p>
+                      Julie Davis
+                    </p>
+                    <span>Sent you some photos.</span>
+                  </div>
+
+                  <div class="contact">
+                    <span class="date">6 - 7 pm</span>
+                    <div class="dot border-sea">
+                    </div>
+                    <p>
+                      Thomas Smith
+                    </p>
+                    <span>One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin.</span>
+                  </div>
+
+                  <div class="contact">
+                    <span class="date">4 - 5 pm</span>
+                    <div class="dot border-orange">
+                    </div>
+                    <p>
+                      37 New friends
+                    </p>
+                    <div class="friends">
+                      <img alt="" class="circle" src="img/user3.jpg"> <img alt="" class="circle" src="img/user3.jpg"> <img alt="" class="circle" src="img/user7.jpg">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Footer -->
+          <div class="scene_element scene_element--fadeinup footer-copyright primary-color">
+            <div class="container">
+              <i class="mdi mdi-facebook"></i> 
+              <i class="mdi mdi-twitter"></i> 
+              <i class="mdi mdi-google-plus"></i> 
+              <i class="mdi mdi-pinterest"></i>
+            </div>
+          </div>
+
+        </div> <!-- End of Main Contents -->
+        <div id="blockui"></div>
+      </div> <!-- End of Page Content -->
+    </div> <!-- End of Page Container -->
+
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script> 
+    <script src="js/materialize.min.js"></script> 
+    <script src="js/snap.js"></script> 
+    <script src="js/jquery.smoothState.min.js"></script> 
+    <script src="js/sidebar.js"></script> 
+    <script src="js/functions.js"></script>
+  </body>
+</html>

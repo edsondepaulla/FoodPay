@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <title>
+      Asteroid - Mobile Template
+    </title>
+    <meta content="IE=edge" http-equiv="x-ua-compatible">
+    <meta content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" name="viewport">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="yes" name="apple-touch-fullscreen">
+    <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+    <link href="css/materialdesignicons.min.css" media="all" rel="stylesheet" type="text/css">
+    <link href="css/keyframes.css" rel="stylesheet" type="text/css">
+    <link href="css/materialize.min.css" rel="stylesheet" type="text/css">
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+  </head>
+  <body>
+    <div class="m-scene" id="main"> <!-- Page Container -->
+
+      <!-- Sidebars -->
+      <div class="snap-drawers">
+
+        <!-- Left Sidebar -->
+        <div class="snap-drawer snap-drawer-left">
+          <div class="drawer-inner">
+            <ul>
+              <li><a href="index.html"><i class="mdi mdi-home"></i> <span>Home</span></a></li>
+              <li><a href="profile.html"><i class="mdi mdi-account"></i> <span>Profile</span></a></li>
+              <li><a href="portfolio.html"><i class="mdi mdi-file-image-box"></i> <span>Portfolio</span></a></li>
+              <li><a href="blog.html"><i class="mdi mdi-book-multiple-variant"></i> <span>Blog <span class="badge white z-depth-1">4</span></span></a></li>
+              <li><a href="news.html"><i class="mdi mdi-rss"></i> <span>News</span></a></li>
+              <li><a href="contacts.html"><i class="mdi mdi-map-marker"></i> <span>Contacts</span></a></li>
+            </ul>
+            <ul class="exit">
+              <li><a href="login.html"><i class="mdi mdi-exit-to-app"></i> <span>Logout</span></a>
+              </li>
+            </ul>
+          </div>
+        </div> <!-- End of Left Sidebar -->
+
+        <!-- Right Sidebar -->
+        <div class="snap-drawer snap-drawer-right">
+          <div class="drawer-inner">
+            <ul>
+              <li><a href="timeline.html"><i class="mdi mdi-timelapse"></i> <span>Timeline</span></a></li>
+              <li><a href="messages.html"><i class="mdi mdi-bell"></i> <span>Messages <span class="badge white z-depth-1">2</span></span></a></li>
+              <li><a href="todo.html"><i class="mdi mdi-checkbox-marked-outline"></i> <span>ToDo</span></a></li>
+              <li><a href="login.html"><i class="mdi mdi-account-circle"></i> <span>Login</span></a></li>
+              <li><a href="signup.html"><i class="mdi mdi-account-plus"></i> <span>Account Creation</span></a></li>
+              <li class="have-child">
+                <ul class="collapsible" data-collapsible="accordion">
+                  <li>
+                    <div class="collapsible-header">
+                      <i class="mdi mdi-pine-tree"></i> Sub Tree <i class="mdi mdi-menu-down right"></i>
+                    </div>
+                    <div class="collapsible-body">
+                      <ul class="collapsible" data-collapsible="accordion">
+                        <li>
+                          <div class="collapsible-header">
+                            <i class="mdi mdi-numeric-1-box-outline"></i> First
+                          </div>
+                          <div class="collapsible-header">
+                            <i class="mdi mdi-numeric-2-box-outline"></i> Second
+                          </div>
+                          <div class="collapsible-header">
+                            <i class="mdi mdi-numeric-3-box-outline"></i> Third
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div> <!-- End of Right Sidebar -->
+      </div> <!-- End of Sidebars -->
+
+      <!-- Page Content -->
+      <div class="snap-content z-depth-5" id="content">
+
+        <!-- Toolbar -->
+        <div id="toolbar">
+          <div class="open-left" id="open-left">
+            <i class="mdi mdi-sort-variant"></i>
+          </div>
+          <span class="title">Profile</span>
+          <div class="open-right" id="open-right">
+            <i class="mdi mdi-dots-vertical"></i>
+          </div>
+        </div>
+
+        <div class="scene_element scene_element--fadeinup">
+          
+          <!-- Profile HEader -->
+          <div class="profile-header">
+            <img alt="" src="img/13.jpg">
+            <div class="overlay-gradient">
+            </div>
+            <div class="contact profile-user">
+              <img alt="" src="img/user8.jpg">
+              <h4 class="white-text">
+                Camilla
+              </h4>
+              <p class="white-text">
+                Web Designer & Developer
+              </p>
+              <a class="waves-effect waves-light btn-flat primary-color white-text" href="#">Follow</a>
+            </div>
+          </div>
+
+          <div class="container">
+            <div class="social-counter">
+              <i class="mdi mdi-twitter"></i><br>
+              350<br>
+              <span>Follower</span>
+            </div>
+
+            <div class="social-counter last">
+              <i class="mdi mdi-facebook"></i><br>
+              1200<br>
+              <span>Like</span>
+            </div>
+
+            <div class="social-counter last">
+              <i class="mdi mdi-pinterest"></i><br>
+              643<br>
+              <span>Pin</span>
+            </div>
+
+            <div class="profile-description">
+              <h4 class="paragraph-title">
+                ABOUT
+              </h4>
+
+              <p>
+                A collection of textile samples lay spread out on the table Samsa was a travelling salesman and above it there hung a picture that he had recently cut out.
+              </p>
+            </div>
+
+            <div class="photo-preview">
+              <img alt="" src="img/user5.jpg"> <img alt="" src="img/user3.jpg"> <img alt="" src="img/user6.jpg">
+              <div class="box valign-wrapper">
+                <div class="valign">
+                  <a href="portfolio.html">+28<br>
+                  <span>Friends</span></a>
+                </div>
+              </div>
+              <div class="clr">
+              </div>
+            </div>
+
+            <div class="profile-description">
+              <h4 class="paragraph-title">
+                ACTIVITY
+              </h4>
+              <div class="timeline">
+                <div class="row">
+                  <div class="col s12">
+                    <div class="contact">
+                      <img alt="" src="img/user7.jpg">
+                      <div class="dot border-coral">
+                      </div>
+                      <p>
+                        Julie Davis <i class="mdi mdi-attachment"></i>
+                      </p>
+                      <span>Sent you some photos.</span>
+                    </div>
+
+                    <div class="contact">
+                      <span class="date">6 - 7 pm</span>
+                      <div class="dot border-sea">
+                      </div>
+                      <p>
+                        Thomas Smith
+                      </p>
+                      <span>One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin.</span>
+                    </div>
+
+                    <div class="contact">
+                      <span class="date">4 - 5 pm</span>
+                      <div class="dot border-orange">
+                      </div>
+                      <p>
+                        37 New friends
+                      </p>
+                      <div class="friends">
+                        <img alt="" class="circle" src="img/user4.jpg"> 
+                        <img alt="" class="circle" src="img/user3.jpg"> 
+                        <img alt="" class="circle" src="img/user5.jpg"> 
+                      </div>
+                    </div>
+
+                    <div class="contact">
+                      <span class="date">1 - 2 pm</span>
+                      <div class="dot border-green">
+                      </div>
+                      <p>
+                        Jake Soul
+                      </p>
+                      <span>A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.</span>
+                    </div>
+
+                    <div class="contact">
+                      <img alt="" src="img/user6.jpg">
+                      <div class="dot border-coral">
+                      </div>
+                      <p>
+                        Robert Green
+                      </p>
+                      <span>7 New notifications</span>
+                    </div>
+
+                    <div class="contact">
+                      <span class="date">4 - 8 am</span>
+                      <div class="dot border-sea">
+                      </div>
+                      <p>
+                        Camilla Oller
+                      </p>
+                      <span>One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin.</span>
+                    </div>
+
+                    <div class="contact">
+                      <span class="date">2 - 3 am</span>
+                      <div class="dot border-green">
+                      </div>
+                      <p>
+                        Added 3 new photos.
+                      </p>
+                      <div class="friends">
+                        <img alt="" class="circle" src="img/user7.jpg"> <img alt="" class="circle" src="img/user8.jpg"> <img alt="" class="circle" src="img/user6.jpg">
+                      </div>
+                    </div>
+
+                    <div class="contact">
+                      <span class="date">1 - 2 pm</span>
+                      <div class="dot border-coral">
+                      </div>
+                      <p>
+                        Mike Lee <i class="mdi mdi-attachment"></i>
+                      </p>
+                      <span>Sent you an attachment.</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Footer -->
+          <div class="scene_element scene_element--fadeinup footer-copyright primary-color">
+            <div class="container">
+              <i class="mdi mdi-facebook"></i> 
+              <i class="mdi mdi-twitter"></i> 
+              <i class="mdi mdi-google-plus"></i> 
+              <i class="mdi mdi-pinterest"></i>
+            </div>
+          </div>
+
+        </div> <!-- End of Main Contents -->
+        <div id="blockui"></div>
+      </div> <!-- End of Page Content -->
+    </div> <!-- End of Page Container -->
+
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script> 
+    <script>
+      $(function() {
+        var div = $('.box');
+        var width = div.width();
+        div.css('height', width);
+      });
+    </script> 
+    <script src="js/materialize.min.js"></script> 
+    <script src="js/snap.js"></script> 
+    <script src="js/jquery.smoothState.min.js"></script> 
+    <script src="js/sidebar.js"></script> 
+    <script src="js/functions.js"></script>
+  </body>
+</html>
