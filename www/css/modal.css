@@ -58,10 +58,6 @@
   outline: 0 none !important
 }
 
-body *{
-  box-shadow: none !important;
-}
-
 [ng-controller="Modal"] .modal-footer{
   /*border-top: 7px solid #EEE;*/
   width: 100%;
