@@ -5,7 +5,10 @@ app.controller('Index', function($rootScope, $scope, CompartilharData) {
     $rootScope.titulo = 'FoodPay';
 
     $rootScope.click = function(){
-        marker = new google.maps.Marker({
+        var mapMaxZoom = 18;
+        var geoloccontrol = new klokantech.GeolocationControl(map, mapMaxZoom);
+
+        /*marker = new google.maps.Marker({
             map: map,
             draggable: true,
         });
@@ -21,7 +24,7 @@ app.controller('Index', function($rootScope, $scope, CompartilharData) {
                 });
         } else {
             alert('Navegador não suporta Geolocalização!');
-        }
+        }*/
     };
 
     // Menu direito
