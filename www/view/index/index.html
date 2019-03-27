@@ -90,24 +90,45 @@
                 zoom: 17,
                 disableDefaultUI:true
             });
-            map.setOptions({styles: [
+            map.setOptions(
                 {
-                    featureType: "poi",
-                    stylers: [
-                        { visibility: "off" }
+                    styles: [
+                        {
+                            featureType: "poi",
+                            stylers: [
+                                { visibility: "off" }
+                            ]
+                        }
                     ]
                 }
-            ]});
+            );
+
+                var data = "Hello World!";
+                var infowindow = new google.maps.InfoWindow({
+                    content: data
+                });
+
+            var image = 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png';
             var myMarker = new google.maps.Marker({
                 map: map,
                 animation: google.maps.Animation.DROP,
-                position: faisalabad
+                position: faisalabad,
+                icon: image,
+                title: 'sfdfds',
+                teste: 5,
+                label: {
+                    text: 'Hello world'
+                }
             });
             myMarker.addListener('click', function() {
-                map.setZoom(15);
+                map.setZoom(17);
                 map.setCenter(myMarker.getPosition());
 
-                alert('fds');
+                console.log(myMarker.teste);
+
+                alert(myMarker.title);
+
+                infowindow.open(map,myMarker);
             });
 
             addYourLocationButton(map, myMarker);
