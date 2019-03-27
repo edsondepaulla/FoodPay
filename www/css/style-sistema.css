@@ -2616,10 +2616,10 @@ body.verificando_login #menuLeft{
   display: none;
   left: 0;
   top: 0;
-  opacity: 0.5;
+  opacity: 0;
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
-  transition: 0.5s;
+  transition: 1s;
 }
 .ativo{
   color: #babfcb !important;

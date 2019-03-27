@@ -694,14 +694,24 @@ app.controller('Main', function($rootScope, $scope, $http, $routeParams, $route,
         $('#lstMenu li, #lstMenuConteudo li').removeClass('active');
         $('#lstMenu li[data-menu="'+menu+'"], #lstMenuConteudo li[data-menu="'+menu+'"]').addClass('active');
     };
+
+    var menuClose_time = null;
     $rootScope.menuOpen = function(){
-        $('#fundo_transparente').show();
-        $('.Menuleft').css('left', '0%').show();
+        clearTimeout(menuClose_time);
+        $('#fundo_transparente').css('display', 'block');
+        setTimeout(function () {
+            $('#fundo_transparente').css('opacity', '0.5');
+        }, 1);
+        $('.Menuleft').css('left', '0%');
     };
     $rootScope.menuClose = function(){
         $('.Menuleft').css('left', '-80%');
-        $('#fundo_transparente').hide();
+        $('#fundo_transparente').css('opacity', '0');
+        menuClose_time = setTimeout(function () {
+            $('#fundo_transparente').hide();
+        }, 1000);
     };
+
     $rootScope.comboMenuExibir = function(TIPO){
         switch (TIPO){
             case 'HIDE':

@@ -36,13 +36,6 @@
     <script src="plugins/alert/jquery.edp-alert.js"></script>
     <script src="plugins/lang.plano.js"></script>
 
-    <script src="plugins/highcharts/highstock.js"></script>
-    <script src="plugins/highcharts/modules/exporting.js"></script>
-    <script src="plugins/highcharts/grouped-categories.js"></script>
-    <script src="plugins/highcharts/highcharts-more.js"></script>
-    <script src="plugins/highcharts/modules/heatmap.js"></script>
-    <script src="plugins/highcharts/modules/treemap.js"></script>
-    <script src="plugins/highcharts/fuctions.js"></script>
     <script src="plugins/mn-touch/mn-touch.min.js"></script>
 
     <script src="plugins/device-detector/ng-device-detector.min.js"></script>
@@ -76,7 +69,7 @@
         }, 5000);
     </script>
   </head>
-  <body mn-touch secure-tap="swipeRight()" hold="swipeRight()" class="verificando_login" device="{{device}}" controller="{{controller}}" ng-app="App">
+  <body mn-touch class="verificando_login" device="{{device}}" controller="{{controller}}" ng-app="App">
     <div id="carregando_sistema">
       <img src="img/Vinheta-App-v2.3.gif">
       <label>Por favor aguarde, carregando...</label>
@@ -93,9 +86,9 @@
       <!--<div mn-touch swipe-right="swipeRight()" id="menu-bottom" ng-include="'view/menu/bottom.html'" class="navbar-absolute-bottom"></div>-->
     </div>
 
-    <div id="fundo_transparente" ng-click="menuClose()" mn-touch swipe-left="swipeLeft()" ui-prevent-touchmove-defaults></div>
+    <div id="fundo_transparente" ng-click="menuClose()" mn-touch swipe-left="swipeLeft()" swipe-right="swipeRight()" ui-prevent-touchmove-defaults></div>
 
-    <div id="menuLeft" class="Menuleft " mn-touch swipe-left="swipeLeft()" ui-prevent-touchmove-defaults>
+    <div id="menuLeft" class="Menuleft " mn-touch swipe-left="swipeLeft()" swipe-right="swipeRight()" ui-prevent-touchmove-defaults>
       <div id="faixaLeft">
         <img src="img/logo.jpg" border="0">
       </div>
