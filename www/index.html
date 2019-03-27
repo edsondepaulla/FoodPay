@@ -96,26 +96,33 @@
     <div id="fundo_transparente" ng-click="menuClose()" mn-touch swipe-left="swipeLeft()" ui-prevent-touchmove-defaults></div>
 
     <div id="menuLeft" class="Menuleft " mn-touch swipe-left="swipeLeft()" ui-prevent-touchmove-defaults>
+      <div id="faixaLeft">
+        <img src="/img/logo.jpg" border="0">
+      </div>
       <!--imagem de quem esta logado-->
-      <div id="login" class="img_login">
+      <!--<div id="login" class="img_login">
         <img src="{{usuarioLogado.url_avatar||''}}" on-error-src border="0">
         <div id="dados" class="ativo">
           <h3>{{usuarioLogado.NOME}}</h3>
           <h4>{{usuarioLogado.EMAIL}}</h4>
         </div>
-      </div>
+      </div>-->
       <!--conteudo com menu -->
-      <div ng-repeat="menu in MenuLeft" style="text-align: left;" class="{{menu.tipo}} ativo">
+      xxxx
+      <!--<div ng-repeat="menu in MenuLeft" style="text-align: left;" class="{{menu.tipo}} ativo">
         <a ng-click="locationMenuLeft(menu)">
           <i class="{{menu.icone}}" style="font-size: 22px"></i> {{menu.titulo}}
         </a>
-      </div>
+      </div>-->
       <!--logout-->
-      <div id="footerMenu">
-        <!--<a ng-click="$mdMenu.close($event)" onclick="window.location = 'login.html';">
+      <!--<div id="footerMenu">
+        <a ng-click="$mdMenu.close($event)" onclick="window.location = 'login.html';">
           <i class="fa fa-sign-out" aria-hidden="true" style="padding-right: 5px"></i>Sair
-        </a>-->
-      </div>
+        </a>
+      </div>-->
+      <a ng-click="$mdMenu.close($event)" onclick="window.location = 'login.html';">
+        <i class="fa fa-sign-out" aria-hidden="true" style="padding-right: 5px"></i>Sair
+      </a>
     </div>
 
     <div id="blocoTeclado" ng-controller="Teclado">

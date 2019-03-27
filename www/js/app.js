@@ -694,19 +694,13 @@ app.controller('Main', function($rootScope, $scope, $http, $routeParams, $route,
         $('#lstMenu li, #lstMenuConteudo li').removeClass('active');
         $('#lstMenu li[data-menu="'+menu+'"], #lstMenuConteudo li[data-menu="'+menu+'"]').addClass('active');
     };
-    var menuClose_time = null;
     $rootScope.menuOpen = function(){
-        $('body > .app').css('margin-left', '80%').css('height', '80%').css('margin-top', '18%').css('position', 'absolute');
-        $('#fundo_transparente').css('margin-left', '80%').css('display', 'block');
-        clearTimeout(menuClose_time);
-        $('.Menuleft').css('margin-left', '0%').css('display', 'block');
+        $('#fundo_transparente').show();
+        $('.Menuleft').css('left', '0%').show();
     };
     $rootScope.menuClose = function(){
-        $('body > .app').css('margin-left', '0%').css('height', '100%').css('margin-top', '0').css('position', 'absolute');
-        $('#fundo_transparente').css('margin-left', '0%').css('display', 'none');
-        menuClose_time = setTimeout(function () {
-            $('.Menuleft').css('margin-left', '-52%').css('display', 'none');
-        }, 500);
+        $('.Menuleft').css('left', '-80%');
+        $('#fundo_transparente').hide();
     };
     $rootScope.comboMenuExibir = function(TIPO){
         switch (TIPO){

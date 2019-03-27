@@ -38,11 +38,11 @@ body {
 }
 
 html body.verificando_login {
-  background: #224887;
-  background: -webkit-linear-gradient(#224887, #5482bd);
-  background: -o-linear-gradient(#224887, #5482bd);
-  background: -moz-linear-gradient(#224887, #5482bd);
-  background: linear-gradient(#224887, #5482bd);
+  background: #000;
+  background: -webkit-linear-gradient(#000, #1d3a4e);
+  background: -o-linear-gradient(#000, #5482bd);
+  background: -moz-linear-gradient(#000, #5482bd);
+  background: linear-gradient(#000, #5482bd);
   height: 100%;
   width: 100%;
   overflow-x: hidden;
@@ -73,15 +73,6 @@ a {
 /*------------------------------------------------------------------
 4. Base Elements
 -------------------------------------------------------------------*/
-img {
-  width: 75%;
-  height: auto;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 5%;
-  opacity: 0.8;
-}
 .snap-content {
   position: relative;
   top: 56px;
@@ -297,7 +288,7 @@ textarea.materialize-textarea:focus:not([readonly])+label {
   color: inherit;
 }
 .input-field .prefix.active {
-  color: #224887;
+  color: #000;
 }
 .input-field.white-text input {
   border-color: #fff;
@@ -374,12 +365,12 @@ textarea.materialize-textarea:focus:not([readonly])+label {
   width: auto;
   height: 45px;
   position: fixed;
-  background: #224887;
+  background: #000;
 }
 
-body[device="ios"] #toolbar{
+/*body[device="ios"] #toolbar{
   height: 60px;
-}
+}*/
 
 .t-delay {
   -webkit-transition-delay: 2s;
@@ -393,9 +384,9 @@ body[device="ios"] #toolbar{
   text-align: center;
   position: relative;
 }
-body[device="ios"] .open-left{
+/*body[device="ios"] .open-left{
   height: 60px;
-}
+}*/
 .open-right {
   height: 45px;
   line-height: 45px;
@@ -410,17 +401,17 @@ body[device="ios"] .open-left{
   line-height: 45px;
   color: #fff;
 }
-body[device="ios"] #toolbar i{
+/*body[device="ios"] #toolbar i{
   line-height: 70px;
   margin-top: 3px;
-}
+}*/
 #subTituloTop i{
   font-size: 30px;
   margin-top: 6px;
 }
-body[device="ios"] #subTituloTop i{
+/*body[device="ios"] #subTituloTop i{
   margin-top: 8px;
-}
+}*/
 #toolbar .title {
   font-size: 22px;
   color: #fff;
@@ -501,8 +492,8 @@ body[device="ios"] #subTituloTop i{
   transform: rotate(180deg);
 }
 .snap-drawer .have-child {
-	list-style-type: none; 
-	display: inline; 
+	list-style-type: none;
+	display: inline;
 	padding: 0;
 }
 .snap-drawers {
@@ -513,7 +504,7 @@ body[device="ios"] #subTituloTop i{
   left: 0;
   width: auto;
   height: auto;
-  background: #224887;
+  background: #000;
 }
 .snap-drawer {
   position: absolute;
@@ -540,7 +531,7 @@ body[device="ios"] #subTituloTop i{
   z-index: 1;
 }
 .snapjs-left .snap-drawer-right,
-.snapjs-right 
+.snapjs-right
 .snap-drawer-left {
   display: none;
 }
@@ -890,7 +881,7 @@ body[device="ios"] #subTituloTop i{
   width: 25%;
   float: left;
   text-align: center;
-  background-color: #224887;
+  background-color: #000;
   color: #fff;
   font-size: 18px;
   line-height: .9;
@@ -1046,7 +1037,7 @@ body[device="ios"] #subTituloTop i{
   margin-bottom: 20px;
 }
 .new-event .switch label input[type=checkbox]:checked+.lever:after {
-  background-color: #224887;
+  background-color: #000;
 }
 .modal.bottom-sheet {
   max-height: 100vh;
@@ -1070,8 +1061,8 @@ body[device="ios"] #subTituloTop i{
 .new-event input[type=number]:focus:not([readonly]),
 .new-event input[type=search]:focus:not([readonly]),
 .new-event textarea.materialize-textarea:focus:not([readonly]) {
-  border-bottom: 1px solid #224887;
-  box-shadow: 0 1px 0 0 #224887;
+  border-bottom: 1px solid #000;
+  box-shadow: 0 1px 0 0 #000;
 }
 .new-event input[type=text]:focus:not([readonly])+label,
 .new-event input[type=password]:focus:not([readonly])+label,
@@ -1085,7 +1076,7 @@ body[device="ios"] #subTituloTop i{
 .new-event input[type=search]:focus:not([readonly])+label,
 .new-event textarea.materialize-textarea:focus:not([readonly])+label,
 .new-event .material-icons.prefix.active {
-  color: #224887;
+  color: #000;
 }
 
 /*------------------------------------------------------------------
@@ -1178,6 +1169,11 @@ body > .app{
   padding-top: 46px;
   display: none;
 }
+body > .app[open="1"]{
+  position: absolute;
+  height: 80%;
+  margin-top: 18%;
+}
 
 body > .app .has-navbar-bottom .app-body {
   padding-bottom: 71px;
@@ -1244,7 +1240,7 @@ input.scrollable-header {
 }
 
 #menu-bottom .row .col.active{
-  color: #224887;
+  color: #000;
 }
 
 #menu-bottom .col i{
@@ -1335,7 +1331,7 @@ ul.configuracoes li a span{
 }
 
 #resumoLinhaDoTempo #blocoDetalhamento ul li.active{
-  color: #224887;
+  color: #000;
 }
 
 .padding_0{
@@ -1383,7 +1379,7 @@ ul.configuracoes li a span{
   display: block;
   font-size: 18px;
   margin: 10px;
-  color: #224887;
+  color: #000;
   overflow: hidden;
   text-overflow: ellipsis;
 }
@@ -1467,7 +1463,7 @@ ul.configuracoes li a span{
 }
 
 .lstPerformance li .menu.row .col.s3:nth-child(3){
-  background: #224887;
+  background: #000;
 }
 
 .lstPerformance li .menu.row .col.s3 i{
@@ -1545,6 +1541,12 @@ ul.configuracoes li a span{
   text-align: center;
   margin-left: 15%;
   margin-right: 15%;
+  padding-top: 8px;
+}
+#centroTop img{
+  width: 50px;
+  opacity: 1;
+  margin: 0 auto;
 }
 #centroSubTop{
   margin-left: 19%;
@@ -1580,21 +1582,21 @@ input[type="search"].campoBusca{
   margin-top: 16px;
   z-index: 99999;
 }
-body[device="ios"] .clearBusca{
+/*body[device="ios"] .clearBusca{
   margin-top: 30px;
-}
+}*/
 
 input[type="search"].campoBusca:focus {
   border: 0px solid;
   opacity: 1;
 }
 
-body[device="ios"] input[type="search"].campoBusca{
+/*body[device="ios"] input[type="search"].campoBusca{
   margin-top: 23px;
-}
+}*/
 
 #toolbar .title{
-  color: #224887;
+  color: #000;
 }
 
 
@@ -1616,13 +1618,13 @@ body[device="ios"] input[type="search"].campoBusca{
   border-bottom: 1px solid #F2F2F2;
 }
 
-body[device="ios"] > .app{
+/*body[device="ios"] > .app{
   padding-top: 65px;
 }
 
 body[device="ios"] .scrollable:not(.ng-enter) #filtroTop{
   top: 0px;
-}
+}*/
 
 .scrollable:not(.ng-enter) > #filtroTop+.scrollable-content{
   padding-bottom: 35px;
@@ -1649,7 +1651,7 @@ body[device="ios"] .scrollable:not(.ng-enter) #filtroTop{
 
 #filtroTop > span{
   float: right;
-  color: #224887;
+  color: #000;
   font-size: 1rem;
   margin-top: -1px;
   max-width: 75%;
@@ -1660,7 +1662,7 @@ body[device="ios"] .scrollable:not(.ng-enter) #filtroTop{
 
 #filtroTop > select{
   float: right;
-  color: #224887;
+  color: #000;
   font-size: 1rem;
   display: block;
   width: 76px;
@@ -1706,7 +1708,6 @@ body[device="ios"] .scrollable:not(.ng-enter) #filtroTop{
 
 .app-body{
   position: relative;
-  padding-top: 35px;
 }
 
 body.sidebar-left-in .app-body #fundo{
@@ -1750,8 +1751,8 @@ body.sidebar-left-in .app-body #fundo{
 
 #lstMenu li.active{
   font-weight: 600;
-  color: #224887;
-  border-bottom: 2px solid #224887;
+  color: #000;
+  border-bottom: 2px solid #000;
 }
 
 #lstMenu li:first-child{
@@ -1762,7 +1763,7 @@ body.sidebar-left-in .app-body #fundo{
  * Planos de acao
  */
 .lstMinhasAcoes .comments{
-  color: #224887;
+  color: #000;
   margin-top: -1px;
   display: inline-block;
   font-size: 10px;
@@ -1864,7 +1865,7 @@ body.sidebar-left-in .app-body #fundo{
   right: 15%;
   font-size: 14px;
   font-weight: 600;
-  /* color: #224887; */
+  /* color: #000; */
   top: 45px;
 }
 
@@ -2038,16 +2039,16 @@ body.sidebar-left-in .app-body #fundo{
  * Menu tabs
  */
 md-tabs.md-default-theme md-ink-bar, md-tabs md-ink-bar {
-  color: #224887 !important;
-  background: #224887 !important;
+  color: #000 !important;
+  background: #000 !important;
 }
 
 md-tabs.md-default-theme .md-tab.md-active, md-tabs .md-tab.md-active, md-tabs.md-default-theme .md-tab.md-active md-icon, md-tabs .md-tab.md-active md-icon, md-tabs.md-default-theme .md-tab.md-focused, md-tabs .md-tab.md-focused, md-tabs.md-default-theme .md-tab.md-focused md-icon, md-tabs .md-tab.md-focused md-icon {
-  color: #224887 !important;
+  color: #000 !important;
 }
 
 md-icon.md-default-theme, md-icon {
-  color: #224887 !important;
+  color: #000 !important;
 }
 
 .md-tab {
@@ -2061,7 +2062,7 @@ md-icon.md-default-theme, md-icon {
  */
 #comboMenu{
   font-size: 18px;
-  color: #224887;
+  color: #000;
 }
 
 ul#comboMenuOpcoes{
@@ -2076,7 +2077,7 @@ ul#comboMenuOpcoes li{
 }
 
 ul#comboMenuOpcoes li.active{
-  color: #224887;
+  color: #000;
 }
 
 .fundoMenu{
@@ -2124,9 +2125,9 @@ md-menu-item{
   height: 40px !important;
   border-top: 1px solid #f2f2f2;
 }
-body[device="ios"] .md-open-menu-container{
+/*body[device="ios"] .md-open-menu-container{
   margin-top: 50px;
-}
+}*/
 
 md-menu-item:first-child{
   border-top: 0;
@@ -2228,9 +2229,9 @@ md-menu-content{
   font-size: 14px;
   z-index: 1;
 }
-body[device="ios"] #ambiente_teste{
+/*body[device="ios"] #ambiente_teste{
   margin-top: 15px;
-}
+}*/
 .md-open-menu-container{
   background-color: white;
 }
@@ -2278,7 +2279,7 @@ body[device="ios"] #ambiente_teste{
 
 .btn-salvar {
   color: #fff;
-  background-color: #224887;
+  background-color: #000;
 }
 .btn-salvar[disabled],
 .btn-salvar:hover,
@@ -2287,8 +2288,8 @@ body[device="ios"] #ambiente_teste{
 .btn-salvar.active,
 .open .dropdown-toggle.btn-salvar {
   color: #FFFFFF !important;
-  background-color: #224887 !important;
-  border-color: #224887 !important;
+  background-color: #000 !important;
+  border-color: #000 !important;
   opacity: 1 !important;
 }
 
@@ -2313,7 +2314,7 @@ body[device="ios"] #ambiente_teste{
 .btn-default.active{
   color: #333;
   background-color: #e6e6e6;
-  border-color: #224887;
+  border-color: #000;
 }
 
 /*aplica fundo escuro ao selecionar o menu*/
@@ -2537,10 +2538,10 @@ body .md-datepicker-input-container{
 }
 
 md-slider.md-default-theme .md-sign, md-slider .md-sign {
-  background-color: #224887 !important;
+  background-color: #000 !important;
 }
 md-slider.md-default-theme .md-sign:after, md-slider .md-sign:after {
-   border-top-color: #224887 !important;
+   border-top-color: #000 !important;
 }
 
 md-slider:focus .md-sign,
@@ -2559,21 +2560,38 @@ md-slider .md-sign:after {
   position: absolute;
   bottom: 0;
   color: #babfcb;
-  background: #22262e;
+  background: rgba(235, 235, 235, 0.7);
   padding: 0 0 20px 0;
   width: 100%;
 }
-#menuLeft{
-  background: #22262e !important;
-  padding-left: 10%;
-  width: 80%;
-  padding-top: 78px;
-  height: 88%;
-  padding-bottom: 0;
-  margin-left: 0;
+body.verificando_login #menuLeft{
   display: none;
+}
+#menuLeft{
+  background: #FFF;
+  width: 80%;
+  height: 100%;
+  display: block;
   overflow: auto;
   -webkit-overflow-scrolling: touch;
+  position: fixed;
+  z-index: 99;
+  top: 0;
+  left: 0;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  transition: 0.5s;
+}
+#menuLeft #faixaLeft{
+  background: #000;
+  text-align: center;
+  height: 45px;
+  padding-top: 8px;
+}
+#menuLeft #faixaLeft img{
+  width: 50px;
+  opacity: 1;
+  margin: 0 auto;
 }
 #menuLeft a {
   display: block;
@@ -2587,14 +2605,19 @@ md-slider .md-sign:after {
 }
 
 #fundo_transparente{
-  background-color: transparent;
+  background-color: #000;
   width: 100%;
-  height: 90%;
-  margin-top: 5%;
+  height: 100%;
   position: absolute;
-  margin-left: 80%;
-  z-index: 999;
+  margin-left: 0;
+  z-index: 2;
   display: none;
+  left: 0;
+  top: 0;
+  opacity: 0.5;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  transition: 0.5s;
 }
 .ativo{
   color: #babfcb !important;
@@ -2717,7 +2740,7 @@ md-slider.md-default-theme .md-track, md-slider .md-track {
 
 .compartilhar i.fa{
   vertical-align: middle  !important;
-  color: #224887 !important;
+  color: #000 !important;
   font-size: 22px;
   -webkit-text-stroke: 1px #fff;
 }
@@ -2750,19 +2773,19 @@ body .md-datepicker-input{
   min-width: auto !important;
 }
 
-body[device="ios"] input[disabled]{
+/*body[device="ios"] input[disabled]{
   color: #4a4a4a !important;
   opacity: 1;
-}
+}*/
 
 body .pace .pace-progress{
   display: none;
 }
 
-body[device="ios"] .pace .pace-activity{
+/*body[device="ios"] .pace .pace-activity{
   top: 30px;
   right: 40px;
-}
+}*/
 
 body md-toolbar{
   min-height: auto !important;
@@ -2819,8 +2842,8 @@ body md-toolbar{
   width: 14px;
   height: 14px;
   border: solid 2px transparent;
-  border-top-color: #224887;
-  border-left-color: #224887;
+  border-top-color: #000;
+  border-left-color: #000;
   border-radius: 10px;
   -webkit-animation: pace-spinner 400ms linear infinite;
   -moz-animation: pace-spinner 400ms linear infinite;

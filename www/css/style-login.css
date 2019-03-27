@@ -2,7 +2,7 @@
 @-moz-keyframes progress-bar-stripes{from{background-position:40px 0}to{background-position:0 0}}
 @-ms-keyframes progress-bar-stripes{from{background-position:40px 0}to{background-position:0 0}}
 @-o-keyframes progress-bar-stripes{from{background-position:40px 0}to{background-position:0 0}}
-/*Cor padrao do sistema #224887*/
+/*Cor padrao do sistema #000*/
 /*#204d8e*/
 html{
   height: 100%;
@@ -11,11 +11,11 @@ html{
 body {
   color: #FFF;
   overflow-x: hidden;
-  background: #224887; /* For browsers that do not support gradients */
-  background: -webkit-linear-gradient(#224887, #5482bd); /* For Safari 5.1 to 6.0 */
-  background: -o-linear-gradient(#224887, #5482bd); /* For Opera 11.1 to 12.0 */
-  background: -moz-linear-gradient(#224887, #5482bd); /* For Firefox 3.6 to 15 */
-  background: linear-gradient(#224887, #5482bd); /* Standard syntax */
+  background: #000; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(#000, #5482bd); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(#000, #5482bd); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(#000, #5482bd); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(#000, #5482bd); /* Standard syntax */
 }
 
 html,
@@ -167,11 +167,11 @@ body > .app{
   margin: 0 auto;
   display: block;
   margin-top: -145px;
-  background: #224887;
-  background: -webkit-linear-gradient(#224887, #5482bd);
-  background: -o-linear-gradient(#224887, #5482bd);
-  background: -moz-linear-gradient(#224887, #5482bd);
-  background: linear-gradient(#224887, #5482bd);
+  background: #000;
+  background: -webkit-linear-gradient(#000, #5482bd);
+  background: -o-linear-gradient(#000, #5482bd);
+  background: -moz-linear-gradient(#000, #5482bd);
+  background: linear-gradient(#000, #5482bd);
 }
 
 #formLogin .contact.profile-user {
@@ -202,8 +202,8 @@ input[type=tel]:focus:not([readonly]),
 input[type=number]:focus:not([readonly]),
 input[type=search]:focus:not([readonly]),
 textarea.materialize-textarea:focus:not([readonly]) {
-  border-bottom: 1px solid #224887;
-  box-shadow: 0 1px 0 0 #224887;
+  border-bottom: 1px solid #000;
+  box-shadow: 0 1px 0 0 #000;
 }
 
 input[type=text]:focus:not([readonly])+label,
@@ -217,7 +217,7 @@ input[type=tel]:focus:not([readonly])+label,
 input[type=number]:focus:not([readonly])+label,
 input[type=search]:focus:not([readonly])+label,
 textarea.materialize-textarea:focus:not([readonly])+label {
-  color: #224887;
+  color: #000;
 }
 
 .input-field .prefix {
@@ -225,7 +225,7 @@ textarea.materialize-textarea:focus:not([readonly])+label {
 }
 
 .input-field .prefix.active {
-  color: #224887;
+  color: #000;
 }
 
 .input-field.white-text input {
