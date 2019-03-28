@@ -4,17 +4,12 @@
     #map {
         height: 100%;
     }
-    /* Optional: Makes the sample page fill the window. */
-    html, body {
-        height: 100%;
-        margin: 0;
-        padding: 0;
-    }
 </style>
 
 <div id="map"></div>
 <script>
     var map;
+    var markers = [];
     var faisalabad = {lat:31.4181, lng:73.0776};
 
     function teste(map, marker){
@@ -83,6 +78,60 @@
         map.controls[google.maps.ControlPosition.RIGHT_BOTTOM].push(controlDiv);
     }
 
+    getpoints_timeout = null;
+    function getpoints(time) {
+        if (getpoints_timeout)
+            clearTimeout(getpoints_timeout);
+
+        getpoints_timeout = setTimeout(function () {
+            var bounds = map.getBounds();
+            var ne = bounds.getNorthEast();
+            var sw = bounds.getSouthWest();
+            var nw = new google.maps.LatLng(ne.lat(), sw.lng());
+            var se = new google.maps.LatLng(sw.lat(), ne.lng());
+            Factory.ajax(
+                {
+                    action: 'estabecimentos/getpoints',
+                    data: {
+                        NE_LAT: ne.lat(),
+                        SW_LNG: sw.lng(),
+                        SW_LAT: sw.lat(),
+                        NE_LNG: ne.lng()
+                    }
+                },
+                function (data) {
+                    for (var i = 0; i < markers.length; i++) {
+                        markers[i].setMap(null);
+                    }
+                    markers = [];
+
+                    $.each(data.lst, function (index, val) {
+                        var latlng = new google.maps.LatLng(val.LAT, val.LNG);
+                        var marker = new google.maps.Marker({
+                            position: latlng,
+                            map: map,
+                            ID: val.ID
+                        });
+                        marker.addListener('click', function () {
+                            Factory.ajax(
+                                {
+                                    action: 'estabecimentos/removepoint',
+                                    data: {
+                                        ID: marker.ID
+                                    }
+                                },
+                                function (data) {
+                                    getpoints(1);
+                                }
+                            );
+                        });
+                        markers.push(marker);
+                    });
+                }
+            );
+        }, time?time:500);
+    }
+
     function initMap() {
         navigator.geolocation.getCurrentPosition(function(position){
             map = new google.maps.Map(document.getElementById('map'), {
@@ -103,10 +152,52 @@
                 }
             );
 
-                var data = "Hello World!";
-                var infowindow = new google.maps.InfoWindow({
-                    content: data
+            setTimeout(function(){
+                getpoints(1);
+            }, 1);
+
+            google.maps.event.addListener(map, 'click', function(event) {
+                //placeMarker(event.latLng);
+                Factory.ajax(
+                    {
+                        action: 'estabecimentos/setpoint',
+                        data: {
+                            LAT: event.latLng.lat(),
+                            LNG: event.latLng.lng()
+                        }
+                    },
+                    function (data) {
+                        getpoints(1);
+                    }
+                );
+            });
+
+            google.maps.event.addListener(map, 'zoom_changed', function(event) {
+                /*zoomLevel = map.getZoom();
+                if (zoomLevel >= minFTZoomLevel) {
+                    FTlayer.setMap(map);
+                } else {
+                    FTlayer.setMap(null);
+                }*/
+
+                getpoints();
+            });
+
+            google.maps.event.addListener(map, 'dragend', function(event) {
+                getpoints();
+            });
+
+            function placeMarker(location) {
+                var marker = new google.maps.Marker({
+                    position: location,
+                    map: map
                 });
+            }
+
+            var data = "Hello World!";
+            var infowindow = new google.maps.InfoWindow({
+                content: data
+            });
 
             var image = 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png';
             var myMarker = new google.maps.Marker({
@@ -138,4 +229,4 @@
         });
     }
 </script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAmC5dvFmNrc8sQ5Y5UtJfldKbc4O9Hq6g&callback=initMap" async defer></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAmC5dvFmNrc8sQ5Y5UtJfldKbc4O9Hq6g&libraries=geometry&callback=initMap" async defer></script>

@@ -41,7 +41,12 @@ app.config(function($routeProvider, $mdThemingProvider, $mdDateLocaleProvider, $
     $routeProvider
         .when("/", {
             templateUrl : "view/index/index.html",
-            controller: 'Index'
+            controller: 'Index'/*,
+            resolve: {
+                CompartilharData: function ($route) {
+                    return [];
+                }
+            }*/
         })
         .when("/compartilhar", {
             templateUrl : "view/index/compartilhar.html",

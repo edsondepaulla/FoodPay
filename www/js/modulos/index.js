@@ -1,4 +1,4 @@
-app.controller('Index', function($rootScope, $scope, CompartilharData) {
+app.controller('Index', function($rootScope, $scope/*, CompartilharData*/) {
     $('#subTituloTop').hide();
     $('#tituloTop').show();
     Factory.activeMenuBottom('');
