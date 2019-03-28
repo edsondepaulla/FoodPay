@@ -15,7 +15,6 @@
     <preference name="HideKeyboardFormAccessoryBar" value="true" />
     <preference name="AutoHideSplashScreen" value="true" />
     <preference name="StatusBarBackgroundColor" value="#000000" />
-    <preference name="SplashScreenBackgroundColor" value="#ff0000" />
     <preference name="orientation" value="portrait" />
     <preference name="target-device" value="handset" />
     <preference name="fullscreen" value="false" />
