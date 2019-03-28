@@ -1,9 +1,7 @@
 var config = {
-    versao_app_mobile: "1.0.4",
-    ambiente: "producao",
+    versao_app_mobile: "1.0.0",
+    ambiente: "local",
     url_api: {
-        local: "https://m-php5.planoparasuaempresa.com.br/",
-        homologacao: "https://m-h.planoparasuaempresa.com.br/",
-        producao: "https://m.planoparasuaempresa.com.br/"
+        local: "http://m.foodpay.com.br/"
     }
 };

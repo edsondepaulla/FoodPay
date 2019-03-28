@@ -41,19 +41,7 @@ app.config(function($routeProvider, $mdThemingProvider, $mdDateLocaleProvider, $
     $routeProvider
         .when("/", {
             templateUrl : "view/index/index.html",
-            controller: 'Index',
-            resolve: {
-                CompartilharData: function ($route) {
-                    Factory.PAGINACAO_INFINITO.PESQUISA = 1;
-                    Factory.PAGINACAO_INFINITO.ATIVO = 1;
-                    Factory.PAGINACAO_INFINITO.OFFSET = 0;
-                    return Factory.ajax(
-                        {
-                            action: 'compartilhar/lst'
-                        }
-                    );
-                }
-            }
+            controller: 'Index'
         })
         .when("/compartilhar", {
             templateUrl : "view/index/compartilhar.html",
@@ -477,6 +465,10 @@ app.controller('Main', function($rootScope, $scope, $http, $routeParams, $route,
         // Close teclado
         $('#blocoTeclado').hide();
         $rootScope.menuClose();
+
+        $('#carregando_sistema').remove();
+        $('body').removeClass('verificando_login');
+        $('body > .app').show();
     });
 
     $rootScope.$on('$routeChangeSuccess', function() {
@@ -493,7 +485,7 @@ app.controller('Main', function($rootScope, $scope, $http, $routeParams, $route,
         }, 100);
 
         // Get - configuracoes
-        var url_hash = window.location.hash.replace('#!/', '').split('/');
+        /*var url_hash = window.location.hash.replace('#!/', '').split('/');
         Factory.ajax(
             {
                 action: 'configuracoes/get',
@@ -516,7 +508,7 @@ app.controller('Main', function($rootScope, $scope, $http, $routeParams, $route,
                     }, 500);
                 }
             }
-        );
+        );*/
     });
 
     $rootScope.slider = function(direction){
