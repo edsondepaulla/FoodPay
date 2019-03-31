@@ -50,8 +50,7 @@
             }
         },
         capturePhoto: function(){
-
-            /*navigator.camera.getPicture(onSuccess, onFail, {
+            navigator.camera.getPicture(onSuccess, onFail, {
                 quality: 50,
                 destinationType: Camera.DestinationType.DATA_URL,
                 saveToPhotoAlbum: true
@@ -66,15 +65,15 @@
 
             function onFail(message) {
                 alert('Failed because: ' + message);
-            }*/
-
+            }
         }
     };
     app.initialize();
 </script>
-<!--<div id="minhaImagem" style="width: 100%; height: 100%">ddd</div>-->
 
 <button onclick="app.teste()">teste</button>
 <button onclick="app.teste1()">teste1</button>
+<button onclick="app.capturePhoto()">capturePhoto</button>
+<div id="minhaImagem" style="width: 100%; height: 100%"></div>
 
 
