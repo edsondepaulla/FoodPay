@@ -1,11 +1,10 @@
 {
-  "name": "motos.antigas",
+  "name": "food.pay",
   "version": "1.0.0",
-  "displayName": "Motos antigas",
+  "displayName": "FoodPay",
   "cordova": {
     "platforms": [
-      "android",
-      "ios"
+      "android"
     ],
     "plugins": {
       "cordova-plugin-ios-non-exempt-encryption": {},
