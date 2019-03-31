@@ -11,9 +11,9 @@ var app = {
         //document.addEventListener('deviceready', this.onDeviceReady, false);
     },
 
-    QRScanner: function(){
+    teste: function(){
 
-        QRScanner.prepare(onDone); // show the prompt
+        /*QRScanner.prepare(onDone); // show the prompt
 
         function onDone(err, status){
             if (err) {
@@ -32,9 +32,9 @@ var app = {
                 // Android, a denial isn't permanent unless the user checks the "Don't
                 // ask again" box.) We can ask again at the next relevant opportunity.
             }
-        }
+        }*/
 
-        /*navigator.camera.getPicture(onSuccess, onFail, {
+        navigator.camera.getPicture(onSuccess, onFail, {
             quality: 50,
             destinationType: Camera.DestinationType.DATA_URL,
             saveToPhotoAlbum: true
@@ -48,9 +48,8 @@ var app = {
 
         function onFail(message) {
             alert('Failed because: ' + message);
-        }*/
+        }
 
     }
 };
 app.initialize();
-app.QRScanner();
