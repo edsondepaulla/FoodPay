@@ -11,7 +11,7 @@ var app = {
         //document.addEventListener('deviceready', this.onDeviceReady, false);
     },
 
-    teste: function(){
+    capturePhoto: function(){
 
         /*QRScanner.prepare(onDone); // show the prompt
 
