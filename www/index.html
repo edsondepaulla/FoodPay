@@ -1,9 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
   <head>
-    <title>
-      FoodPay
-    </title>
+    <title>Pagamento de Refeições e Bebidas - FoodPay</title>
     <meta charset="UTF-8">
     <meta http-equiv="Content-Language" content="pt_BR">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -12,6 +10,8 @@
     <meta content="yes" name="apple-mobile-web-app-capable">
     <meta content="yes" name="apple-touch-fullscreen">
 
+
+    <link href="css/style-sistema.css" rel="stylesheet" type="text/css">
     <link href="plugins/alert/jquery.edp-alert.css" media="all" rel="stylesheet" type="text/css" >
     <link href="css/font.css" media="all" rel="stylesheet" type="text/css" >
     <link href="css/materialdesignicons.min.css" media="all" rel="stylesheet" type="text/css">
@@ -21,7 +21,6 @@
 
     <link href="plugins/angular/css/mobile-angular-ui-base.css" rel="stylesheet" />
     <link href="plugins/pace/pace-theme-flash.css" rel="stylesheet" type="text/css">
-    <link href="css/style-sistema.css" rel="stylesheet" type="text/css">
     <link href="css/modal.css" rel="stylesheet" type="text/css">
 
     <script src="plugins/jquery-2.1.1.min.js"></script>
@@ -41,15 +40,15 @@
     <script src="plugins/device-detector/ng-device-detector.min.js"></script>
     <script src="plugins/device-detector/re-tree.min.js"></script>
     <script src="plugins/jquery.price_format.2.0.min.js"></script>
+
     <script src="js/functions.js"></script>
     <script src="js/config.js"></script>
     <script src="js/app.js"></script>
+
     <script src="js/modulos/login.js"></script>
     <script src="js/modulos/index.js"></script>
-    <!--<script src="js/modulos/performance.js"></script>
-    <script src="js/modulos/indicadores.js"></script>
-    <script src="js/modulos/acoes.js"></script>
-    <script src="js/modulos/componentes.js"></script>-->
+    <script src="js/modulos/formas-de-pagamento.js"></script>
+    <script src="js/modulos/estabelecimento.js"></script>
 
     <link rel="stylesheet" href="css/angular-material.min.css">
     <script src="plugins/angular-aria.js"></script>
@@ -59,26 +58,13 @@
     <script src="plugins/elastic.js"></script>
 
     <link href="img/favicon.png" rel="shortcut icon" >
-
-    <script type="text/javascript">
-        setTimeout(function(){
-            $('#carregando_sistema img').fadeToggle("slow");
-        }, 3000);
-        setTimeout(function(){
-            $('#carregando_sistema label').fadeToggle("slow");
-        }, 5000);
-    </script>
   </head>
-  <body mn-touch class="verificando_login" device="{{device}}" controller="{{controller}}" ng-app="App">
-    <div id="carregando_sistema">
-      <img src="img/Vinheta-App-v2.3.gif">
-      <label>Por favor aguarde, carregando...</label>
-    </div>
-
+  <body mn-touch device="{{device}}" controller="{{controller}}" ng-app="App">
     <div class="app" ng-controller="Main" ui-prevent-touchmove-defaults>
       <div mn-touch swipe-right="swipeRight()" ng-include="'view/menu/top.html'" id="toolbar"></div>
       <span id="ambiente_teste" ng-if="ambiente_teste == 1">Ambiente de testes</span>
-      <div class="app-body">
+      <div id="map" ng-include="'view/maps.html'"></div>
+      <div class="app-body" ng-show="show_body">
         <div class="app-content">
           <div class="scrollable ng-scope" ng-view></div>
         </div>
@@ -92,53 +78,9 @@
       <div id="faixaLeft">
         <img src="img/logo.jpg" border="0">
       </div>
-      <!--imagem de quem esta logado-->
-      <!--<div id="login" class="img_login">
-        <img src="{{usuarioLogado.url_avatar||''}}" on-error-src border="0">
-        <div id="dados" class="ativo">
-          <h3>{{usuarioLogado.NOME}}</h3>
-          <h4>{{usuarioLogado.EMAIL}}</h4>
-        </div>
-      </div>-->
-      <!--conteudo com menu -->
       <ul>
-        <li>Formas de pagamento</li>
-        <li>Encerrar seção</li>
+        <li ng-repeat="menu in MenuLeft"><a href="{{menu.url}}">{{menu.titulo}}</a></li>
       </ul>
-      xxxx
-      <!--<div ng-repeat="menu in MenuLeft" style="text-align: left;" class="{{menu.tipo}} ativo">
-        <a ng-click="locationMenuLeft(menu)">
-          <i class="{{menu.icone}}" style="font-size: 22px"></i> {{menu.titulo}}
-        </a>
-      </div>-->
-      <!--logout-->
-      <!--<div id="footerMenu">
-        <a ng-click="$mdMenu.close($event)" onclick="window.location = 'login.html';">
-          <i class="fa fa-sign-out" aria-hidden="true" style="padding-right: 5px"></i>Sair
-        </a>
-      </div>-->
-      <!--<a ng-click="$mdMenu.close($event)" onclick="window.location = 'login.html';">
-        <i class="fa fa-sign-out" aria-hidden="true" style="padding-right: 5px"></i>Sair
-      </a>-->
     </div>
-
-    <!--<div id="blocoTeclado" ng-controller="Teclado">
-      <div ng-click="close()"></div>
-      <table>
-        <tbody>
-        <tr ng-repeat="linha in $root.lstLinhas">
-          <td ng-click="select(item)" border="{{item.caracter}}" ng-repeat="item in linha" ng-bind-html="item.html"></td>
-        </tr>
-        </tbody>
-      </table>
-    </div>
-
-    <div id="slider" mn-touch swipe-left="slider('next')" swipe-right="slider('prev')" ui-prevent-touchmove-defaults>
-      <ul>
-        <li ng-click="slider('next')" class="{{registro.CLASS}}" ng-repeat="registro in lstSlider">
-          <img src="{{registro.IMG}}" border="0">
-        </li>
-      </ul>
-    </div>-->
   </body>
 </html>

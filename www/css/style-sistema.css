@@ -22,6 +22,13 @@ body *{
   min-height: 100vh !important;
 }
 
+/*
+ * Maps
+ */
+#map {
+  height: 100%;
+}
+
 /*------------------------------------------------------------------
 3. Typography
 -------------------------------------------------------------------*/
@@ -1169,7 +1176,6 @@ body > .app{
 body > .app{
   background: #f2f2f2;
   padding-top: 46px;
-  display: none;
 }
 body > .app[open="1"]{
   position: absolute;
@@ -1709,7 +1715,16 @@ body[device="ios"] .scrollable:not(.ng-enter) #filtroTop{
 }
 
 .app-body{
-  position: relative;
+  height: 100%;
+  padding: 0;
+  overflow: hidden;
+  display: block;
+  z-index: 9999;
+  position: fixed;
+  top: 45px;
+  left: 0;
+  width: 100%;
+  background: #FFF;
 }
 
 body.sidebar-left-in .app-body #fundo{

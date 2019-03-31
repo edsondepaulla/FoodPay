@@ -48,6 +48,14 @@ app.config(function($routeProvider, $mdThemingProvider, $mdDateLocaleProvider, $
                 }
             }*/
         })
+        .when("/formas-de-pagamento", {
+            templateUrl : "view/formas-de-pagamento/index.html",
+            controller: 'FormasDePagamento'
+        })
+        .when("/estabelecimento/:ID", {
+            templateUrl : "view/estabelecimento/index.html",
+            controller: 'Estabelecimento'
+        })
         .when("/compartilhar", {
             templateUrl : "view/index/compartilhar.html",
             controller: 'CompartilharForm',
@@ -448,6 +456,7 @@ app.controller('Main', function($rootScope, $scope, $http, $routeParams, $route,
 
     $rootScope.lstSlider = [];
     $rootScope.QTDEACOES = 0;
+    $rootScope.show_body = false;
     $rootScope.QTDECOMPARTILHAR = 0;
     Factory.$http = $http;
     Factory.$rootScope = $rootScope;
@@ -471,9 +480,9 @@ app.controller('Main', function($rootScope, $scope, $http, $routeParams, $route,
         $('#blocoTeclado').hide();
         $rootScope.menuClose();
 
-        $('#carregando_sistema').remove();
+        /*$('#carregando_sistema').remove();
         $('body').removeClass('verificando_login');
-        $('body > .app').show();
+        $('body > .app').show();*/
     });
 
     $rootScope.$on('$routeChangeSuccess', function() {
@@ -616,19 +625,19 @@ app.controller('Main', function($rootScope, $scope, $http, $routeParams, $route,
     // Menu
     $rootScope.MenuLeft = [
         {
-            titulo: 'Mapa',
-            icone: 'fa fa-share-alt',
+            titulo: 'Pedir',
+            icone: 'mdi mdi-chart-line',
             url_pai: '#!/',
             url: '#!/',
             tipo: 'pai'
-        }/*,
-        {
-            titulo: 'Performance',
-            icone: 'mdi mdi-chart-line',
-			url_pai: '#!/performance-resumo',
-            url: '#!/performance-resumo',
-            tipo: 'pai'
         },
+        {
+            titulo: 'Formas de pagamento',
+            icone: 'mdi mdi-chart-line',
+			url_pai: '#!/formas-de-pagamento',
+            url: '#!/formas-de-pagamento',
+            tipo: 'pai'
+        }/*,
         {
             titulo: 'Resumo da performance',
 			url_pai: '#!/performance-resumo',
