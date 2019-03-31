@@ -2,6 +2,7 @@
 
 <script type="text/javascript" src="cordova.js"></script>
 <script type="text/javascript">
+    var QRScanner = require('QRScanner');
     var app = {
         // Application Constructor
         initialize: function() {
@@ -15,6 +16,27 @@
             //document.addEventListener('deviceready', this.onDeviceReady, false);
         },
 
+        teste3: function(){
+            var callback = function(err, contents){
+                if(err){
+                    alert(err._message);
+                }
+                alert('The QR Code contains: ' + contents);
+            };
+
+            QRScanner.scan(callback);
+        },
+        teste2: function(){
+            var done = function(err, status){
+                if(err){
+                    alert(err._message);
+                } else {
+                    alert('QRScanner is initialized. Status:' + status);
+                }
+            };
+
+            QRScanner.prepare(done);
+        },
         teste1: function(){
             // Start a scan. Scanning will continue until something is detected or
             // `QRScanner.cancelScan()` is called.
@@ -40,7 +62,7 @@
             function onDone(err, status){
                 if (err) {
                     // here we can handle errors and clean up any loose ends.
-                    console.error(err);
+                    alert(err);
                 }
                 if (status.authorized) {
                     // W00t, you have camera access and the scanner is initialized.
@@ -80,6 +102,8 @@
 
 <button onclick="app.teste()">teste</button>
 <button onclick="app.teste1()">teste1</button>
+<button onclick="app.teste2()">teste2</button>
+<button onclick="app.teste3()">teste3</button>
 <button onclick="app.capturePhoto()">capturePhoto</button>
 <div id="minhaImagem" style="width: 100%; height: 100%"></div>
 
