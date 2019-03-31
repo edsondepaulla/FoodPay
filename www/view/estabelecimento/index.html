@@ -16,6 +16,8 @@
         },
 
         teste1: function(){
+            // Start a scan. Scanning will continue until something is detected or
+            // `QRScanner.cancelScan()` is called.
             QRScanner.scan(displayContents);
 
             function displayContents(err, text){
@@ -26,6 +28,11 @@
                     alert(text);
                 }
             }
+
+            // Make the webview transparent so the video preview is visible behind it.
+            QRScanner.show();
+            // Be sure to make any opaque HTML elements transparent here to avoid
+            // covering the video.
         },
         teste: function(){
             QRScanner.prepare(onDone); // show the prompt
