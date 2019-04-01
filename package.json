@@ -2,6 +2,9 @@
   "name": "food.pay",
   "version": "1.0.0",
   "displayName": "FoodPay",
+  "phonegap-plugin-barcodescanner": {
+    "CAMERA_USAGE_DESCRIPTION": "sss My Test xxx"
+  },
   "cordova": {
     "platforms": [
       "android"
