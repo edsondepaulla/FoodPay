@@ -65,8 +65,22 @@
     <div class="app" ng-controller="Main" ui-prevent-touchmove-defaults>
       <div mn-touch swipe-right="swipeRight()" ng-include="'view/menu/top.html'" id="toolbar"></div>
       <span id="ambiente_teste" ng-if="ambiente_teste == 1">Ambiente de testes</span>
-        <div id="map" ng-include="'view/maps.html'"></div>
-        <button id="scan">Iniciar</button>
+        <div id="map" ng-include="'view/maps1.html'"></div>
+
+
+      <div class="video">
+        fdsfsdfds
+        <video id="barcodeScanStream">ddd</video>
+      </div>
+
+      <div class="inputControls">
+        <div id="deviceready">
+          <button id="scan">Iniciar</button>
+          <!-- 0 is the front camera, 1 is the back camera -->
+          <input type="text" id="barcodeScanDevice" placeholder="1">
+        </div>
+      </div>
+
         <style>
           button#scan{
             position: fixed;
@@ -101,7 +115,7 @@
                             showTorchButton : true,// iOS and Android
                             torchOn: false, // Android, launch with the torch switched on (if available)
                             saveHistory: false, // Android, save scan history (default false)
-                            prompt :"fdfs\nfdlfskdjl\nlfkjdflsd", // Android
+                            prompt: "fdfs\nfdlfskdjl\nlfkjdflsd", // Android
                             resultDisplayDuration: 0, // Android, display scanned text for X ms. 0 suppresses it entirely, default 1500
                             formats : "QR_CODE",// default: all but PDF_417 and RSS_EXPANDED
                             orientation : "portrait",// Android only (portrait|landscape), default unset so it rotates with the device
