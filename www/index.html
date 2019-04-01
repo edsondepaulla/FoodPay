@@ -95,8 +95,9 @@
                         function (error) {
                             alert("Scanning failed: " + error);
                         },
-                        {preferFrontCamera : false, // iOS and Android
-                            showFlipCameraButton : true,// iOS and Android
+                        {
+                            preferFrontCamera : false, // iOS and Android
+                            showFlipCameraButton : false,// iOS and Android
                             showTorchButton : true,// iOS and Android
                             torchOn: false, // Android, launch with the torch switched on (if available)
                             saveHistory: false, // Android, save scan history (default false)
