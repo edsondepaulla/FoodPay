@@ -138,7 +138,7 @@
         <img src="img/logo.jpg" border="0">
       </div>
       <ul>
-        <li ng-repeat="menu in MenuLeft"><a href="{{menu.url}}">{{menu.titulo}}</a></li>
+        <li ng-repeat="menu in MenuLeft"><a ng-click="locationMenuLeft(menu)">{{menu.titulo}}</a></li>
       </ul>
     </div>
   </body>
