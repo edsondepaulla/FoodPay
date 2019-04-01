@@ -77,7 +77,7 @@
         </style>
 
       <script type="text/javascript">
-         /* $(document).ready(function() {
+          $(document).ready(function() {
               document.addEventListener("deviceready", onDeviceReady, false);
           });
 
@@ -85,12 +85,22 @@
               $('#scan').click(function () {
                   cordova.plugins.barcodeScanner.scan(
                       function (result) {
-                          if (!result.cancelled)
-                              window.location = '#!/estabelecimento/' + result.text;
-                        /!*alert("We got a barcode\n" +
-                                "Result: " + result.text + "\n" +
-                                "Format: " + result.format + "\n" +
-                                "Cancelled: " + result.cancelled);*!/
+                          if (!result.cancelled) {
+                              Factory.ajax(
+                                  {
+                                      action: 'qrcode/get',
+                                      data: {
+                                          TEXT: result.text
+                                      }
+                                  },
+                                  function (data) {
+                                      if(data.status == 1)
+                                          window.location = data.url;
+                                      else
+                                          window.location = '#!/';
+                                  }
+                              );
+                          }
                         },
                         function (error) {
                             alert("Scanning failed: " + error);
@@ -109,12 +119,8 @@
                             disableSuccessBeep: false // iOS and Android
                         }
                   );
-
-                  setTimeout(function(){
-                      alert('fdsfs');
-                  }, 4000);
               });
-          }*/
+          }
       </script>
 
       <div class="app-body" ng-show="show_body">
