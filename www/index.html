@@ -43,6 +43,7 @@
 
     <script src="js/functions.js"></script>
     <script src="js/config.js"></script>
+    <script type="text/javascript" src="cordova.js"></script>
     <!--<script type="text/javascript" src="js/qrcode.js"></script>-->
     <script src="js/app.js"></script>
 
@@ -64,7 +65,54 @@
     <div class="app" ng-controller="Main" ui-prevent-touchmove-defaults>
       <div mn-touch swipe-right="swipeRight()" ng-include="'view/menu/top.html'" id="toolbar"></div>
       <span id="ambiente_teste" ng-if="ambiente_teste == 1">Ambiente de testes</span>
-      <div id="map" ng-include="'view/maps.html'"></div>
+        <div id="map" ng-include="'view/maps.html'"></div>
+        <button id="scan">Iniciar</button>
+        <style>
+          button#scan{
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            z-index: 9;
+          }
+        </style>
+
+      <script type="text/javascript">
+          $(document).ready(function() {
+              document.addEventListener("deviceready", onDeviceReady, false);
+          });
+
+          function onDeviceReady() {
+              $('#scan').click( function()
+                  {
+                      cordova.plugins.barcodeScanner.scan(
+                          function (result) {
+                              alert("We got a barcode\n" +
+                                  "Result: " + result.text + "\n" +
+                                  "Format: " + result.format + "\n" +
+                                  "Cancelled: " + result.cancelled);
+                          },
+                          function (error) {
+                              alert("Scanning failed: " + error);
+                          },
+                          {
+                              preferFrontCamera : false, // iOS and Android
+                              showFlipCameraButton : true, // iOS and Android
+                              showTorchButton : true, // iOS and Android
+                              torchOn: false, // Android, launch with the torch switched on (if available)
+                              saveHistory: false, // Android, save scan history (default false)
+                              prompt : "fdfs\nfdlfskdjl\nlfkjdflsd", // Android
+                              resultDisplayDuration: 0, // Android, display scanned text for X ms. 0 suppresses it entirely, default 1500
+                              formats : "QR_CODE", // default: all but PDF_417 and RSS_EXPANDED
+                              orientation : "portrait", // Android only (portrait|landscape), default unset so it rotates with the device
+                              disableAnimations : false, // iOS
+                              disableSuccessBeep: false // iOS and Android
+                          }
+                      );
+                  }
+              );
+          }
+      </script>
+
       <div class="app-body" ng-show="show_body">
         <div class="app-content">
           <div class="scrollable ng-scope" ng-view></div>
