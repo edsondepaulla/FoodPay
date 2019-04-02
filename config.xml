@@ -44,7 +44,8 @@
         <splash density="port-mdpi" src="res/screen/android/splash-port-mdpi.png" />
         <splash density="port-xhdpi" src="res/screen/android/splash-port-xhdpi.png" />
     </platform>
-    <engine name="android" spec="^6.2.3" />
+    <engine name="ios" spec="^4.3.1" />
+    <engine name="android" spec="~6.2.3" />
     <plugin name="cordova-plugin-ios-non-exempt-encryption" />
     <plugin name="cordova-plugin-keyboard" spec="^1.1.5" />
     <plugin name="cordova-plugin-splashscreen" />
