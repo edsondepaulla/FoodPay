@@ -20,7 +20,8 @@
     <preference name="fullscreen" value="false" />
     <preference name="StatusBarOverlaysWebView" value="true" />
     <preference name="webviewbounce" value="true" />
-    <preference name="SplashScreenDelay" value="0" />
+    <preference name="SplashScreenDelay" value="0" /
+    <preference name="FadeSplashScreen" value="false" />
     <preference name="phonegap-version" value="cli-8.0.0" />
     <platform name="android">
         <allow-intent href="market:*" />
