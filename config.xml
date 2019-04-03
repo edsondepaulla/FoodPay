@@ -30,6 +30,11 @@
     <preference name="StatusBarBackgroundColor" value="#000000" />
     <preference name="AutoHideSplashScreen" value="true" />
     <preference name="FadeSplashScreen" value="false" />
+
+    <preference name="DisallowOverscroll" value="false" />
+    <preference name="SplashMaintainAspectRatio" value="false" />
+    <preference name="SplashShowOnlyFirstTime" value="false" />
+    <preference name="StatusBarStyle" value="default" />
     
     <preference name="fullscreen" value="false" />
 
@@ -40,25 +45,17 @@
         <icon density="mdpi" src="res/android/icon48.png" />
         <icon density="hdpi" src="res/android/icon72.png" />
         <icon density="xhdpi" src="res/android/icon96.png" />
-        
-        <!--
-        <preference name="DisallowOverscroll" value="false" />
-        <preference name="SplashScreenDelay" value="0" />
-        <preference name="SplashMaintainAspectRatio" value="false" />
-        <preference name="SplashShowOnlyFirstTime" value="false" />
-        <preference name="StatusBarStyle" value="default" />
-        -->
-        
+
         <preference name="android-minSdkVersion" value="23" />
         <preference name="android-targetSdkVersion" value="26" />
-        <!--<splash density="land-hdpi" src="res/screen/android/splash-land-hdpi.png" />
+        <splash density="land-hdpi" src="res/screen/android/splash-land-hdpi.png" />
         <splash density="land-ldpi" src="res/screen/android/splash-land-ldpi.png" />
         <splash density="land-mdpi" src="res/screen/android/splash-land-mdpi.png" />
         <splash density="land-xhdpi" src="res/screen/android/splash-land-xhdpi.png" />
         <splash density="port-hdpi" src="res/screen/android/splash-port-hdpi.png" />
         <splash density="port-ldpi" src="res/screen/android/splash-port-ldpi.png" />
         <splash density="port-mdpi" src="res/screen/android/splash-port-mdpi.png" />
-        <splash density="port-xhdpi" src="res/screen/android/splash-port-xhdpi.png" />-->
+        <splash density="port-xhdpi" src="res/screen/android/splash-port-xhdpi.png" />
     </platform>
     <engine name="ios" spec="^4.3.1" />
     <engine name="android" spec="~6.2.3" />
