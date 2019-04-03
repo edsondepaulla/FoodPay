@@ -12,16 +12,22 @@
     <allow-intent href="sms:*" />
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
+    
+    <!--
     <preference name="HideKeyboardFormAccessoryBar" value="true" />
     <preference name="AutoHideSplashScreen" value="true" />
     <preference name="StatusBarBackgroundColor" value="#000000" />
     <preference name="orientation" value="portrait" />
     <preference name="target-device" value="handset" />
-    <preference name="fullscreen" value="false" />
+    <preference name="fullscreen" value="true" />
     <preference name="StatusBarOverlaysWebView" value="true" />
-    <preference name="webviewbounce" value="true" />
+    <preference name="webviewbounce" value="false" />
+    <preference name="UIWebViewBounce" value="false" />    
     <preference name="SplashScreenDelay" value="0" />
+    -->
+    
     <preference name="FadeSplashScreen" value="false" />
+    
     <preference name="phonegap-version" value="cli-8.0.0" />
     <platform name="android">
         <allow-intent href="market:*" />
@@ -29,11 +35,15 @@
         <icon density="mdpi" src="res/android/icon48.png" />
         <icon density="hdpi" src="res/android/icon72.png" />
         <icon density="xhdpi" src="res/android/icon96.png" />
+        
+        <!--
         <preference name="DisallowOverscroll" value="false" />
         <preference name="SplashScreenDelay" value="0" />
         <preference name="SplashMaintainAspectRatio" value="false" />
         <preference name="SplashShowOnlyFirstTime" value="false" />
         <preference name="StatusBarStyle" value="default" />
+        -->
+        
         <preference name="android-minSdkVersion" value="23" />
         <preference name="android-targetSdkVersion" value="26" />
         <splash density="land-hdpi" src="res/screen/android/splash-land-hdpi.png" />
