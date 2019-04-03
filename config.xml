@@ -29,8 +29,7 @@
     <preference name="fullscreen" value="false" />
     
     <preference name="FadeSplashScreen" value="false" />
-    <preference name="SplashScreenSpinnerColor" value="#33cc99"/>
-    <preference name="SplashScreenBackgroundColor" value="0xFFFFFFFF"/>
+    <preference name="SplashScreenBackgroundColor" value="#33cc99"/>
     
     <preference name="phonegap-version" value="cli-8.0.0" />
     <platform name="android">
