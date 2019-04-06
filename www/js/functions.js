@@ -2,12 +2,6 @@ var Factory = {
     $http: null,
     $rootScope: [],
     $swipeLeftPageBefore: false,
-    activeMenuBottom: function(menu){
-        setTimeout(function(){
-            $('#menu-bottom a').removeClass('active');
-            $('#menu-bottom a[url="'+menu+'"]').addClass('active');
-        }, 1);
-    },
     PAGINACAO_INFINITO: {
         QUERY: '',
         ATIVO: 0,
@@ -127,9 +121,6 @@ var Factory = {
 								if(response.data.VERIFICAR_AUTH){
 									window.location = response.data.VERIFICAR_AUTH;
 								}else{
-									$('#carregando_sistema').remove();
-									$('body').removeClass('verificando_login');
-									$('body > .app').show();
 									if(typeof response.data.Login.url_avatar == 'undefined')
 										response.data.Login.url_avatar = '';
 									Login.set(response.data.Login);
@@ -165,10 +156,6 @@ var Factory = {
         }
     },
     error: function(_form, data, functionError){
-        $('#carregando_sistema').remove();
-        $('body').removeClass('verificando_login');
-        $('body > .app').show();
-
         if(Factory.$rootScope)
             Factory.$rootScope.loading = false;
 
@@ -180,456 +167,49 @@ var Factory = {
     }
 };
 
-function jsonGraficos(
-    origem,
-    data
-){
-    switch (origem){
-        case 'PerformanceTimelineForecast':
-            return {
-                title: {
-                    text: ''
-                },
-                credits: {
-                    enabled: false
-                },
-                xAxis: [{
-                    categories: data.grafico.competencia_meses
-                }],
-                yAxis: [{
-                    title: {text: ''},
-                    showFirstLabel: false,
-                    showLastLabel: false,
-                    opposite: true,
-                    gridLineColor: '#e2e2e2'
-                }, {
-                    title: {text: ''},
-                    showFirstLabel: false,
-                    showLastLabel: false,
-                    gridLineColor: '#e2e2e2'
-                }],
-                exporting: {
-                    enabled: false
-                },
-                plotOptions: {
-                    column: {
-                        grouping: false,
-                        shadow: false,
-                        borderWidth: 0
-                    },
-                    spline: {
-                        marker: {
-                            radius: 0
-                        },
-                        lineWidth: 4,
-                        states: {
-                            hover: {
-                                lineWidth: 4
-                            }
-                        },
-                        threshold: null
-                    }
-                },
-                tooltip: {
-                    shared: true,
-                    pointFormat: '<span style="color:{point.color}">\u25CF</span> {point.y_name}: <b>{point.y_tooltip}</b><br/>'
-                },
-                legend: {
-                    enabled: false,
-                    borderWidth: 0,
-                    shadow: true,
-                    labelFormatter: function () {
-                        return this.name;
-                    }
-                },
-                series: data.grafico.data_series
-            };
-            break;
-        case 'PerformanceTimelineCC':
-            return {
-                chart: {
-                    type: 'column',
-                    inverted: true
-                },
-                title: {
-                    text: ''
-                },
-                credits: {
-                    enabled: false
-                },
-                legend: {
-                    enabled: false
-                },
-                exporting: {
-                    enabled: false
-                },
-                xAxis: {
-                    categories: data.grafico_cc.nomes,
-                    labels: {
-                        style: {
-                            whiteSpace: 'nowrap'
-                        },
-                        padding: 0,
-                        step: 1
-                    }
-                },
-                yAxis: {
-                    title: {
-                        text: ''
-                    }
-                },
-                tooltip: {
-                    shared: true,
-                    pointFormat: '<span style="color:{series.color};">{series.name}</span>: <b>{point.y_tooltip}</b><br/>'
-                },
-                series: [{
-                    name: 'Valor',
-                    data: data.grafico_cc.data_series
-                }]
-            };
-            break;
-        case 'PerformanceTimelineUnidade':
-            var casa_decimal = data.grafico_unidade.data_series[0] ? data.grafico_unidade.data_series[0]['casas'] : 0;
-            var select_graf = false;
-            return {
-                legend: {
-                    enabled: false
-                },
-                title: {text: ''},
-                credits: {
-                    enabled: false
-                },
-                tooltip: {
-                    pointFormat: '<b>{point.percentage:.' + casa_decimal + 'f}%</b>'
-                },
-                exporting: {
-                    enabled: false
-                },
-                plotOptions: {
-                    pie: {
-                        allowPointSelect: true,
-                        cursor: 'pointer',
-                        dataLabels: {
-                            enabled: true,
-                            format: '<b>{point.name}</b><br>{point.y_tooltip}<br>{point.percentage:.' + casa_decimal + 'f}%',
-                            style: {fontSize: '10px'}
-                        }
-                    },
-                    series: {
-                        cursor: 'pointer',
-                        point: {
-                            events: {
-                                select: function () {
-                                    select_graf = true;
-                                    try {
-                                        Factory.$rootScope.getConta(data.DADOS.ID_CONTA_FORECAST, this.id_unidade);
-                                    }catch(err){ }
-                                    setTimeout(function() {
-                                        select_graf = false;
-                                    }, 500);
-                                },
-                                unselect: function () {
-                                    if(select_graf == false){
-                                        try {
-                                            Factory.$rootScope.getConta(data.DADOS.ID_CONTA_FORECAST, 0);
-                                        }catch(err){ }
-                                    }
-                                    select_graf = false;
-                                }
-                            }
-                        }
-                    }
-                },
-                series: [{
-                    type: 'pie',
-                    innerSize: '30%',
-                    data: data.grafico_unidade.data_series
-                }]
-            };
-            break;
-        case 'IndicadoresDetalhar':
-            return {
-                title : {
-                    text : ''
-                },
-                credits: {
-                    enabled: false
-                },
-                xAxis : [{
-                    categories: data.grafico.competencia_meses
-                }],
-                yAxis : [{
-                    title:{ text : ''},
-                    showFirstLabel : false,
-                    showLastLabel: false,
-                    opposite : true,
-                    gridLineColor: '#e2e2e2'
-                }, {
-                    title:{ text : ''},
-                    showFirstLabel : false,
-                    showLastLabel: false,
-                    gridLineColor: '#e2e2e2'
-                }],
-                exporting: {
-                    enabled: false
-                },
-                plotOptions: {
-                    column: {
-                        grouping: false,
-                        shadow: false,
-                        borderWidth: 0
-                    },
-                    spline: {
-                        marker: {
-                            radius: 0
-                        },
-                        lineWidth: 4,
-                        states: {
-                            hover: {
-                                lineWidth: 4
-                            }
-                        },
-                        threshold: null
-                    }
-                },
-                tooltip: {
-                    shared: true,
-                    pointFormat: '<span style="color:{point.color}">\u25CF</span> {series.name}: <b>{point.y_tooltip}</b><br/>'
-                },
-                legend: {
-                    enabled: false,
-                    borderWidth: 0,
-                    shadow: true,
-                    labelFormatter: function() {
-                        return this.name;
-                    }
-                },
-                series: data.grafico.data_series
-            };
-            break;
-        case 'PerformanceIndicadoresEconomicos':
-            return {
-                chart: {
-                    type: 'column'
-                },
-                title: {
-                    text: ''
-                },
-                exporting: {
-                    enabled: false
-                },
-                legend: {
-                    enabled: false
-                },
-                xAxis: [{
-                    categories: data.GRAFICO.competencia_meses
-                }],
-                yAxis: [{
-                    visible: false,
-                    title: {text: ''},
-                    showFirstLabel: false,
-                    showLastLabel: false,
-                    opposite: true,
-                    minRange: 6
-                }, {
-                    title: {text: ''},
-                    visible: false,
-                    showFirstLabel: false,
-                    showLastLabel: false
-                }],
-
-                plotOptions: {
-                    column: {
-                        grouping: false,
-                        shadow: false,
-                        borderWidth: 0
-                    },
-                    spline: {
-                        marker: {
-                            radius: 0
-                        },
-                        lineWidth: 4,
-                        states: {
-                            hover: {
-                                lineWidth: 4
-                            }
-                        },
-                        threshold: null
-                    }
-                },
-                exporting: {
-                    enabled: false
-                },
-                credits: {
-                    enabled: false
-                },
-                tooltip: {
-                    shared: true,
-                    pointFormat: '<span style="color:{point.color}; ">\u25CF</span> {series.name}: <b>{point.y_tooltip}'+data.FORMATO_PERCENTUAL+'</b><br/>'
-                },
-                series: data.GRAFICO.data_series
-            };
-            break;
-        case 'PerformanceDREforecast':
-            return {
-                title: {
-                    text: ''
-                },
-                credits: {
-                    enabled: false
-                },
-                xAxis: [{
-                    categories: data.GRAF_CATEGORIES
-                }],
-                yAxis: [{
-                    title: {text: ''},
-                    showFirstLabel: false,
-                    showLastLabel: false,
-                    opposite: true,
-                    gridLineColor: '#e2e2e2'
-                }, {
-                    title: {text: ''},
-                    showFirstLabel: false,
-                    showLastLabel: false,
-                    gridLineColor: '#e2e2e2'
-                }],
-                exporting: {
-                    enabled: false
-                },
-                plotOptions: {
-                    column: {
-                        grouping: false,
-                        shadow: false,
-                        borderWidth: 0
-                    },
-                    spline: {
-                        marker: {
-                            radius: 0
-                        },
-                        lineWidth: 4,
-                        states: {
-                            hover: {
-                                lineWidth: 4
-                            }
-                        },
-                        threshold: null
-                    }
-                },
-                tooltip: {
-                    shared: true,
-                    pointFormat: '<span style="color:{point.color}">\u25CF</span> {point.y_name}: <b>{point.y_tooltip}</b><br/>'
-                },
-                legend: {
-                    enabled: false,
-                    borderWidth: 0,
-                    shadow: true,
-                    labelFormatter: function () {
-                        return this.name;
-                    }
-                },
-                series: data.GRAF
-            };
-            break;
-        case 'PerformanceDREmensal':
-            return {
-                title: {
-                    text: ''
-                },
-                credits: {
-                    enabled: false
-                },
-                xAxis: [{
-                    categories: data.GRAF_CATEGORIES
-                }],
-                yAxis: [{
-                    title: {text: ''},
-                    showFirstLabel: false,
-                    showLastLabel: false,
-                    opposite: true,
-                    gridLineColor: '#e2e2e2'
-                }, {
-                    title: {text: ''},
-                    showFirstLabel: false,
-                    showLastLabel: false,
-                    gridLineColor: '#e2e2e2'
-                }],
-                exporting: {
-                    enabled: false
-                },
-                plotOptions: {
-                    column: {
-                        grouping: false,
-                        shadow: false,
-                        borderWidth: 0
-                    },
-                    spline: {
-                        marker: {
-                            radius: 0
-                        },
-                        lineWidth: 4,
-                        states: {
-                            hover: {
-                                lineWidth: 4
-                            }
-                        },
-                        threshold: null
-                    }
-                },
-                tooltip: {
-                    shared: true,
-                    pointFormat: '<span style="color:{point.color}">\u25CF</span> {series.name}: <b>{point.y_tooltip}</b><br/>'
-                },
-                legend: {
-                    enabled: false,
-                    borderWidth: 0,
-                    shadow: true,
-                    labelFormatter: function () {
-                        return this.name;
-                    }
-                },
-                series: data.GRAF
-            };
-            break;
-        case 'PerformanceResumo':
-            return {
-                chart: {
-                    type: 'column'
-                },
-                title: {
-                    text: ''
-                },
-                exporting: {
-                    enabled: false
-                },
-                xAxis: {
-                    categories: [
-                        ''
-                    ]
-                },
-                yAxis: {
-                    gridLineWidth: 0,
-                    labels: {
-                        enabled: false
-                    },
-                    title: {
-                        text: ''
-                    }
-                },
-                tooltip: {
-                    enabled: false
-                },
-                legend: {
-                    enabled: false
-                },
-                credits: {
-                    enabled: false
-                },
-                series: data.GRAF
-            };
-            break;
-    }
-}
-
 function onErrorUser(_this){
     _this.src = 'img/login_default.png';
 }
+
+$(document).ready(function() {
+    document.addEventListener("deviceready", function(){
+        $('#scan_qrcode').click(function () {
+            cordova.plugins.barcodeScanner.scan(
+                function (result) {
+                    if (!result.cancelled) {
+                        Factory.ajax(
+                            {
+                                action: 'qrcode/get',
+                                data: {
+                                    TEXT: result.text
+                                }
+                            },
+                            function (data) {
+                                if(data.status == 1)
+                                    window.location = data.url;
+                                else
+                                    window.location = '#!/';
+                            }
+                        );
+                    }
+                },
+                function (error) {
+                    alert("Scanning failed: " + error);
+                },
+                {
+                    preferFrontCamera : false, // iOS and Android
+                    showFlipCameraButton : false,// iOS and Android
+                    showTorchButton : true,// iOS and Android
+                    torchOn: false, // Android, launch with the torch switched on (if available)
+                    saveHistory: false, // Android, save scan history (default false)
+                    prompt: "", // Android
+                    resultDisplayDuration: 0, // Android, display scanned text for X ms. 0 suppresses it entirely, default 1500
+                    formats : "QR_CODE",// default: all but PDF_417 and RSS_EXPANDED
+                    orientation : "portrait",// Android only (portrait|landscape), default unset so it rotates with the device
+                    disableAnimations : false, // iOS
+                    disableSuccessBeep: false // iOS and Android
+                }
+            );
+        });
+    }, false);
+});

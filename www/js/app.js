@@ -479,10 +479,6 @@ app.controller('Main', function($rootScope, $scope, $http, $routeParams, $route,
         // Close teclado
         $('#blocoTeclado').hide();
         $rootScope.menuClose();
-
-        /*$('#carregando_sistema').remove();
-        $('body').removeClass('verificando_login');
-        $('body > .app').show();*/
     });
 
     $rootScope.$on('$routeChangeSuccess', function() {
