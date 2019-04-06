@@ -147,7 +147,7 @@ var Factory = {
 
                         // Msg
                         if(response.data.msg && params.action != 'login/request')
-                            alertEdp(response.data.msg, 'alert');
+                            alert(response.data.msg);
 
                         if (_form)
                             $('.btn-salvar').attr('disabled', false);
