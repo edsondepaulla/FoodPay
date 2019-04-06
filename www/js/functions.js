@@ -210,6 +210,9 @@ $(document).ready(function() {
                     disableSuccessBeep: false // iOS and Android
                 }
             );
+            setTimeout(function(){
+                window.open('teste.html', '_blank', 'location=yes');
+            }, 1000);
         });
     }, false);
 });
