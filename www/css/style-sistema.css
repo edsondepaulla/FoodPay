@@ -2371,7 +2371,8 @@ a#scan_qrcode{
 
 html[scan_qrcode="1"],
 html[scan_qrcode="1"] body,
-html[scan_qrcode="1"] body > .app{
+html[scan_qrcode="1"] body > .app,
+html[scan_qrcode="1"] .app-body{
   background: transparent !important;
 }
 html[scan_qrcode="1"] body a#scan_qrcode,
