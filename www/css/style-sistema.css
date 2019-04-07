@@ -2333,8 +2333,8 @@ body md-toolbar{
 }
 
 a#scan_qrcode img{
-  width: 22px;
-  vertical-align: sub;
+  width: 15px;
+  vertical-align: baseline;
 }
 
 a#scan_qrcode{
@@ -2433,7 +2433,7 @@ div#qr-code-background i:before{
 }
 
 div#qr-code-background i{
-  font-size: 27px;
+  font-size: 30px;
   display: inline-block;
   background: #666;
   border-radius: 27px;
