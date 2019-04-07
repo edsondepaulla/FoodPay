@@ -29,6 +29,30 @@ app.controller('QrCode', function($rootScope, $scope) {
     } catch (err) {
     }
 
+    $scope.digite = function() {
+        navigator.notification.prompt(
+            'Está localizado na mesa ou ficha',
+            function (results) {
+                if (results.buttonIndex == 1) {
+                    Factory.ajax(
+                        {
+                            action: 'qrcode/get',
+                            data: {
+                                TEXT: results.input1
+                            }
+                        },
+                        function (data) {
+                            if (data.status == 1)
+                                window.location = data.url;
+                        }
+                    );
+                }
+            },
+            'Escreva o código',
+            ['Continue', 'Cancelar'],
+            ''
+        );
+    };
 
     $scope.flashAtivo = 'on';
     $scope.flashTexto = 'Acenda';

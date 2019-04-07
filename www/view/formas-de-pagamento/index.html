@@ -54,11 +54,11 @@
     }
     function prompt() {
         navigator.notification.prompt(
-            'Please enter your name',  // message
+            'Está localizado na mesa ou ficha',  // message
             onPrompt,                  // callback to invoke
-            'Registration',            // title
-            ['Ok','Exit'],             // buttonLabels
-            'Jane Doe'                 // defaultText
+            'Escreva o código',            // title
+            ['Continue','Cancelar'],             // buttonLabels
+            ''                 // defaultText
         );
     }
 </script>
