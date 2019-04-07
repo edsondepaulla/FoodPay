@@ -558,10 +558,6 @@ app.controller('Main', function($rootScope, $scope, $http, $routeParams, $route,
     $rootScope.backpageTop = function(){
         $('.scrollable:first').attr('backpage', 1);
         window.history.go(-1);
-        if(parseInt($rootScope.SEMEFEITO_ATIVAR)) {
-            $rootScope.SEMEFEITO_ATIVAR = null;
-            $rootScope.SEMEFEITO = 1;
-        }
     };
 
     $rootScope.trustAsHtml = function(string) {
@@ -621,74 +617,16 @@ app.controller('Main', function($rootScope, $scope, $http, $routeParams, $route,
     $rootScope.MenuLeft = [
         {
             titulo: 'Pedir',
-            icone: 'mdi mdi-chart-line',
             url_pai: '#!/',
             url: '#!/',
             tipo: 'pai'
         },
         {
             titulo: 'Formas de pagamento',
-            icone: 'mdi mdi-chart-line',
 			url_pai: '#!/formas-de-pagamento',
             url: '#!/formas-de-pagamento',
             tipo: 'pai'
-        }/*,
-        {
-            titulo: 'Resumo da performance',
-			url_pai: '#!/performance-resumo',
-            url: '#!/performance-resumo',
-            tipo: 'filho'
-        },
-        {
-            titulo: 'Demonstração de resultado',
-			url_pai: '#!/performance-resumo',
-            url: '#!/performance',
-            tipo: 'filho'
-        },
-        {
-            titulo: 'Indicadores econômicos',
-			url_pai: '#!/performance-resumo',
-            url: '#!/performance-indicadores',
-            tipo: 'filho'
-        },
-        {
-            titulo: 'Indicadores',
-            icone: 'mdi mdi-chart-bar',
-			url_pai: '#!/indicadores',
-            url: '#!/indicadores',
-            tipo: 'pai'
-        },
-        {
-            titulo: 'Meus indicadores',
-			url_pai: '#!/indicadores',
-            url: '#!/indicadores',
-            tipo: 'filho'
-        },
-        {
-            titulo: 'Estrutura de indicadores',
-			url_pai: '#!/indicadores',
-            url: '#!/estruturas-de-indicadores',
-            tipo: 'filho'
-        },
-        {
-            titulo: 'Ações',
-            icone: 'mdi mdi-checkbox-marked-outline',
-			url_pai: '#!/minhas-acoes',
-            url: '#!/minhas-acoes',
-            tipo: 'pai'
-        },
-        {
-            titulo: 'Minhas ações',
-			url_pai: '#!/minhas-acoes',
-            url: '#!/minhas-acoes',
-            tipo: 'filho'
-        },
-        {
-            titulo: 'Planos de ação',
-			url_pai: '#!/minhas-acoes',
-            url: '#!/planos-de-acao',
-            tipo: 'filho'
-        }*/
+        }
     ];
 
     $rootScope.menuOpcoes = function(menu){

@@ -1,4 +1,7 @@
 app.controller('QrCode', function($rootScope, $scope) {
+    $('#top').hide();
+    $('#topTitulo').show();
+    $rootScope.Titulo = 'Escaneia o código';
     $('html').attr('scan_qrcode', 1);
     $rootScope.show_body = true;
     try {
