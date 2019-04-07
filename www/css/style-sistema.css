@@ -2342,8 +2342,8 @@ a#scan_qrcode{
   color: #FFF;
   transform: translateX(-50%);
   border-radius: 25px;
-  font-size: 16px;
-  padding: 7px 25px;
+  font-size: 24px;
+  padding: 8px 35px;
 }
 
 
@@ -2364,7 +2364,9 @@ html[scan_qrcode="1"] body #map{
 #topTitulo #textoTitulo{
   display: inline-block;
   color: #FFF;
-  padding-top: 11px;
+  padding-top: 8px;
+  font-size: 18px;
+  font-weight: bold;
 }
 #topTitulo .open-left{
   text-align: left;
@@ -2372,8 +2374,8 @@ html[scan_qrcode="1"] body #map{
 }
 
 div#qr-code-background{
-  width: 130px;
-  height: 130px;
+  width: 200px;
+  height: 200px;
   position: absolute;
   left: 50%;
   top: 50%;
@@ -2386,7 +2388,8 @@ div#qr-code-background{
 
 div#qr-code-background #btn-flash{
   position: absolute;
-  bottom: -30px;
+  bottom: -46px;
   left: 0;
   z-index: 2;
+  font-size: 30px;
 }

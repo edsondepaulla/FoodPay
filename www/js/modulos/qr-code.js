@@ -30,16 +30,16 @@ app.controller('QrCode', function($rootScope, $scope) {
     }
 
 
-    $scope.flashAtivo = 0;
+    $scope.flashAtivo = 'on';
     $scope.flash = function(){
-        if(!$scope.flashAtivo){
-            $scope.flashAtivo = 1;
+        if($scope.flashAtivo == 'off'){
+            $scope.flashAtivo = 'on';
             try {
                 QRScanner.enableLight();
             } catch (err) {
             }
         }else{
-            $scope.flashAtivo = 0;
+            $scope.flashAtivo = 'off';
             try {
                 QRScanner.disableLight();
             } catch (err) {
