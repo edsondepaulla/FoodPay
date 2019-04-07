@@ -2334,7 +2334,7 @@ body md-toolbar{
 
 a#scan_qrcode{
   position: fixed;
-  bottom: 20px;
+  bottom: 40px;
   left: 50%;
   z-index: 2;
   background: #000;
@@ -2342,8 +2342,9 @@ a#scan_qrcode{
   color: #FFF;
   transform: translateX(-50%);
   border-radius: 25px;
-  font-size: 24px;
+  font-size: 20px;
   padding: 8px 35px;
+  font-weight: bold;
 }
 
 
@@ -2394,6 +2395,22 @@ div#qr-code-background #btn-flash i{
   width: 40px;
   height: 40px;
   margin-bottom: 5px;
+}
+
+div#qr-code-texto{
+  position: absolute;
+  top: 30px;
+  left: 0px;
+  width: 100%;
+  z-index: 2;
+  font-size: 12px;
+  color: #FFF;
+  text-align: center;
+}
+
+div#qr-code-texto img{
+  width: 50px;
+  margin-bottom: 30px;
 }
 
 div#qr-code-background #btn-flash{
