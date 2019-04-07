@@ -2358,7 +2358,7 @@ button#scan_qrcode{
   position: fixed;
   bottom: 20px;
   left: 50%;
-  z-index: 999999999999999;
+  z-index: 2;
   background: #000;
   border: 0;
   color: #FFF;
@@ -2368,7 +2368,12 @@ button#scan_qrcode{
   padding: 7px 25px;
 }
 
-html[ativar="1"],
-html[ativar="1"] *{
-  background-color: transparent !important;
+body[scan_qrcode="1"] #scan_qrcode{
+  display: none;
+}
+body[scan_qrcode="1"] > .app{
+  background: transparent !important;
+}
+body[scan_qrcode="1"] #map{
+  display: none;
 }
