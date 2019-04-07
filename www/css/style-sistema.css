@@ -2367,3 +2367,8 @@ button#scan_qrcode{
   font-size: 16px;
   padding: 7px 25px;
 }
+
+html[ativar="1"],
+html[ativar="1"] *{
+  background-color: transparent !important;
+}

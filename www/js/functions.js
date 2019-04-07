@@ -195,6 +195,9 @@ $(document).ready(function() {
         }
 
         $('#scan_qrcode').click(function () {
+            $('html').attr('ativar', '1');
+            $('#map').remove();
+
             // Start a scan. Scanning will continue until something is detected or
 // `QRScanner.cancelScan()` is called.
             QRScanner.scan(displayContents);
@@ -214,7 +217,7 @@ $(document).ready(function() {
 // covering the video.
 
 
-            
+
             /*cordova.plugins.barcodeScanner.scan(
                 function (result) {
                     if (!result.cancelled) {
