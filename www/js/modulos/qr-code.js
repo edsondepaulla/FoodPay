@@ -1,5 +1,6 @@
 app.controller('QrCode', function($rootScope, $scope) {
     $('html').attr('scan_qrcode', 1);
+    $rootScope.show_body = true;
     try {
         QRScanner.scan(function (err, text) {
             if (err) {
@@ -24,6 +25,24 @@ app.controller('QrCode', function($rootScope, $scope) {
         QRScanner.show();
     } catch (err) {
     }
+
+
+    $scope.flashAtivo = 0;
+    $scope.flash = function(){
+        if(!$scope.flashAtivo){
+            $scope.flashAtivo = 1;
+            try {
+                QRScanner.enableLight();
+            } catch (err) {
+            }
+        }else{
+            $scope.flashAtivo = 0;
+            try {
+                QRScanner.disableLight();
+            } catch (err) {
+            }
+        }
+    };
 });
 
 var QRScannerConf = {
