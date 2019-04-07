@@ -44,6 +44,7 @@
   <script src="js/modulos/login.js"></script>
   <script src="js/modulos/index.js"></script>
   <script src="js/modulos/formas-de-pagamento.js"></script>
+  <script src="js/modulos/qr-code.js"></script>
   <script src="js/modulos/estabelecimento.js"></script>
 
   <link rel="stylesheet" href="css/angular-material.min.css">
@@ -58,7 +59,9 @@
   <div mn-touch swipe-right="swipeRight()" ng-include="'view/menu/top.html'" id="toolbar"></div>
   <span id="ambiente_teste" ng-if="ambiente_teste == 1">Ambiente de testes</span>
   <div id="map" ng-include="'view/maps.html'"></div>
-  <button id="scan_qrcode">Iniciar</button>
+
+  <a id="scan_qrcode" href="#!/qr-code">Iniciar</a>
+
   <div class="app-body" ng-show="show_body">
     <div class="app-content">
       <div class="scrollable ng-scope" ng-view></div>
@@ -73,7 +76,9 @@
     <img src="img/logo.jpg" border="0">
   </div>
   <ul>
-    <li ng-repeat="menu in MenuLeft"><a href="{{menu.url}}">{{menu.titulo}}</a></li>
+    <li ng-repeat="menu in MenuLeft">
+      <a  ng-click="location(menu.url)">{{menu.titulo}}</a>
+    </li>
   </ul>
 </div>
 </body>

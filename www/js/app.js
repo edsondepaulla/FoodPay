@@ -48,6 +48,10 @@ app.config(function($routeProvider, $mdThemingProvider, $mdDateLocaleProvider, $
                 }
             }*/
         })
+        .when("/qr-code", {
+            templateUrl : "view/qr-code/index.html",
+            controller: 'QrCode'
+        })
         .when("/formas-de-pagamento", {
             templateUrl : "view/formas-de-pagamento/index.html",
             controller: 'FormasDePagamento'
@@ -549,11 +553,6 @@ app.controller('Main', function($rootScope, $scope, $http, $routeParams, $route,
     $rootScope.locationMenuLeft = function(menu){
 		url_location_bottom[menu.url_pai] = menu.url;
         $scope.location(menu.url);
-    };
-    $rootScope.locationBottom = function(url){
-        if(!url_location_bottom[url])
-            url_location_bottom[url] = url;
-        $scope.location(url_location_bottom[url]);
     };
 
     $rootScope.backpageTop = function(){

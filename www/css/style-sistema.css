@@ -2354,7 +2354,7 @@ body md-toolbar{
   z-index: 1000;
 }
 
-button#scan_qrcode{
+a#scan_qrcode{
   position: fixed;
   bottom: 20px;
   left: 50%;
@@ -2374,7 +2374,7 @@ html[scan_qrcode="1"] body,
 html[scan_qrcode="1"] body > .app{
   background: transparent !important;
 }
-html[scan_qrcode="1"] body #scan_qrcode,
+html[scan_qrcode="1"] body a#scan_qrcode,
 html[scan_qrcode="1"] body #map{
   display: none;
 }

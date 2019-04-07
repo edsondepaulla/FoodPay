@@ -172,33 +172,6 @@ function onErrorUser(_this){
 }
 
 $(document).ready(function() {
-    $('#scan_qrcode').click(function () {
-        $('html').attr('scan_qrcode', 1);
-        try {
-            QRScanner.scan(function (err, text) {
-                if (err) {
-
-                } else {
-                    Factory.ajax(
-                        {
-                            action: 'qrcode/get',
-                            data: {
-                                TEXT: text
-                            }
-                        },
-                        function (data) {
-                            if (data.status == 1)
-                                window.location = data.url;
-                            else
-                                window.location = '#!/';
-                        }
-                    );
-                }
-            });
-            QRScanner.show();
-        } catch (err) {
-        }
-    });
     try {
         QRScanner.prepare(function (err, status) {
             if (err) {
