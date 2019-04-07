@@ -2368,12 +2368,13 @@ button#scan_qrcode{
   padding: 7px 25px;
 }
 
-body[scan_qrcode="1"] #scan_qrcode{
-  display: none;
-}
-body[scan_qrcode="1"] > .app{
+
+html[scan_qrcode="1"],
+html[scan_qrcode="1"] body,
+html[scan_qrcode="1"] body > .app{
   background: transparent !important;
 }
-body[scan_qrcode="1"] #map{
+html[scan_qrcode="1"] body #scan_qrcode,
+html[scan_qrcode="1"] body #map{
   display: none;
 }

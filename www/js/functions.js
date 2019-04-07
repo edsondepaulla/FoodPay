@@ -173,7 +173,7 @@ function onErrorUser(_this){
 
 $(document).ready(function() {
     $('#scan_qrcode').click(function () {
-        $('body').attr('scan_qrcode', 1);
+        $('html').attr('scan_qrcode', 1);
         try {
             QRScanner.scan(function (err, text) {
                 if (err) {
