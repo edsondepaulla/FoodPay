@@ -2364,8 +2364,8 @@ html[scan_qrcode="1"] body #map{
 #topTitulo #textoTitulo{
   display: inline-block;
   color: #FFF;
-  padding-top: 8px;
-  font-size: 18px;
+  padding-top: 5px;
+  font-size: 21px;
   font-weight: bold;
 }
 #topTitulo .open-left{
@@ -2378,7 +2378,7 @@ div#qr-code-background{
   height: 200px;
   position: absolute;
   left: 50%;
-  top: 50%;
+  top: 43%;
   transform: translate(-50%, -50%);
   background: transparent !important;
   border-radius: 0;
@@ -2386,10 +2386,22 @@ div#qr-code-background{
   z-index: 1;
 }
 
+div#qr-code-background #btn-flash i{
+  font-size: 30px;
+  display: inline-block;
+  background: #CCC;
+  border-radius: 27px;
+  width: 40px;
+  height: 40px;
+  margin-bottom: 5px;
+}
+
 div#qr-code-background #btn-flash{
   position: absolute;
-  bottom: -46px;
-  left: 0;
+  bottom: -151px;
+  right: -53px;
   z-index: 2;
-  font-size: 30px;
+  font-size: 12px;
+  color: #FFF;
+  text-align: center;
 }

@@ -1,3 +1,6 @@
 <div id="qr-code-background" mn-touch swipe-right="swipeRight()">
-    <i id="btn-flash" ng-click="flash()" class="mdi mdi-image-flash-{{flashAtivo}}"></i>
+    <div id="btn-flash">
+        <i ng-click="flash()" class="mdi mdi-image-flash-{{flashAtivo}}"></i><br>
+        {{flashTexto}} as lanternas
+    </div>
 </div>
