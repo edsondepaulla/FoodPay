@@ -1,6 +1,6 @@
 app.controller('Estabelecimento', function($rootScope, $scope, $routeParams) {
     $rootScope.show_body = true;
-    QRScannerConf.hide();
+    QRScannerConf.destroy();
     Factory.ajax(
         {
             action: 'estabecimentos/get',

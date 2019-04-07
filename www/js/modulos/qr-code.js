@@ -27,10 +27,10 @@ app.controller('QrCode', function($rootScope, $scope) {
 });
 
 var QRScannerConf = {
-    hide: function () {
+    destroy: function () {
         $('html').attr('scan_qrcode', 0);
         try {
-            QRScanner.hide();
+            QRScanner.destroy();
         } catch (err) {
         }
     }
