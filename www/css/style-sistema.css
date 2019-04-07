@@ -2332,6 +2332,11 @@ body md-toolbar{
   z-index: 1000;
 }
 
+a#scan_qrcode img{
+  width: 22px;
+  vertical-align: sub;
+}
+
 a#scan_qrcode{
   position: fixed;
   bottom: 40px;
@@ -2379,7 +2384,7 @@ div#qr-code-background{
   height: 200px;
   position: absolute;
   left: 50%;
-  top: 43%;
+  top: 45%;
   transform: translate(-50%, -50%);
   background: transparent !important;
   border-radius: 0;
@@ -2387,19 +2392,9 @@ div#qr-code-background{
   z-index: 1;
 }
 
-div#qr-code-background #btn-flash i{
-  font-size: 30px;
-  display: inline-block;
-  background: #CCC;
-  border-radius: 27px;
-  width: 40px;
-  height: 40px;
-  margin-bottom: 5px;
-}
-
 div#qr-code-texto{
   position: absolute;
-  top: 30px;
+  top: 60px;
   left: 0px;
   width: 100%;
   z-index: 2;
@@ -2421,4 +2416,28 @@ div#qr-code-background #btn-flash{
   font-size: 12px;
   color: #FFF;
   text-align: center;
+}
+
+div#qr-code-background #btn-digite-qrcode{
+  position: absolute;
+  bottom: -151px;
+  left: -26px;
+  z-index: 2;
+  font-size: 12px;
+  color: #FFF;
+  text-align: center;
+}
+
+div#qr-code-background i:before{
+  vertical-align: middle;
+}
+
+div#qr-code-background i{
+  font-size: 27px;
+  display: inline-block;
+  background: #666;
+  border-radius: 27px;
+  width: 40px;
+  height: 40px;
+  margin-bottom: 5px;
 }
