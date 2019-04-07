@@ -9,20 +9,7 @@ app.controller('QrCode', function($rootScope, $scope) {
             if (err) {
 
             } else {
-                Factory.ajax(
-                    {
-                        action: 'qrcode/get',
-                        data: {
-                            TEXT: text
-                        }
-                    },
-                    function (data) {
-                        if (data.status == 1)
-                            window.location = data.url;
-                        else
-                            window.location = '#!/';
-                    }
-                );
+                QRScannerConf.scan(text);
             }
         });
         QRScanner.show();
@@ -34,18 +21,10 @@ app.controller('QrCode', function($rootScope, $scope) {
             'Está localizado na mesa ou ficha',
             function (results) {
                 if (results.buttonIndex == 1) {
-                    Factory.ajax(
-                        {
-                            action: 'qrcode/get',
-                            data: {
-                                TEXT: results.input1
-                            }
-                        },
-                        function (data) {
-                            if (data.status == 1)
-                                window.location = data.url;
-                        }
-                    );
+                    if(results.input1.length)
+                        QRScannerConf.scan(results.input1);
+                    else
+                        return false;
                 }
             },
             'Escreva o código',
@@ -81,6 +60,29 @@ var QRScannerConf = {
         try {
             QRScanner.destroy();
         } catch (err) {
+        }
+    },
+    scan: function(text){
+        if(text.length) {
+            Factory.ajax(
+                {
+                    action: 'qrcode/get',
+                    data: {
+                        TEXT: text
+                    }
+                },
+                function (data) {
+                    if (data.status == 1)
+                        window.location = data.url;
+                    else{
+                        navigator.notification.alert(
+                            'Código inválido!',
+                            'Mensagem',
+                            'Algo de errado'
+                        );
+                    }
+                }
+            );
         }
     }
 };

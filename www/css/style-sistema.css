@@ -2349,7 +2349,6 @@ a#scan_qrcode{
   border-radius: 25px;
   font-size: 20px;
   padding: 8px 35px;
-  font-weight: bold;
 }
 
 
@@ -2433,7 +2432,7 @@ div#qr-code-background i:before{
 }
 
 div#qr-code-background i{
-  font-size: 30px;
+  font-size: 33px;
   display: inline-block;
   background: #666;
   border-radius: 27px;
