@@ -2354,7 +2354,7 @@ a#scan_qrcode{
 i.mdi.btn_maps{
   position: fixed;
   z-index: 2;
-  font-size: 25px;
+  font-size: 27px;
   background: rgba(255, 255, 255, 0.7);
   border-radius: 27px;
   width: 40px;
@@ -2365,7 +2365,7 @@ i.mdi.btn_maps{
 }
 
 i.mdi.btn_maps:before{
-  vertical-align: middle;
+  vertical-align: -webkit-baseline-middle;
 }
 
 i.mdi.btn_maps.mdi-maps-my-location{
