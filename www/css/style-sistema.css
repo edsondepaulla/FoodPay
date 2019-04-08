@@ -2351,6 +2351,27 @@ a#scan_qrcode{
   padding: 8px 35px;
 }
 
+i.mdi.btn_maps{
+  position: fixed;
+  z-index: 2;
+  font-size: 25px;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 27px;
+  width: 40px;
+  height: 40px;
+  color: #1a73e8;
+  box-shadow: 0 2px 5px 0 rgba(0,0,0,0.26), 0 2px 10px 0 rgba(0,0,0,0.22);
+  text-align: center;
+}
+
+i.mdi.btn_maps:before{
+  vertical-align: middle;
+}
+
+i.mdi.btn_maps.mdi-maps-my-location{
+  right: 5px;
+  bottom: 5px;
+}
 
 html[scan_qrcode="1"],
 html[scan_qrcode="1"] body,
@@ -2358,7 +2379,7 @@ html[scan_qrcode="1"] body > .app,
 html[scan_qrcode="1"] .app-body{
   background: transparent !important;
 }
-html[scan_qrcode="1"] body a#scan_qrcode,
+html[scan_qrcode="1"] body .btn_maps,
 html[scan_qrcode="1"] body #map{
   display: none;
 }

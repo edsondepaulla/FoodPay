@@ -17,20 +17,26 @@ app.controller('QrCode', function($rootScope, $scope) {
     }
 
     $scope.digite = function() {
-        navigator.notification.prompt(
-            'Está localizado na mesa ou ficha',
-            function (results) {
-                if (results.buttonIndex == 1) {
-                    if(results.input1.length)
-                        QRScannerConf.scan(results.input1);
-                    else
-                        return false;
-                }
-            },
-            'Escreva o código',
-            ['Continue', 'Cancelar'],
-            ''
-        );
+        try {
+            navigator.notification.prompt(
+                'Está localizado na mesa ou ficha',
+                function (results) {
+                    if (results.buttonIndex == 1) {
+                        if(results.input1.length)
+                            QRScannerConf.scan(results.input1);
+                        else
+                            return false;
+                    }
+                },
+                'Escreva o código',
+                ['Continue', 'Cancelar'],
+                ''
+            );
+        } catch (err) {
+            var text = prompt("Escreva o código que está localizado na mesa ou ficha", "");
+            if (text != null)
+                QRScannerConf.scan(text);
+        }
     };
 
     $scope.flashAtivo = 'on';
@@ -75,11 +81,15 @@ var QRScannerConf = {
                     if (data.status == 1)
                         window.location = data.url;
                     else{
-                        navigator.notification.alert(
-                            'Código inválido!',
-                            'Mensagem',
-                            'Algo de errado'
-                        );
+                        try {
+                            navigator.notification.alert(
+                                'Código inválido!',
+                                'Mensagem',
+                                'Algo de errado'
+                            );
+                        } catch (err) {
+                            alert('Código inválido!');
+                        }
                     }
                 }
             );

@@ -52,7 +52,7 @@
     function onPrompt(results) {
         alert("You selected button number " + results.buttonIndex + " and entered " + results.input1);
     }
-    function prompt() {
+    function prompt1() {
         navigator.notification.prompt(
             'Está localizado na mesa ou ficha',  // message
             onPrompt,                  // callback to invoke
@@ -67,4 +67,4 @@
 <p><a href="#" onclick="showAlert(); return false;">Show Alert</a></p>
 <p><a href="#" onclick="playBeep(); return false;">Play Beep</a></p>
 <p><a href="#" onclick="vibrate(); return false;">Vibrate</a></p>
-<p><a href="#" onclick="prompt(); return false;">prompt</a></p>
+<p><a href="#" onclick="prompt1(); return false;">prompt</a></p>
