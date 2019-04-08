@@ -4,17 +4,8 @@ app.controller('QrCode', function($rootScope, $scope) {
     $rootScope.Titulo = 'Escaneia o código';
     $('html').attr('scan_qrcode', 1);
     $rootScope.show_body = true;
-    try {
-        QRScanner.scan(function (err, text) {
-            if (err) {
 
-            } else {
-                QRScannerConf.scan(text);
-            }
-        });
-        QRScanner.show();
-    } catch (err) {
-    }
+    QRScannerConf.show();
 
     $scope.digite = function() {
         try {
@@ -61,6 +52,19 @@ app.controller('QrCode', function($rootScope, $scope) {
 });
 
 var QRScannerConf = {
+    show: function () {
+        try {
+            QRScanner.scan(function (err, text) {
+                if (err) {
+
+                } else {
+                    QRScannerConf.scan(text, 1);
+                }
+            });
+            QRScanner.show();
+        } catch (err) {
+        }
+    },
     destroy: function () {
         $('html').attr('scan_qrcode', 0);
         try {
@@ -68,7 +72,7 @@ var QRScannerConf = {
         } catch (err) {
         }
     },
-    scan: function(text){
+    scan: function(text, qrcode){
         if(text.length) {
             Factory.ajax(
                 {
@@ -81,9 +85,12 @@ var QRScannerConf = {
                     if (data.status == 1)
                         window.location = data.url;
                     else{
-                        try {
-                            QRScanner.prepare();
-                        } catch (err) {
+                        if(qrcode) {
+                            try {
+                                QRScanner.destroy();
+                                QRScannerConf.show();
+                            } catch (err) {
+                            }
                         }
                         try {
                             navigator.notification.alert(
