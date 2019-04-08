@@ -2365,7 +2365,7 @@ i.mdi.btn_maps{
 }
 
 i.mdi.btn_maps:before{
-  vertical-align: -webkit-baseline-middle;
+  vertical-align: sub;
 }
 
 i.mdi.btn_maps.mdi-maps-my-location{
