@@ -55,6 +55,10 @@ app.config(function($routeProvider, $mdThemingProvider, $mdDateLocaleProvider, $
             templateUrl : "view/estabelecimentos/lst.html",
             controller: 'EstabelecimentosLst'
         })
+        .when("/estabelecimentos/:ID/:MESA", {
+            templateUrl : "view/estabelecimentos/lst.html",
+            controller: 'EstabelecimentosLst'
+        })
         .when("/estabelecimentos/:ID", {
             templateUrl : "view/estabelecimentos/get.html",
             controller: 'EstabelecimentosGet'

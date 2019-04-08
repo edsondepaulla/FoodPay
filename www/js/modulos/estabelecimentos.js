@@ -3,6 +3,22 @@ app.controller('EstabelecimentosLst', function($rootScope, $scope, $routeParams)
     $('#top').show();
     $('#topTitulo').hide();
     QRScannerConf.destroy();
+    Factory.ajax(
+        {
+            action: 'estabecimentos/lst',
+            data: {
+                MESA: $routeParams.MESA
+            }
+        },
+        function (data) {
+            $scope.LST = data.LST;
+        }
+    );
+
+
+    $scope.click = function(EST) {
+        $rootScope.location('#!/estabelecimentos/' + EST.ID);
+    };
 });
 
 app.controller('EstabelecimentosGet', function($rootScope, $scope, $routeParams) {
