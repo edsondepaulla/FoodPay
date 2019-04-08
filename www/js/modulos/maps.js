@@ -47,7 +47,7 @@ var Maps = {
                                         }
                                     });
                                     marker.addListener('click', function () {
-                                        window.location = '#!/estabelecimento/' + marker.ID;
+                                        window.location = '#!/estabelecimentos/' + marker.ID;
                                     });
                                     Maps.markers[val.ID] = marker;
                                 }
@@ -163,6 +163,10 @@ function initMap() {
          } else {
          FTlayer.setMap(null);
          }*/
+        Maps.getPoints();
+    });
+
+    google.maps.event.addListener(Maps.this, 'dragend', function(event) {
         Maps.getPoints();
     });
 

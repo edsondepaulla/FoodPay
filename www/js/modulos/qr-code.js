@@ -82,6 +82,10 @@ var QRScannerConf = {
                         window.location = data.url;
                     else{
                         try {
+                            QRScanner.prepare();
+                        } catch (err) {
+                        }
+                        try {
                             navigator.notification.alert(
                                 'Código inválido!',
                                 'Mensagem',

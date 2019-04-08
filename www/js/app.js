@@ -41,12 +41,7 @@ app.config(function($routeProvider, $mdThemingProvider, $mdDateLocaleProvider, $
     $routeProvider
         .when("/", {
             templateUrl : "view/index/index.html",
-            controller: 'Index'/*,
-            resolve: {
-                CompartilharData: function ($route) {
-                    return [];
-                }
-            }*/
+            controller: 'Index'
         })
         .when("/qr-code", {
             templateUrl : "view/qr-code/index.html",
@@ -56,10 +51,24 @@ app.config(function($routeProvider, $mdThemingProvider, $mdDateLocaleProvider, $
             templateUrl : "view/formas-de-pagamento/index.html",
             controller: 'FormasDePagamento'
         })
-        .when("/estabelecimento/:ID", {
-            templateUrl : "view/estabelecimento/index.html",
-            controller: 'Estabelecimento'
+        .when("/estabelecimentos", {
+            templateUrl : "view/estabelecimentos/lst.html",
+            controller: 'EstabelecimentosLst'
         })
+        .when("/estabelecimentos/:ID", {
+            templateUrl : "view/estabelecimentos/get.html",
+            controller: 'EstabelecimentosGet'
+        })
+        .when("/ajuda", {
+            templateUrl : "view/ajuda/index.html",
+            controller: 'Ajuda'
+        })
+
+
+
+
+
+
         .when("/compartilhar", {
             templateUrl : "view/index/compartilhar.html",
             controller: 'CompartilharForm',
@@ -547,12 +556,6 @@ app.controller('Main', function($rootScope, $scope, $http, $routeParams, $route,
                 }
                 break
         }
-    };
-
-    var url_location_bottom = [];
-    $rootScope.locationMenuLeft = function(menu){
-		url_location_bottom[menu.url_pai] = menu.url;
-        $scope.location(menu.url);
     };
 
     $rootScope.backpageTop = function(){

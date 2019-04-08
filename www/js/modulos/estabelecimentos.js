@@ -1,4 +1,11 @@
-app.controller('Estabelecimento', function($rootScope, $scope, $routeParams) {
+app.controller('EstabelecimentosLst', function($rootScope, $scope, $routeParams) {
+    $rootScope.show_body = true;
+    $('#top').show();
+    $('#topTitulo').hide();
+    QRScannerConf.destroy();
+});
+
+app.controller('EstabelecimentosGet', function($rootScope, $scope, $routeParams) {
     $rootScope.show_body = true;
     $('#top').show();
     $('#topTitulo').hide();

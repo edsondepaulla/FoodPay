@@ -45,7 +45,8 @@
   <script src="js/modulos/formas-de-pagamento.js"></script>
   <script src="js/modulos/qr-code.js"></script>
   <script src="js/modulos/maps.js"></script>
-  <script src="js/modulos/estabelecimento.js"></script>
+  <script src="js/modulos/estabelecimentos.js"></script>
+  <script src="js/modulos/ajuda.js"></script>
 
   <link rel="stylesheet" href="css/angular-material.min.css">
   <script src="plugins/angular-aria.js"></script>
@@ -63,8 +64,8 @@
     <div id="map"></div>
     <a class="btn_maps" id="scan_qrcode" href="#!/qr-code"><img src="img/qrcode.png"> Escaneia</a>
 
-    <i class="btn_maps mdi mdi-maps-local-restaurant"></i>
-    <i class="btn_maps mdi mdi-action-help"></i>
+    <i class="btn_maps mdi mdi-maps-local-restaurant" ng-click="location('#!/estabelecimentos')"></i>
+    <i class="btn_maps mdi mdi-action-help" ng-click="location('#!/ajuda')"></i>
 
     <i class="btn_maps mdi mdi-maps-my-location" onclick="Maps.geoLocation()"></i>
     <i class="btn_maps mdi mdi-navigation-refresh" onclick="Maps.getPoints()"></i>
