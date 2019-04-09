@@ -10,7 +10,7 @@ app.controller('QrCode', function($rootScope, $scope) {
     $scope.digite = function() {
         try {
             navigator.notification.prompt(
-                'Está localizado na mesa ou ficha',
+                'Está localizado na mesa ou comanda',
                 function (results) {
                     if (results.buttonIndex == 1) {
                         if(results.input1.length)
@@ -24,7 +24,7 @@ app.controller('QrCode', function($rootScope, $scope) {
                 ''
             );
         } catch (err) {
-            var text = prompt("Escreva o código que está localizado na mesa ou ficha", "");
+            var text = prompt("Escreva o código que está localizado na mesa ou comanda", "");
             if (text != null)
                 QRScannerConf.scan(text);
         }

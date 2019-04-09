@@ -39,11 +39,10 @@ var Maps = {
                                         map: Maps.this,
                                         icon: image,
                                         ID: val.ID,
-                                        labelClass: "labels",
-                                        labelStyle: {opacity: 0.75},
                                         label: {
-                                            text: val.ID + ' - ' + val.NOME,
-                                            fontSize: "15px"
+                                            text: val.NOME,
+                                            fontSize: "13px",
+                                            fontWeight: "bold"
                                         }
                                     });
                                     marker.addListener('click', function () {
@@ -141,18 +140,22 @@ function initMap() {
     );
 
     google.maps.event.addListener(Maps.this, 'click', function(event) {
-        Factory.ajax(
-            {
-                action: 'estabecimentos/setpoint',
-                data: {
-                    LAT: event.latLng.lat(),
-                    LNG: event.latLng.lng()
+        var text = prompt("Nome do estabelecimento", "");
+        if (text.length) {
+            Factory.ajax(
+                {
+                    action: 'estabecimentos/setpoint',
+                    data: {
+                        LAT: event.latLng.lat(),
+                        LNG: event.latLng.lng(),
+                        NOME: text
+                    }
+                },
+                function (data) {
+                    Maps.getPoints(1);
                 }
-            },
-            function (data) {
-                Maps.getPoints(1);
-            }
-        );
+            );
+        }
     });
 
     google.maps.event.addListener(Maps.this, 'zoom_changed', function(event) {

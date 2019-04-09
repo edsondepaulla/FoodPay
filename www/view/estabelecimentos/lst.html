@@ -1,4 +1,57 @@
-Estabelecimentos
+<div>
+    LOCAL<br>
+    <b>Próximo a R. Lourenco Grabowski <i class="mdi-hardware-keyboard-arrow-down"></i></b>
+</div>
+
+<div id="pesquisarFiltro">
+    <i class="mdi mdi-action-search"></i>
+    <input ng-model="$root.pesquisa" placeholder="Prato ou restaurante">
+    <i ng-if="$root.pesquisa && $root.pesquisa != ''" ng-click="$root.pesquisa = ''" class="mdi mdi-content-clear"></i>
+    <a>Filtros</a>
+</div>
+
+<style>
+    #pesquisarFiltro .mdi-action-search{
+        position: absolute;
+        left: 9px;
+        top: 0px;
+        font-size: 28px;
+    }
+    #pesquisarFiltro .mdi-content-clear{
+        position: absolute;
+        left: 75%;
+        top: 0px;
+        font-size: 19px;
+        padding: 6px;
+    }
+
+    #pesquisarFiltro a{
+        color: #000;
+        position: absolute;
+        right: 0;
+        top: 11px;
+        font-size: 12px;
+    }
+
+    #pesquisarFiltro input{
+        background: #EEE;
+        border: 0;
+        padding: 10px 10px 10px 45px;
+        width: 85%;
+    }
+
+    #pesquisarFiltro{
+        position: relative;
+        margin-top: 10px;
+    }
+</style>
+
+
+<!--<div id="pesquisar">
+    <input ng-keyup="pesquisar()" placeholder="&#xf002; Pesquisar" onfocus="this.placeholder = ''" onblur="this.placeholder = '&#xf002; Pesquisar'" id="campoBusca" class="campoBusca" type="search"  ng-model="$root.criterio">
+    <span ng-if="$root.criterio && $root.criterio != ''" ng-click="limpaBusca();pesquisar();" class="fa fa-close clearBusca"></span>
+</div>-->
+
 <ul>
     <li ng-repeat="EST in LST" ng-click="click(EST)">{{EST.ID}} - {{EST.NOME}}</li>
 </ul>

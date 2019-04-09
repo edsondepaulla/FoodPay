@@ -1416,7 +1416,6 @@ input[type="search"].campoBusca:focus {
 .app-body{
   height: 100%;
   padding: 0;
-  overflow: hidden;
   display: block;
   z-index: 9999;
   position: fixed;
@@ -1478,10 +1477,7 @@ body.sidebar-left-in .app-body #fundo{
  * Efeito entre paginas
  */
 .scrollable{
-  bottom:0;
-  position:absolute;
-  top:0;
-  width:100%;
+  padding: 10px;
 }
 @keyframes scaleUp {
   from 		{ opacity: 0.3; transform: scale(0.95); }
@@ -2475,4 +2471,8 @@ div#qr-code-background i{
   width: 40px;
   height: 40px;
   margin-bottom: 5px;
+}
+
+body .app-content{
+  overflow: visible;
 }

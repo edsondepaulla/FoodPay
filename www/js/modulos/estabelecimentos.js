@@ -1,7 +1,9 @@
 app.controller('EstabelecimentosLst', function($rootScope, $scope, $routeParams) {
     $rootScope.show_body = true;
-    $('#top').show();
-    $('#topTitulo').hide();
+    $('#top').hide();
+    $('#topTitulo').show();
+    $rootScope.Titulo = "Restaurantes";
+
     QRScannerConf.destroy();
     Factory.ajax(
         {
