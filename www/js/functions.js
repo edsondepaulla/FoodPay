@@ -179,13 +179,19 @@ document.addEventListener("deviceready", function(){
 }, false);
 
 $(document).ready(function() {
-
     cordova.plugins.notification.local.schedule({
-        title: 'My first notification',
+        title: 'My first notification 22222',
         text: 'Thats pretty easy...',
         foreground: true
     });
-    
+    setTimeout(function(){
+        cordova.plugins.notification.local.schedule({
+            title: 'My first notification 444444',
+            text: 'Thats pretty easy...',
+            foreground: true
+        });
+    }, 30000);
+
     try {
         QRScanner.prepare(function (err, status) {
             if (err) {
