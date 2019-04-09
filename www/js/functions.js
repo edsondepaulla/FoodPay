@@ -171,7 +171,21 @@ function onErrorUser(_this){
     _this.src = 'img/login_default.png';
 }
 
+
+document.addEventListener("deviceready", function(){
+    cordova.plugins.notification.local.requestPermission(function (granted) {
+
+    });
+}, false);
+
 $(document).ready(function() {
+
+    cordova.plugins.notification.local.schedule({
+        title: 'My first notification',
+        text: 'Thats pretty easy...',
+        foreground: true
+    });
+    
     try {
         QRScanner.prepare(function (err, status) {
             if (err) {
