@@ -649,6 +649,7 @@ app.controller('Main', function($rootScope, $scope, $http, $routeParams, $route,
             $('#fundo_transparente').css('opacity', '0.5');
         }, 1);
         $('.Menuleft').css('left', '0%');
+        $('body').attr('menu_left', 1);
     };
     $rootScope.menuClose = function(){
         $('.Menuleft').css('left', '-80%');
@@ -656,6 +657,7 @@ app.controller('Main', function($rootScope, $scope, $http, $routeParams, $route,
         menuClose_time = setTimeout(function () {
             $('#fundo_transparente').hide();
         }, 1000);
+        $('body').removeAttr('menu_left');
     };
 
     $rootScope.comboMenuExibir = function(TIPO){

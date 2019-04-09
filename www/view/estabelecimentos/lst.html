@@ -5,9 +5,9 @@
 
 <div id="pesquisarFiltro">
     <i class="mdi mdi-action-search"></i>
-    <input ng-model="$root.pesquisa" placeholder="Prato ou restaurante">
-    <i ng-if="$root.pesquisa && $root.pesquisa != ''" ng-click="$root.pesquisa = ''" class="mdi mdi-content-clear"></i>
-    <a>Filtros</a>
+    <input ng-keyup="getLst(true)" ng-model="pesquisa" placeholder="Prato ou restaurante">
+    <i ng-if="pesquisa && pesquisa != ''" ng-click="clearPesquisa()" class="mdi mdi-content-clear"></i>
+    <a href="">Filtros</a>
 </div>
 
 <style>
@@ -15,20 +15,20 @@
         position: absolute;
         left: 9px;
         top: 0px;
-        font-size: 28px;
+        font-size: 30px;
     }
     #pesquisarFiltro .mdi-content-clear{
         position: absolute;
-        left: 75%;
-        top: 0px;
-        font-size: 19px;
+        left: 77%;
+        top: -1px;
+        font-size: 22px;
         padding: 6px;
     }
 
     #pesquisarFiltro a{
         color: #000;
         position: absolute;
-        right: 0;
+        left: 88%;
         top: 11px;
         font-size: 12px;
     }
