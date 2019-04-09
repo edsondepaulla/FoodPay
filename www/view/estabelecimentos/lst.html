@@ -5,9 +5,9 @@
 
 <div id="pesquisarFiltro">
     <i class="mdi mdi-action-search"></i>
-    <input ng-keyup="getLst(true)" ng-model="pesquisa" placeholder="Prato ou restaurante">
-    <i ng-if="pesquisa && pesquisa != ''" ng-click="clearPesquisa()" class="mdi mdi-content-clear"></i>
-    <a href="">Filtros</a>
+    <input ng-keyup="getLst(true)" ng-model="$root.pesquisa" placeholder="Prato ou restaurante">
+    <i ng-if="$root.pesquisa && $root.pesquisa != ''" ng-click="clearPesquisa()" class="mdi mdi-content-clear"></i>
+    <a href="#!/estabelecimentos-filtros">Filtros</a>
 </div>
 
 <style>
@@ -46,11 +46,6 @@
     }
 </style>
 
-
-<!--<div id="pesquisar">
-    <input ng-keyup="pesquisar()" placeholder="&#xf002; Pesquisar" onfocus="this.placeholder = ''" onblur="this.placeholder = '&#xf002; Pesquisar'" id="campoBusca" class="campoBusca" type="search"  ng-model="$root.criterio">
-    <span ng-if="$root.criterio && $root.criterio != ''" ng-click="limpaBusca();pesquisar();" class="fa fa-close clearBusca"></span>
-</div>-->
 
 <ul>
     <li ng-repeat="EST in LST" ng-click="click(EST)">{{EST.ID}} - {{EST.NOME}}</li>

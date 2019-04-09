@@ -14,19 +14,15 @@
   <link href="css/font.css" media="all" rel="stylesheet" type="text/css" >
   <link href="css/keyframes.css" rel="stylesheet" type="text/css">
   <link href="css/materialize.min.css" rel="stylesheet" type="text/css">
-  <link href="css/teclado.css" rel="stylesheet" type="text/css">
 
   <link href="plugins/angular/css/mobile-angular-ui-base.css" rel="stylesheet" />
   <link href="plugins/pace/pace-theme-flash.css" rel="stylesheet" type="text/css">
-  <link href="css/modal.css" rel="stylesheet" type="text/css">
 
   <script src="plugins/jquery-2.1.1.min.js"></script>
   <script src="plugins/pace/pace.min.js"></script>
   <script src="plugins/angular.min.js"></script>
   <script src="plugins/angular-route.min.js"></script>
   <script src="plugins/angular-animate.js"></script>
-  <script src="plugins/moment.min.js"></script>
-  <script src="plugins/moment-with-locales.min.js"></script>
   <script src="plugins/angular/js/mobile-angular-ui.min.js"></script>
   <script src="plugins/angular/js/mobile-angular-ui.gestures.min.js"></script>
 
@@ -65,7 +61,7 @@
     <a class="btn_maps" id="scan_qrcode" href="#!/qr-code"><img src="img/qrcode.png"> Escanear</a>
 
     <i class="btn_maps mdi mdi-maps-local-restaurant" ng-click="location('#!/estabelecimentos')"></i>
-    <i class="btn_maps mdi mdi-action-help" ng-click="location('#!/ajuda')"></i>
+    <i class="btn_maps mdi mdi-action-search" ng-click="location('#!/estabelecimentos-filtros')"></i>
 
     <i class="btn_maps mdi mdi-maps-my-location" onclick="Maps.geoLocation()"></i>
     <i class="btn_maps mdi mdi-navigation-refresh" onclick="Maps.getPoints()"></i>

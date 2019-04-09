@@ -1275,12 +1275,6 @@ ul.configuracoes li a span{
   opacity: 1;
   margin: 0 auto;
 }
-#centroSubTop{
-  margin-left: 19%;
-  position: absolute;
-  width: 70%;
-  top: 0px;
-}
 input[type="search"].campoBusca::-webkit-input-placeholder {
   color: #a9c7dc;
 }
@@ -1551,21 +1545,6 @@ md-icon.md-default-theme, md-icon {
  */
 #comboMenu{
   font-size: 18px;
-  color: #000;
-}
-
-ul#comboMenuOpcoes{
-  display: none;
-  background: #FFF;
-  padding: 0 19px;
-  margin-top: 6px;
-}
-ul#comboMenuOpcoes li{
-  padding: 5px;
-  font-size: 1.1rem;
-}
-
-ul#comboMenuOpcoes li.active{
   color: #000;
 }
 
@@ -2244,19 +2223,13 @@ body .md-datepicker-input{
   min-width: auto !important;
 }
 
-/*body[device="ios"] input[disabled]{
-  color: #4a4a4a !important;
-  opacity: 1;
-}*/
-
 body .pace .pace-progress{
   display: none;
 }
 
-/*body[device="ios"] .pace .pace-activity{
-  top: 30px;
-  right: 40px;
-}*/
+body[controller="Index"] .pace .pace-activity{
+  right: 16px;
+}
 
 body md-toolbar{
   min-height: auto !important;
@@ -2330,7 +2303,7 @@ body md-toolbar{
 
 a#scan_qrcode img{
   width: 15px;
-  vertical-align: baseline;
+  /*vertical-align: baseline;*/
 }
 
 a#scan_qrcode{
@@ -2364,7 +2337,7 @@ i.mdi.btn_maps:before{
   vertical-align: sub;
 }
 
-i.mdi.btn_maps.mdi-action-help{
+i.mdi.btn_maps.mdi-action-search{
   left: 15px;
   bottom: 25px;
 }

@@ -1,3 +1,12 @@
+app.controller('EstabelecimentosFiltros', function($rootScope, $scope, $routeParams) {
+    $rootScope.show_body = true;
+    $('#top').hide();
+    $('#topTitulo').show();
+    $rootScope.Titulo = "Filtros";
+
+    QRScannerConf.destroy();
+});
+
 app.controller('EstabelecimentosLst', function($rootScope, $scope, $routeParams) {
     $rootScope.show_body = true;
     $('#top').hide();
@@ -7,7 +16,6 @@ app.controller('EstabelecimentosLst', function($rootScope, $scope, $routeParams)
     QRScannerConf.destroy();
 
     var timeoutGetLst = null;
-    $scope.pesquisa = '';
     $scope.getLst = function(pesquisa) {
         if(timeoutGetLst)
             clearTimeout(timeoutGetLst);
@@ -16,7 +24,7 @@ app.controller('EstabelecimentosLst', function($rootScope, $scope, $routeParams)
                 {
                     action: 'estabecimentos/lst',
                     data: {
-                        Q: $scope.pesquisa,
+                        Q: $rootScope.pesquisa,
                         MESA: $routeParams.MESA
                     }
                 },
@@ -29,7 +37,7 @@ app.controller('EstabelecimentosLst', function($rootScope, $scope, $routeParams)
     $scope.getLst();
 
     $scope.clearPesquisa = function() {
-        $scope.pesquisa = '';
+        $rootScope.pesquisa = '';
         $scope.getLst();
     };
 
@@ -40,9 +48,12 @@ app.controller('EstabelecimentosLst', function($rootScope, $scope, $routeParams)
 
 app.controller('EstabelecimentosGet', function($rootScope, $scope, $routeParams) {
     $rootScope.show_body = true;
-    $('#top').show();
-    $('#topTitulo').hide();
+    $('#top').hide();
+    $('#topTitulo').show();
+    $rootScope.Titulo = "";
+
     QRScannerConf.destroy();
+
     Factory.ajax(
         {
             action: 'estabecimentos/get',
@@ -52,6 +63,7 @@ app.controller('EstabelecimentosGet', function($rootScope, $scope, $routeParams)
         },
         function (data) {
             $scope.REG = data;
+            $rootScope.Titulo = data.NOME;
         }
     );
 });
