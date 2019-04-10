@@ -1,4 +1,4 @@
-<div>
+<div id="localAtual">
     LOCAL<br>
     <b>Próximo a R. Lourenco Grabowski <i class="mdi-hardware-keyboard-arrow-down"></i></b>
 </div>
@@ -11,6 +11,19 @@
 </div>
 
 <style>
+    #localAtual{
+        color: #CCC;
+        font-size: 14px;
+    }
+    #localAtual i{
+        color: #000;
+        font-size: 12px;
+    }
+    #localAtual b{
+        font-size: 13px;
+        color: #000;
+    }
+
     #pesquisarFiltro .mdi-action-search{
         position: absolute;
         left: 9px;
@@ -44,9 +57,53 @@
         position: relative;
         margin-top: 10px;
     }
+
+    #estabelecimentos li{
+        border-bottom: 1px solid #EEE;
+        padding: 10px 4px;
+        position: relative;
+    }
+
+    #estabelecimentos li:last-child{
+        border-bottom: 0;
+    }
+    #estabelecimentos li img{
+        width: 55px;
+        height: 55px;
+        margin-right: 15px;
+        border-radius: 25px;
+    }
+    #estabelecimentos li > div.info{
+        position: absolute;
+        left: 71px;
+        top: 10px;
+        max-width: 67%;
+    }
+    #estabelecimentos li > div.info span{
+        color: #CCC;
+    }
+    #estabelecimentos li > div.info b{
+        font-size: 13px;
+        font-weight: 600;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        display: block;
+        overflow: hidden;
+    }
+    #estabelecimentos li > div.info label{
+        display: block;
+        font-size: 11px;
+    }
 </style>
 
 
-<ul>
-    <li ng-repeat="EST in LST" ng-click="click(EST)">{{EST.ID}} - {{EST.NOME}}</li>
+<ul id="estabelecimentos">
+    <li ng-repeat="EST in LST" ng-click="click(EST)">
+        <img src="img/logo.jpg" onerror="onErrorEstabelecimento(this)">
+        <div class="info">
+            <b>{{EST.NOME}}</b>
+            <span>Lanches - 10 min - 9,2 km</span>
+            <label>Água verde - Rep. Argentina, 266</label>
+        </div>
+    </li>
 </ul>

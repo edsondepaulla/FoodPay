@@ -171,6 +171,9 @@ function onErrorUser(_this){
     _this.src = 'img/login_default.png';
 }
 
+function onErrorEstabelecimento(_this){
+    _this.src = 'img/login_default.png';
+}
 
 document.addEventListener("deviceready", function(){
     cordova.plugins.notification.local.requestPermission(function (granted) {
@@ -179,7 +182,7 @@ document.addEventListener("deviceready", function(){
 }, false);
 
 $(document).ready(function() {
-    cordova.plugins.notification.local.schedule({
+    /*cordova.plugins.notification.local.schedule({
         title: 'My first notification 22222',
         text: 'Thats pretty easy...',
         foreground: true
@@ -190,7 +193,7 @@ $(document).ready(function() {
             text: 'Thats pretty easy...',
             foreground: true
         });
-    }, 30000);
+    }, 30000);*/
 
     try {
         QRScanner.prepare(function (err, status) {
