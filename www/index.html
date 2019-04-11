@@ -119,6 +119,10 @@
         font-size: 15px;
         font-weight: 600;
       }
+      #userLeft > div label a{
+        text-decoration: underline;
+        color: #004dea;
+      }
       #userLeft > div label{
         display: block;
         color: #666;
@@ -130,6 +134,7 @@
       }
       #contentLeft > ul li a{
         color: #444;
+        display: block;
       }
       #contentLeft > ul li i{
         font-size: 26px;
@@ -149,16 +154,16 @@
       }
     </style>
     <div id="contentLeft">
-      <div id="userLeft">
+      <div id="userLeft" ng-click="location('#!/conecte-se')">
         <img border="0" src="" onerror="onErrorUser(this)">
         <div>
           <b>Olá, Visitante</b>
-          <label>Entrar ou criar conta</label>
+          <label><a>Conecte-se</a></label>
         </div>
       </div>
       <ul>
         <li ng-repeat="menu in MenuLeft">
-          <a  ng-click="location(menu.url)">
+          <a ng-click="location(menu.url)">
             <i class="mdi {{menu.icon}}"></i>
             {{menu.titulo}}
           </a>

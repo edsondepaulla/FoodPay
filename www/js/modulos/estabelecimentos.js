@@ -12,7 +12,6 @@ app.controller('EstabelecimentosLst', function($rootScope, $scope, $routeParams)
     $('#top').hide();
     $('#topTitulo').show();
     $rootScope.Titulo = "Restaurantes";
-
     QRScannerConf.destroy();
 
     var timeoutGetLst = null;

@@ -9,3 +9,10 @@ var Login = {
         return Login.data;
     }
 };
+
+app.controller('ConecteSe', function($rootScope, $scope, $routeParams) {
+    $rootScope.show_body = true;
+    $('#top').show();
+    $('#topTitulo').hide();
+    QRScannerConf.destroy();
+});

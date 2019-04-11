@@ -33,6 +33,10 @@ app.config(function($routeProvider, $mdThemingProvider, $mdDateLocaleProvider, $
             templateUrl : "view/formas-de-pagamento/index.html",
             controller: 'FormasDePagamento'
         })
+        .when("/conecte-se", {
+            templateUrl : "view/conecte-se/index.html",
+            controller: 'ConecteSe'
+        })
         .when("/estabelecimentos", {
             templateUrl : "view/estabelecimentos/lst.html",
             controller: 'EstabelecimentosLst'

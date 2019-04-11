@@ -2042,9 +2042,6 @@ md-slider .md-sign:after {
   opacity: 1;
   margin: 0 auto;
 }
-#menuLeft a {
-  display: block;
-}
 .img_login{
   position: absolute;
   background: #22262e;

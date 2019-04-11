@@ -1,6 +1,7 @@
 app.controller('Ajuda', function($rootScope, $scope, $routeParams) {
     $rootScope.show_body = true;
-    $('#top').show();
-    $('#topTitulo').hide();
+    $('#top').hide();
+    $('#topTitulo').show();
+    $rootScope.Titulo = "Ajuda";
     QRScannerConf.destroy();
 });

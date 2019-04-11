@@ -1,0 +1,69 @@
+<form id="conecteSe">
+
+    <label>Preecha o seu número de telefone</label>
+
+    <div id="boxTelefone">
+        <label>
+            <span>+55</span>
+        </label>
+        <input>
+    </div>
+
+    <style>
+        #conecteSe #boxTelefone label span{
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-size: 15px;
+        }
+        #conecteSe #boxTelefone label{
+            position: absolute;
+            top: 0;
+            left: 10px;
+            width: 27%;
+            height: 100%;
+            border-right: 1px solid #EEE;
+            z-index: 1;
+            text-align: center;
+            padding-top: 7px;
+        }
+        #conecteSe #boxTelefone input{
+            border: 0;
+            position: absolute;
+            top: 0;
+            right: 10px;
+            width: 66%;
+            height: 100%;
+            text-align: center;
+            font-size: 15px;
+        }
+
+        #conecteSe > label{
+            color: #CCC;
+        }
+
+        #conecteSe{
+            padding: 30px;
+        }
+
+        #conecteSe #boxTelefone{
+            width: 100%;
+            height: 37px;
+            border: 1px solid #EEE;
+            border-radius: 10px;
+            position: relative;
+            margin-top: 15px;
+        }
+
+        #conecteSe button{
+            background: #000;
+            color: #FFF;
+            border: 0;
+            border-radius: 5px;
+            width: 50%;
+            padding: 10px 30px;
+            font-size: 15px;
+            margin: 0 auto;
+        }
+    </style>
+
+    <button>Entrar</button>
+</form>
