@@ -1,14 +1,27 @@
-<div id="localAtual">
-    LOCAL<br>
-    <b>Próximo a R. Lourenco Grabowski <i class="mdi-hardware-keyboard-arrow-down"></i></b>
-</div>
+<md-content class="scrollable-content" scroll flex md-scroll-y>
+    <div id="localAtual">
+        LOCAL<br>
+        <b>Próximo a R. Lourenco Grabowski <i class="mdi-hardware-keyboard-arrow-down"></i></b>
+    </div>
 
-<div id="pesquisarFiltro">
-    <i class="mdi mdi-action-search"></i>
-    <input ng-keyup="getLst(true)" ng-model="$root.pesquisa" placeholder="Prato ou restaurante">
-    <i ng-if="$root.pesquisa && $root.pesquisa != ''" ng-click="clearPesquisa()" class="mdi mdi-content-clear"></i>
-    <a href="#!/estabelecimentos-filtros">Filtros</a>
-</div>
+    <div id="pesquisarFiltro">
+        <i class="mdi mdi-action-search"></i>
+        <input ng-keyup="getLst(true)" ng-model="$root.pesquisa" placeholder="Prato ou restaurante">
+        <i ng-if="$root.pesquisa && $root.pesquisa != ''" ng-click="clearPesquisa()" class="mdi mdi-content-clear"></i>
+        <a href="#!/estabelecimentos-filtros">Filtros</a>
+    </div>
+
+    <ul id="estabelecimentos">
+        <li ng-repeat="EST in LST" ng-click="click(EST)">
+            <img src="img/logo.jpg" onerror="onErrorEstabelecimento(this)">
+            <div class="info">
+                <b>{{EST.NOME}}</b>
+                <span>Lanches - 10 min - 9,2 km</span>
+                <label>Água verde - Rep. Argentina, 266</label>
+            </div>
+        </li>
+    </ul>
+</md-content>
 
 <style>
     #localAtual{
@@ -70,7 +83,6 @@
     #estabelecimentos li img{
         width: 55px;
         height: 55px;
-        margin-right: 15px;
         border-radius: 25px;
     }
     #estabelecimentos li > div.info{
@@ -95,15 +107,3 @@
         font-size: 11px;
     }
 </style>
-
-
-<ul id="estabelecimentos">
-    <li ng-repeat="EST in LST" ng-click="click(EST)">
-        <img src="img/logo.jpg" onerror="onErrorEstabelecimento(this)">
-        <div class="info">
-            <b>{{EST.NOME}}</b>
-            <span>Lanches - 10 min - 9,2 km</span>
-            <label>Água verde - Rep. Argentina, 266</label>
-        </div>
-    </li>
-</ul>

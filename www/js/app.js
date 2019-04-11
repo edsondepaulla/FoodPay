@@ -97,16 +97,44 @@ app.controller('Main', function($rootScope, $scope, $http, $routeParams, $route,
     // Menu
     $rootScope.MenuLeft = [
         {
-            titulo: 'Pedir',
-            url: '#!/'
+            titulo: 'Estabelecimentos',
+            url: '#!/',
+            icon: 'mdi-maps-local-restaurant'
+        },
+        {
+            titulo: 'Pedidos',
+            url: '#!/pedidos',
+            icon: 'mdi-action-view-list'
+        },
+        {
+            titulo: 'Cupons',
+            url: '#!/cupons',
+            icon: 'mdi-maps-local-offer'
+        },
+        {
+            titulo: 'Comunidade',
+            url: '#!/comunidade',
+            icon: 'mdi-social-group'
         },
         {
             titulo: 'Formas de pagamento',
-            url: '#!/formas-de-pagamento'
+            url: '#!/formas-de-pagamento',
+            icon: 'mdi-action-credit-card'
+        },
+        {
+            titulo: 'Notificações',
+            url: '#!/notificacoes',
+            icon: 'mdi-social-notifications'
         },
         {
             titulo: 'Ajuda',
-            url: '#!/ajuda'
+            url: '#!/ajuda',
+            icon: 'mdi-action-help'
+        },
+        {
+            titulo: 'Sobre o App',
+            url: '#!/sobre',
+            icon: 'mdi-hardware-phone-android'
         }
     ];
 
