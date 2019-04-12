@@ -111,34 +111,23 @@ var Factory = {
                         if (Factory.$rootScope)
                             Factory.$rootScope.loading = false;
 
-                        if (response.data.desconectado == 1 && false) {
-                            Login.set({});
-                            if(params.action != 'login/logout')
-                                window.location = "login.html";
-                        } else {
-                            // Login
-                            if(response.data.Login) {
-								if(response.data.VERIFICAR_AUTH){
-									window.location = response.data.VERIFICAR_AUTH;
-								}else{
-									if(typeof response.data.Login.url_avatar == 'undefined')
-										response.data.Login.url_avatar = '';
-									Login.set(response.data.Login);
-									Factory.$rootScope.usuarioLogado = response.data.Login;
-								}
-                            }
-
-                            // PHPSESSID
-                            if(response.data.PHPSESSID)
-                                localStorage.setItem("PHPSESSID",response.data.PHPSESSID);
-
-                            if (successCallback)
-                                eval(successCallback)(response.data);
+                        // Login
+                        if(response.data.Login) {
+                            Login.set(response.data.Login);
+                            Factory.$rootScope.usuarioLogado = response.data.Login;
                         }
 
-                        // Msg
-                        if(response.data.msg && params.action != 'login/request')
-                            alert(response.data.msg);
+                        // PHPSESSID
+                        if(response.data.PHPSESSID)
+                            localStorage.setItem("PHPSESSID",response.data.PHPSESSID);
+
+                        if (successCallback)
+                            eval(successCallback)(response.data);
+
+                        if(response.data.status == '1') {
+                            if(response.data.redirect)
+                                window.location = response.data.redirect;
+                        }
 
                         if (_form)
                             $('.btn-salvar').attr('disabled', false);

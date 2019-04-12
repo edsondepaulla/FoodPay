@@ -1,0 +1,52 @@
+<form id="conecteSeCodigo" onsubmit="return false;" method="post">
+    <label>Foi enviado para <b>{{$root.CELULAR}}</b></label>
+
+    <div id="boxCodigo">
+        <input type="text" ng-model="CODIGO" />
+    </div>
+
+    <button ng-if="CODIGO && CODIGO != ''" class="btn-salvar" type="button" ng-click="seguinte()">Seguinte</button>
+
+    <style>
+        #conecteSeCodigo #boxCodigo input{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            font-size: 15px;
+            border: 0 !important;
+            background: transparent;
+        }
+
+        #conecteSeCodigo > label{
+            color: #CCC;
+        }
+
+        #conecteSeCodigo{
+            padding: 30px;
+        }
+
+        #conecteSeCodigo #boxCodigo{
+            width: 100%;
+            height: 37px;
+            border: 1px solid #EEE;
+            border-radius: 10px;
+            position: relative;
+            margin-top: 15px;
+        }
+
+        #conecteSeCodigo button{
+            background: #000;
+            color: #FFF;
+            border: 0;
+            border-radius: 5px;
+            width: 50%;
+            padding: 10px 30px;
+            font-size: 15px;
+            margin: 30px auto 0;
+            display: block;
+        }
+    </style>
+</form>

@@ -1,13 +1,14 @@
-<form id="conecteSe">
-
+<form id="conecteSe" onsubmit="return false;" method="post">
     <label>Preecha o seu número de telefone</label>
 
     <div id="boxTelefone">
         <label>
             <span>+55</span>
         </label>
-        <input>
+        <input type="tel" ng-model="$root.CELULAR" />
     </div>
+
+    <button ng-if="$root.CELULAR && $root.CELULAR != ''" class="btn-salvar" type="button" ng-click="comecar()">Começar</button>
 
     <style>
         #conecteSe #boxTelefone label span{
@@ -61,9 +62,8 @@
             width: 50%;
             padding: 10px 30px;
             font-size: 15px;
-            margin: 0 auto;
+            margin: 30px auto 0;
+            display: block;
         }
     </style>
-
-    <button>Entrar</button>
 </form>

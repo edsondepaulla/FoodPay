@@ -34,8 +34,12 @@ app.config(function($routeProvider, $mdThemingProvider, $mdDateLocaleProvider, $
             controller: 'FormasDePagamento'
         })
         .when("/conecte-se", {
-            templateUrl : "view/conecte-se/index.html",
+            templateUrl : "view/conecte-se/comecar.html",
             controller: 'ConecteSe'
+        })
+        .when("/conecte-se-codigo", {
+            templateUrl : "view/conecte-se/codigo.html",
+            controller: 'ConecteSeCodigo'
         })
         .when("/estabelecimentos", {
             templateUrl : "view/estabelecimentos/lst.html",
