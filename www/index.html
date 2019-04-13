@@ -156,9 +156,13 @@
     <div id="contentLeft">
       <div id="userLeft" ng-click="location('#!/conecte-se')">
         <img border="0" src="" onerror="onErrorUser(this)">
-        <div>
+        <div ng-if="!usuarioLogado.ID">
           <b>Olá, Visitante</b>
           <label><a>Conecte-se</a></label>
+        </div>
+        <div ng-if="usuarioLogado.ID">
+          <b>Olá, {{usuarioLogado.ID}}</b>
+          <label><a>Editar perfil</a> <a ng-click="logout()">Sair</a></label>
         </div>
       </div>
       <ul>

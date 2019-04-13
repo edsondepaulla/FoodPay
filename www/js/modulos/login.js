@@ -7,6 +7,17 @@ var Login = {
     },
     get: function () {
         return Login.data;
+    },
+    logout: function(){
+        Factory.ajax(
+            {
+                action: 'login/logout',
+            },
+            function (data) {
+                Login.set({});
+                Factory.$rootScope.usuarioLogado = {};
+            }
+        );
     }
 };
 

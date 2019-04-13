@@ -88,6 +88,10 @@ app.controller('Main', function($rootScope, $scope, $http, $routeParams, $route,
         window.history.go(-1);
     };
 
+    $rootScope.logout = function(){
+        Login.logout();
+    };
+
     $rootScope.swipeLeft = function(){
         $rootScope.menuClose();
     };
