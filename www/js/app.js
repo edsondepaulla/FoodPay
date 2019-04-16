@@ -72,6 +72,7 @@ app.controller('Main', function($rootScope, $scope, $http, $routeParams, $route,
     $rootScope.show_body = false;
     Factory.$http = $http;
     Factory.$rootScope = $rootScope;
+    $rootScope.usuarioLogado = Login.get();
     $scope.ambiente_teste = config.ambiente == 'homologacao' || config.ambiente == 'local'?1:0;
 
     var urlPesquisar = [];
@@ -90,6 +91,7 @@ app.controller('Main', function($rootScope, $scope, $http, $routeParams, $route,
 
     $rootScope.logout = function(){
         Login.logout();
+        $rootScope.location('#!/');
     };
 
     $rootScope.swipeLeft = function(){
@@ -111,42 +113,50 @@ app.controller('Main', function($rootScope, $scope, $http, $routeParams, $route,
         {
             titulo: 'Estabelecimentos',
             url: '#!/',
-            icon: 'mdi-maps-local-restaurant'
+            icon: 'mdi-maps-local-restaurant',
+            logado: 1
         },
         {
             titulo: 'Pedidos',
             url: '#!/pedidos',
-            icon: 'mdi-action-view-list'
+            icon: 'mdi-action-view-list',
+            logado: 0
         },
         {
             titulo: 'Cupons',
             url: '#!/cupons',
-            icon: 'mdi-maps-local-offer'
+            icon: 'mdi-maps-local-offer',
+            logado: 0
         },
         {
             titulo: 'Comunidade',
             url: '#!/comunidade',
-            icon: 'mdi-social-group'
+            icon: 'mdi-social-group',
+            logado: 0
         },
         {
             titulo: 'Formas de pagamento',
             url: '#!/formas-de-pagamento',
-            icon: 'mdi-action-credit-card'
+            icon: 'mdi-action-credit-card',
+            logado: 0
         },
         {
             titulo: 'Notificações',
             url: '#!/notificacoes',
-            icon: 'mdi-social-notifications'
+            icon: 'mdi-social-notifications',
+            logado: 1
         },
         {
             titulo: 'Ajuda',
             url: '#!/ajuda',
-            icon: 'mdi-action-help'
+            icon: 'mdi-action-help',
+            logado: 1
         },
         {
             titulo: 'Sobre o App',
             url: '#!/sobre',
-            icon: 'mdi-hardware-phone-android'
+            icon: 'mdi-hardware-phone-android',
+            logado: 1
         }
     ];
 

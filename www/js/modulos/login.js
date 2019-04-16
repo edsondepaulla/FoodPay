@@ -42,7 +42,7 @@ app.controller('ConecteSe', function($rootScope, $scope, $routeParams) {
                 },
                 function (data) {
                     if (data.status == '1') {
-
+                        $rootScope.CODIGO = data.CODIGO;
                     }
                 }
             );

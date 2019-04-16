@@ -2,7 +2,7 @@
     <label>Foi enviado para <b>{{$root.CELULAR}}</b></label>
 
     <div id="boxCodigo">
-        <input type="text" ng-model="CODIGO" />
+        <input type="text" ng-model="$root.CODIGO" />
     </div>
 
     <button ng-if="CODIGO && CODIGO != ''" class="btn-salvar" type="button" ng-click="seguinte()">Seguinte</button>
